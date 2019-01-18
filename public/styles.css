@@ -11,12 +11,13 @@ body, html{
   position: relative;
   margin: 40px auto;
   height: auto;
-  width: 500px;
+  width: 50%;
   padding: 20px;
 }
 
 h2 {
-	color: #AAAAAA;
+  color: #AAAAAA;
+  font-size: 2.5vw;
 }
 
 .container ul{
@@ -194,7 +195,7 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 3vw;
+  font-size: 2vw;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 8px;

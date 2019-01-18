@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pädagogischer Tag 2019</title>  
+        <link rel="stylesheet" href="styles.css">  
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">        
+        <meta name="theme-color" content="#ffffff">              
+    </head>
+    <body>   
+        <div class="alert">
+                <h1>Pädagogischer Tag 2019 am 5.3.2019</h1>            
+                <p>Am 5.3. findet der Pädagogische Tag am BKB statt.
+                     Alle Kolleginnen und Kollegen sind dazu eingeladen, sich über diese Webseite anzumelden.</p>
+        </div>
+        <div class="container">                        
+            <form method="GET">                        
+                <button formaction="/tagesablauf">Über Tagesablauf informieren</button> 
+                <br>               
+                <button formaction="/workshops">Über Workshops informieren</button>                
+                <br>
+                <button formaction="/auswahl1">Workshop Nr.1 wählen</button>                
+                <br>
+                <button formaction="/auswahl2">Workshop Nr.2 wählen</button>                
+                <br>
+                <button formaction="/auswahl2">Gruppe Anwendungsphase wählen</button>                
+            </form>            
+        </div>
+        <hr>
+        <div class="signature" >
+                <p>
+            <% for(var i=0; i < anzeigen.length; i++) {%>            
+            <%- anzeigen[i] %>
+          <% } %></p>
+          <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+        </div>          
+        <form method="POST">                        
+                <button class="logout" formaction="/anmelden">abmelden</button>                
+            </form>                                               
+    </body>
+</html>

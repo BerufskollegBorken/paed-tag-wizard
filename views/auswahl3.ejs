@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">        
+        <link rel="stylesheet" href="styles.css">          
+    </head>
+    <body> 
+        <div class="alert">
+            <h1>Pädagogischer Tag 2019 am 5.3.2019!</h1>            
+        </div>    
+        <hr>
+        <div class="container">
+            <h2>Ihre Auswahl für die Anwendungsphase</h2>      
+            <form method="POST" action="/">
+                <ul>
+                    <li>
+                        <input type="radio" id="f-option" name="workshop1">
+                        <label for="f-option">Pizza3</label>
+                        
+                        <div class="check"></div>
+                    </li>
+                    
+                    <li>
+                        <input type="radio" id="s-option" name="workshop1">
+                        <label for="s-option">Bacon</label>
+                        
+                        <div class="check"><div class="inside"></div></div>
+                    </li>
+                    
+                    <li>
+                        <input type="radio" id="t-option" name="workshop1">
+                        <label for="t-option">Cats</label>
+                        
+                        <div class="check"><div class="inside"></div></div>
+                    </li>
+                </ul>
+                <br>                
+                <button>Zurück zur Startseite</button>
+            </form>                
+        </div>                    
+        <div class="signature" >
+                <p>
+            <% for(var i=0; i < anzeigen.length; i++) {%>            
+            <%- anzeigen[i] %>
+            <% } %></p>
+            <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+        </div>          
+    </body>
+</html>

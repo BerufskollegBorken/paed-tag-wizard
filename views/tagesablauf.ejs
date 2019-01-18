@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">        
+        <link rel="stylesheet" href="styles.css">          
+    </head>
+    <body>   
+            <div class="alert">
+                    <h1>Pädagogischer Tag 2019 am 5.3.2019!</h1>            
+                    <h2>Tagesablauf</h2>                    
+                    <p>
+                        Hier finden Sie den voraussichtlichen Tagesablauf für den pädagogischen Tag am
+                        5.3.2019.
+                    </p>
+            </div>    
+            <hr>                
+            <% for(var i=0; i < anzeigen.length; i++) {%>
+                <div class="alert" style="background-color: yellow;">
+                        <h2><%- anzeigen[i] %></h2>
+                </div>
+                <br>                
+            <% } %>    
+            <div>
+                <form method="GET">                                                
+                    <button formaction="/">Zurück zur Startseite</button>                    
+                </form>  
+            </div>    
+            <div class="signature" >            
+              <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+            </div>          
+    </body>
+</html>

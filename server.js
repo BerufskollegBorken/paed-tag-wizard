@@ -75,6 +75,13 @@ app.post('/',(req, res, next) => {
     let lehrerKrz = req.body.lehrerKrz
     let pin = req.body.pin
     
+console.log(req.body.workshop1)
+console.log(req.body.workshop2)
+console.log(req.body.workshop3)
+
+
+console.log(lehrerKrz + " " + pin)
+
     dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "' AND pin = " + pin + ";", (err, rows) => { 
         if (err) return next(err)       
         
@@ -112,16 +119,12 @@ app.get('/tagesablauf',(req, res, next) => {
     
     let tagesablauf = []
 
-    tagesablauf.push("<b>08:30 - 09:00 Uhr Eingangsreferat</b>")
-    tagesablauf.push("<b>09:45 - 10:45 Uhr 1.Workshop<b>")
-    //tagesablauf.push("Sie müssen sich ab Mitte Februar für den 1.Workshop Ihrer Wahl amelden!")
-    tagesablauf.push("<b>11:00 - 12:00 Uhr 2.Workshop<b>")
-    //tagesablauf.push("Sie müssen sich ab Mitte Februar für den 2.Workshop Ihrer Wahl amelden!")
-    tagesablauf.push("<b>12:15 - 13:00 Mittagspause<b>")
-    //tagesablauf.push("Der Festausschuss ...")
-    tagesablauf.push("<b>13:15 - 14:15 Anwendungsphase<b>")
-    //tagesablauf.push("Geplant ist, dass sich wiederum jeder einer Gruppe zuordnet. Die Gruppen sich nach Fächern / Bereichen vorgesehen. Falls zwei Gruppen geeignet erscheinen, dann frei auswählen.")
-    tagesablauf.push("<b>13:15 - 14:15 Plenum<b>")
+    tagesablauf.push("08:30 - 09:00 Uhr Eingangsreferat")
+    tagesablauf.push("09:45 - 10:45 Uhr 1.Workshop")
+    tagesablauf.push("11:00 - 12:00 Uhr 2.Workshop")
+    tagesablauf.push("12:15 - 13:00 Mittagspause")
+    tagesablauf.push("13:15 - 14:15 Anwendungsphase")
+    tagesablauf.push("13:15 - 14:15 Plenum")
 
     res.render('tagesablauf.ejs', {                    
         anzeigen: tagesablauf
@@ -132,8 +135,9 @@ app.get('/workshops',(req, res, next) => {
 
     let workshops = []
 
-    workshops.push("<h2>Workshop 1 Padlet</h2><p>Hallo <a href='http://www.padlet.com/' target='_blank'>Padlet</a>  </p>")
-    workshops.push("<h2>Workshop 2 Padlet</h2><p>Hallo <a href='http://www.padlet.com/' target='_blank'>Padlet</a>  </p>")
+    workshops.push("<h3>Workshop 1 Padlet</h3><p>Hallo <a href='http://www.padlet.com/' target='_blank'>Padlet</a>  </p>")
+    workshops.push("<h3>Workshop 2 Padlet</h3><p>Hallo <a href='http://www.padlet.com/' target='_blank'>Padlet</a>  </p>")
+    workshops.push("<h3>Workshop 2 Padlet</h3><p>Hallo <a href='http://www.padlet.com/' target='_blank'>Padlet</a>  </p>")
     res.render('workshops.ejs', {                    
         anzeigen: workshops
     })    

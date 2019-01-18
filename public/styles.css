@@ -195,7 +195,7 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 2vw;
+  font-size: 4vw;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 8px;
@@ -209,3 +209,16 @@ button {
   width:20%;
 }
 
+.center {
+  margin: auto;
+  width: 60%;
+  font-size: 4vw;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+
+input{
+  width: 60%;
+  font-size: 4vw;
+}

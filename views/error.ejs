@@ -12,19 +12,26 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body>        
-        <section>
-                <h2 class="error"><img src="/images/placemat.png"/></h2>                       
-                <% if(error){ %>                
-                    <% for(var i=0; i < error.length; i++) {%>
-                        <p><%- error[i] %></p><hr>                    
-                    <% } %>                                                
-                    <% } %> 
-                <p>&copy; 2018 Mein Name</p>         
-        </section>   
+        
+            <div class="alert">
+                    <h1>F E H L E R</h1>                                
+            </div>
+            <div class="center">
+            <% if(error){ %>                            
+                <% for(var i=0; i < error.length; i++) {%>
+                    <p><%- error[i] %></p><hr>                    
+                <% } %>                                                
+                <% } %> 
+            </div>                    
+            <p>&copy; 2018 Mein Name</p>         
+        
         <script>
                 setTimeout(function () {                   
                    window.location = "/";
-                }, 5000)
+                }, 7000)
               </script>     
+              <div class="signature" >                
+              <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+            </div>          
     </body>
 </html>

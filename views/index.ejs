@@ -17,10 +17,21 @@
                 <p>Am 5.3. findet der Pädagogische Tag am BKB statt.
                      Alle Kolleginnen und Kollegen sind dazu eingeladen, sich über diese Webseite anzumelden.</p>
         </div>
+
+        <% if(alert){ %>
+            <% for(var i=0; i < alert.length; i++) {%>            
+                <br>
+                <div class="alert" style="background-color: orange;">                    
+                    <h2><%- alert[i] %></h2>                    
+                </div>                                            
+            <% } %>
+        <% } %> 
+
+
         <div class="container">                                                   
-            <a href="/tagesablauf" class="button">Über Tagesablauf informieren</a>    
+            <a href="/tagesablauf" class="button">Unser Tagesablauf</a>    
             <br>
-            <a href="/workshops" class="button">Über Workshops informieren</a>    
+            <a href="/workshops" class="button">Das Workshop-Angebot</a>    
             <br>
             
             <h2>Hier müssen Sie verbindlich <%- wahlen.length %>x wählen:</h2>
@@ -29,17 +40,19 @@
                 <a href="/wahl?w=<%- i %>" class="button"> <%- wahlen[i].name %><br><%- wahlen[i].von %>-<%- wahlen[i].bis %></a>    
                 <br>    
             <% } %>
-        </div>
+        </div>        
         <hr>
         <div class="signature" >
-                <p>
-            <% for(var i=0; i < anzeigen.length; i++) {%>            
-            <%- anzeigen[i] %>
-          <% } %></p>
-          <p>Made with <i class="much-heart"></i> by GW12A &  <a href='mailto:stefan.baeumer@berufskolleg-borken.de?Subject=Hallo' target='_top'>Stefan Bäumer</a></p>
-        </div>          
+            <p>
+                <% for(var i=0; i < anzeigen.length; i++) {%>            
+                    <%- anzeigen[i] %>
+                <% } %>
+            </p>
+            <p>Made with <i class="much-heart"></i> by GW12A &  <a href='mailto:stefan.baeumer@berufskolleg-borken.de?Subject=Hallo' target='_top'>Stefan Bäumer</a></p>
+            <p><a href='/about'>Päd-Tag-Wizard</a></p>
+        </div>
         <form method="POST">                        
-            <button class="button logout" formaction="/anmelden">abmelden</button>                
-        </form>                                               
+                <button class="button logout" formaction="/anmelden">logout</button>                
+        </form>                                                                 
     </body>
 </html>

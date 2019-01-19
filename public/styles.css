@@ -11,7 +11,7 @@ body, html{
   position: relative;
   margin: 40px auto;
   height: auto;
-  width: 50%;
+  width: 80%;
   padding: 20px;
 }
 
@@ -112,7 +112,7 @@ input[type=radio]:checked ~ label{
 .signature p{
 	text-align: center;
 	font-family: Helvetica, Arial, Sans-Serif;
-	font-size: 0.85em;
+	font-size: 1vw;
 	color: #AAAAAA;
 }
 
@@ -225,7 +225,7 @@ by the way it is so weird when you look at your code a couple of years after you
 
 .center {
   margin: auto;
-  width: 60%;
+  width: 80%;
   font-size: 4vw;
   text-align: center;
   padding: 10px;
@@ -238,5 +238,5 @@ input{
 }
 
 p {
-  font-size: 2vw;
+  font-size: 2.5vw;
 }

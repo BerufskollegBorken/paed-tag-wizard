@@ -161,7 +161,7 @@ app.post('/',(req, res, next) => {
             let alert = []
             for(i = 0; i < wahlen.length; i++){
                 if(eval('rows[0].' + wahlen[i].dbFeld)){
-                    alert.push(wahlen[i].name + ": Sie haben " + eval('rows[0].' + wahlen[i].dbFeld) + " gewählt."  + zuspruch[Math.floor(Math.random()*zuspruch.length)] )
+                    alert.push(wahlen[i].name + ": Sie haben " + eval('rows[0].' + wahlen[i].dbFeld) + " gewählt. "  + zuspruch[Math.floor(Math.random()*zuspruch.length)] )
                 }
             }            
             res.render('index.ejs', {   

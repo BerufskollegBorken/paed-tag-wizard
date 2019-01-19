@@ -1,8 +1,59 @@
+class Wahl{
+    constructor(name, von, bis, beschreibung, optionen) {
+        this.name = name
+        this.von = von
+        this.bis = bis
+        this.beschreibung = beschreibung
+        this.optionen = optionen
+    }
+}
+
+let tagesablauf = []
+tagesablauf.themaDesTages = "Pädagogischer Tag 2019 am 5. März"
+tagesablauf.titel = "Unser Tagesablauf"
+tagesablauf.beschreibung = "Hier finden Sie den voraussichtlichen Tagesablauf für den pädagogischen Tag am 5.3.2019."
+tagesablauf.push({von:"08:30", bis:"09:00", thema:"Eingangsreferat", beschreibung: "Von und mit Gerti Kohlruss"})
+tagesablauf.push({von:"09:45", bis:"10:45", thema:"1. Workshop", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen!"})
+tagesablauf.push({von:"11:00", bis:"12:00", thema:"2. Workshop", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen!"})
+tagesablauf.push({von:"12:15", bis:"13:00", thema:"Mittagspause", beschreibung: "Guten Appetit!"})
+tagesablauf.push({von:"13:15", bis:"14:15", thema:"Anwendungsphase", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen! Zuordnung nach Fächern. Leitfrage: Was kann ich konkret in meinem Unterricht umsetzen?"})
+tagesablauf.push({von:"13:15", bis:"14:15", thema:"Plenum", beschreibung: "Gemeinsame Auswertung."})
+
+
+let wahlen = []
+wahlen.titel = "Bitte wählen Sie!"
+wahlen.beschreibung = "Speichern nicht vergessen!"
+
+let optionen = []        
+optionen.titel = "Unser Workshop-Angebot."
+optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
+optionen.push({id:"Laptops", name:"Workshop", label:"Umgang mit (Schüler-)Laptops", beschreibung:""})
+optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:"Padlet Beschreibung"})
+optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:""})
+optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:""})
+optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:""})
+optionen.push({id:"Brainstorming",name:"Workshop", label:"Andere Art 'brainstorming'", beschreibung:""})
+optionen.push({id:"Schreibwerkstatt",name:"Workshop", label:"Schreibwerkstatt", beschreibung:""})
+
+wahlen.push(new Wahl("Workshopphase 1", "09:15","10:15", "Ihre Auswahl des Workshop Nr.1", optionen)) 
+wahlen.push(new Wahl("Workshopphase 2", "10:30","11:30", "Ihre Auswahl des Workshop Nr.2", optionen)) 
+optionen = []
+optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch"})
+optionen.push({id:"Mathe", name:"Workshop", label:"Mathe"})
+optionen.push({id:"Englisch",name:"Workshop", label:"Englisch"})
+optionen.push({id:"Sprachen",name:"Workshop", label:"Sprachen (ohne Englisch)"})
+optionen.push({id:"Religion",name:"Workshop", label:"Religion"})
+optionen.push({id:"Sport",name:"Workshop", label:"Sport"})
+optionen.push({id:"Technik",name:"Workshop", label:"Technik"})
+optionen.push({id:"Soziales",name:"Workshop", label:"Soziales"})
+optionen.push({id:"Agrar",name:"Workshop", label:"Agrar"})
+optionen.push({id:"Naturwissenschaften",name:"Workshop", label:"Naturwissenschaften (Bio, Physik)"})
+optionen.push({id:"Politik",name:"Workshop", label:"Politik, Gesellschaftslehre / Geschichte"})
+optionen.push({id:"Wirtschaft",name:"Workshop", label:"Wirtschaft"})
+
+wahlen.push(new Wahl("Anwendungsphase", "13:30","14:30", "Ihre Auswahl für die Anwendungsphase", optionen)) 
+
 const express = require('express')
-
-// Cookies speichern kleine Code-Schnipsel im Browser.
-// Cookies sind stets Key-Value-Paare.
-
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
@@ -25,6 +76,9 @@ const dbVerbindung = mysql.createConnection({
 })
 
 dbVerbindung.connect()
+
+
+
 
 function istAngemeldetAls(cookie){   // cookie = { istAngemeldetAls: '' } oder { istAngemeldetAls: 'BM' }
     return cookie["istAngemeldetAls"]     
@@ -50,11 +104,14 @@ app.get('/',(req, res, next) => {
             if(rows[0] === undefined){
                 console.log("Cookies werden gelöscht")
                 res.cookie('istAngemeldetAls', '')              
-                res.render('anmelden.ejs', {                    
+                res.render('anmelden.ejs', {               
+                    themaDesTages: tagesablauf.themaDesTages,     
                     anzeigen: ["Es kann Lehrer mit dem Kürzel '" + lehrerKrz + "' und der von Ihnen eingetippten PIN gefunden werden!", "Versuchen Sie es erneut!", "Die PIN sollte Ihnen per E-Mail zugegagnen sein."],                
                 })
             }else{                
-                res.render('index.ejs', {                    
+                res.render('index.ejs', {     
+                    themaDesTages: tagesablauf.themaDesTages,               
+                    wahlen : wahlen,
                     anzeigen: ["Sie sind erfolgreich angemeldet!", "Gut gemacht, " + lehrerKrz + "!", "Wie Sie das immer wieder hinkriegen!"],                
                 })
             }        
@@ -63,7 +120,8 @@ app.get('/',(req, res, next) => {
         console.log("Cookies werden gelöscht ...")
         res.cookie('istAngemeldetAls', '')
         res.render('anmelden.ejs', {  
-            anzeigen : ["Bitte melden Sie sich an!", "Die Zugangsdaten sind Ihnen per E-Mail zugegangen.", "Bei Fragen fragen: <a href='mailto:stefan.baeumer@berufskolleg-borken.de?Subject=Hallo' target='_top'>Stefan Bäumer</a>"]          
+            themaDesTages: tagesablauf.themaDesTages,
+            anzeigen : ["Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind.", "Bei Fragen fragen:-)"]          
         })
     }
 })
@@ -88,13 +146,17 @@ console.log(lehrerKrz + " " + pin)
 		if(rows[0] === undefined){    
             console.log("Cookies werden gelöscht ....")                
             res.cookie('istAngemeldetAls', '')            
-            res.render('anmelden.ejs', {                    
+            res.render('anmelden.ejs', {      
+                themaDesTages: tagesablauf.themaDesTages,              
+                wahlen : wahlen,                    
                 anzeigen: ["Es kann Lehrer mit dem Kürzel '" + lehrerKrz + "' und der von Ihnen eingetippten PIN gefunden werden!", "Versuchen Sie es erneut!", "Die PIN sollte Ihnen per E-Mail zugegagnen sein."],                
             })
         }else{     
             console.log("User wird jetzt angemeldet als: " + lehrerKrz)       
             res.cookie('istAngemeldetAls', lehrerKrz)            
-            res.render('index.ejs', {                    
+            res.render('index.ejs', {   
+                themaDesTages: tagesablauf.themaDesTages,                 
+                wahlen : wahlen,
                 anzeigen: ["Sie sind erfolgreich angemeldet!", "Gut gemacht, " + lehrerKrz + "!", "Wie Sie das immer wieder hinkriegen!"],                
             })
         }        
@@ -110,129 +172,65 @@ app.post('/anmelden',(req, res, next) => {
 
 app.get('/anmelden',(req, res, next) => {                
     res.cookie('istAngemeldetAls', '')    
-    res.render('anmelden.ejs', {                    
+    res.render('anmelden.ejs', {         
+        themaDesTages: tagesablauf.themaDesTages,           
         anzeigen: ["Abgemeldet.", "Geben Sie Ihr Kürzel und die PIN ein, die Ihnen per E-Mail zugegangen ist."]        
     })    
 })
 
-app.get('/tagesablauf',(req, res, next) => {                
-    
-    let tagesablauf = []
-
-    tagesablauf.push("08:30 - 09:00 Uhr Eingangsreferat")
-    tagesablauf.push("09:45 - 10:45 Uhr 1.Workshop")
-    tagesablauf.push("11:00 - 12:00 Uhr 2.Workshop")
-    tagesablauf.push("12:15 - 13:00 Mittagspause")
-    tagesablauf.push("13:15 - 14:15 Anwendungsphase")
-    tagesablauf.push("13:15 - 14:15 Plenum")
-
-    res.render('tagesablauf.ejs', {                    
-        anzeigen: tagesablauf
+app.get('/tagesablauf',(req, res, next) => {              
+    res.render('tagesablauf.ejs', {       
+        themaDesTages: tagesablauf.themaDesTages,             
+        tagesablauf: tagesablauf
     })    
 })
 
-app.get('/workshops',(req, res, next) => {                
-
-    let workshops = []
-
-    workshops.push("<h3>Workshop 1 Padlet</h3><p>Hallo <a href='http://www.padlet.com/' target='_blank'>Padlet</a>  </p>")
-    workshops.push("<h3>Workshop 2 Padlet</h3><p>Hallo <a href='http://www.padlet.com/' target='_blank'>Padlet</a>  </p>")
-    workshops.push("<h3>Workshop 2 Padlet</h3><p>Hallo <a href='http://www.padlet.com/' target='_blank'>Padlet</a>  </p>")
-    res.render('workshops.ejs', {                    
-        anzeigen: workshops
+app.get('/workshops',(req, res, next) => {           
+    res.render('workshops.ejs', {         
+        themaDesTages: tagesablauf.themaDesTages,             
+        optionen: wahlen[0].optionen
     })    
 })
 
-app.get('/auswahl1',(req, res, next) => {                
-    
+app.get('/wahl',(req, res, next) => {                    
+    if(req.query.w >= wahlen.length) return next(new Error("Unzulässiger Parameter!"))
+
     if(istAngemeldetAls(req.cookies)){        
-        res.render('auswahl1.ejs', { 
-            anzeigen : ["Sie müssen auswähen!"]                               
+        res.render('wahl.ejs', { 
+            themaDesTages: tagesablauf.themaDesTages,
+            titel: wahlen.titel,
+            beschreibung: wahlen.beschreibung,        
+            anweisung : wahlen[req.query.w].beschreibung,
+            anzeigen : ["Sie müssen auswähen!"],
+            items : wahlen[req.query.w]
         })
     }else{
         res.render('anmelden.ejs', {            
+            themaDesTages: tagesablauf.themaDesTages,
         })
     }
 })
 
-app.get('/auswahl2',(req, res, next) => {                
-    
-    if(istAngemeldetAls(req.cookies)){        
-        res.render('auswahl2.ejs', { 
-            anzeigen : ["Sie müssen auswähen!"]                               
+app.post('/wahl',(req, res, next) => {        
+    if(istAngemeldetAls(req.cookies)){              
+        res.render('wahl.ejs', {                      
+            themaDesTages: tagesablauf.themaDesTages,  
+            titel: wahlen.titel,
+            beschreibung: wahlen.beschreibung,        
+            anweisung : wahlen[0].beschreibung,
+            anzeigen : ["Vorzügliche Wahl!"],
+            items : wahlen[0]
         })
     }else{
-        res.render('anmelden.ejs', {            
+        res.render('anmelden.ejs', {       
+            themaDesTages: tagesablauf.themaDesTages,     
         })
     }
 })
-
-app.get('/auswahl3',(req, res, next) => {                
-    
-    if(istAngemeldetAls(req.cookies)){        
-        res.render('auswahl3.ejs', { 
-            anzeigen : ["Sie müssen auswähen!"]                               
-        })
-    }else{
-        res.render('anmelden.ejs', {            
-        })
-    }
-})
-
-
-
-app.post('/auswahl1',(req, res, next) => {        
-    if(istAngemeldetAls(req.cookies)){      
-        let anzeigen = []
-        anzeigen.push("Hallo")
-        
-        res.render('auswahl1.ejs', {                                
-            anzeigen : anzeigen
-        })
-    }else{
-        res.render('anmelden.ejs', {            
-        })
-    }
-})
-
-app.post('/auswahl2',(req, res, next) => {                
-    
-    if(istAngemeldetAls(req.cookies)){      
-
-        let anzeigen = []
-        
-        res.render('auswahl2.ejs', {                                
-            anzeigen : anzeigen
-        })
-    }else{
-        res.render('anmelden.ejs', {            
-        })
-    }
-})
-
-app.post('/auswahl3',(req, res, next) => {                
-    
-    if(istAngemeldetAls(req.cookies)){      
-
-        let anzeigen = []
-        anzeigen.push("Hallo")
-        
-        res.render('auswahl3.ejs', {                                
-            anzeigen : anzeigen
-        })
-    }else{
-        res.render('anmelden.ejs', {            
-        })
-    }
-})
-
-
-
-
 
 app.use((err, req, res, next) => {    
     console.log(err.stack)
     res.render('error.ejs', {        
-        error:["F E H L E R", err.message, "Falls Du nicht automatisch weitergeleitet wirst, dann ...", "Seite neu laden, um fortzufahren."]
+        error:["HOLY CRAP!!!", "Das hätte absolut <b>nicht</b> passieren dürfen!", "Try again, Sam!", err.message, "Falls Du nicht automatisch weitergeleitet wirst, dann Seite neu laden, um fortzufahren."]
     }) 
 })

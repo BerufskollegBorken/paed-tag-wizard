@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">        
+        <link rel="stylesheet" href="styles.css">          
+    </head>
+    <body>   
+        <div class="alert">
+                <h1><%= themaDesTages %></h1>                    
+                <h2><%= titel %></h2>                    
+                <p><%= beschreibung %></p>
+        </div>    
+        <hr>
+        <div class="container">
+            <h2><%=anweisung%></h2>      
+            <form method="POST" action="/wahl">
+                <ul>
+                    <% for(var i=0; i < items.optionen.length; i++) {%>            
+                        <li>
+                            <input type="radio" id="<%=items.optionen[i].id%>" name="<%=items.name%>">
+                            <label for="<%=items.optionen[i].id%>"><%=items.optionen[i].label%></label>                                
+                            <div class="check"><div class="inside"></div></div>
+                        </li>
+                    <% } %>
+                </ul>
+                <br>                
+                <button class="button" style="width: 80%">Speichern</button>
+            </form>
+            <br>
+            <a href="/" class="button">Zurück zur Startseite</a>                
+        </div>
+                
+        <div class="signature" >
+                <p>
+            <% for(var i=0; i < anzeigen.length; i++) {%>            
+            <%- anzeigen[i] %>
+          <% } %></p>
+          <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+        </div>          
+    </body>
+</html>

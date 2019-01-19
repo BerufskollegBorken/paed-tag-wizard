@@ -13,22 +13,22 @@
     </head>
     <body>   
         <div class="alert">
-                <h1>Pädagogischer Tag 2019 am 5.3.2019</h1>            
+                <h1><%= themaDesTages %></h1>            
                 <p>Am 5.3. findet der Pädagogische Tag am BKB statt.
                      Alle Kolleginnen und Kollegen sind dazu eingeladen, sich über diese Webseite anzumelden.</p>
         </div>
-        <div class="container">                        
-            <form method="GET">                        
-                <button formaction="/tagesablauf">Über Tagesablauf informieren</button> 
-                <br>               
-                <button formaction="/workshops">Über Workshops informieren</button>                
-                <br>
-                <button formaction="/auswahl1">Workshop Nr.1 wählen</button>                
-                <br>
-                <button formaction="/auswahl2">Workshop Nr.2 wählen</button>                
-                <br>
-                <button formaction="/auswahl2">Gruppe Anwendungsphase wählen</button>                
-            </form>            
+        <div class="container">                                                   
+            <a href="/tagesablauf" class="button">Über Tagesablauf informieren</a>    
+            <br>
+            <a href="/workshops" class="button">Über Workshops informieren</a>    
+            <br>
+            
+            <h2>Hier müssen Sie verbindlich <%- wahlen.length %>x wählen:</h2>
+
+            <% for(var i=0; i < wahlen.length; i++) {%>            
+                <a href="/wahl?w=<%- i %>" class="button"> <%- wahlen[i].name %><br><%- wahlen[i].von %>-<%- wahlen[i].bis %></a>    
+                <br>    
+            <% } %>
         </div>
         <hr>
         <div class="signature" >
@@ -36,10 +36,10 @@
             <% for(var i=0; i < anzeigen.length; i++) {%>            
             <%- anzeigen[i] %>
           <% } %></p>
-          <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+          <p>Made with <i class="much-heart"></i> by GW12A &  <a href='mailto:stefan.baeumer@berufskolleg-borken.de?Subject=Hallo' target='_top'>Stefan Bäumer</a></p>
         </div>          
         <form method="POST">                        
-            <button class="logout" formaction="/anmelden">abmelden</button>                
+            <button class="button logout" formaction="/anmelden">abmelden</button>                
         </form>                                               
     </body>
 </html>

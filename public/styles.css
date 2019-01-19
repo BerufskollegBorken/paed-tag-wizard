@@ -92,15 +92,15 @@ ul li .check::before {
 }
 
 input[type=radio]:checked ~ .check {
-  border: 5px solid #0DFF92;
+  border: 5px solid #4CAF50;
 }
 
 input[type=radio]:checked ~ .check::before{
-  background: #0DFF92;
+  background: #4CAF50;
 }
 
 input[type=radio]:checked ~ label{
-  color: #0DFF92;
+  color: #4CAF50;
 }
 
 .signature {
@@ -171,15 +171,23 @@ by the way it is so weird when you look at your code a couple of years after you
 	color: #333;
 }
 
+
+.alert h1 { 
+  font-size: 4vw;
+  text-align: center;  
+}
+
 .alert h2 {
-	font-size: 22px;
+	font-size: 2.5vw;
 	color: #232323;
-	margin-top: 0;
+  margin-top: 0;
+  text-align: center;
 }
 
 .alert p {
 	line-height: 1.6em;
-	font-size:18px;
+  font-size:2vw;
+  text-align: center;
 }
 
 .alert a {
@@ -187,7 +195,7 @@ by the way it is so weird when you look at your code a couple of years after you
 	font-weight: bold;
 }
 
-button {
+.button {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -207,6 +215,12 @@ button {
 .logout{
   background-color: grey; /* Green */
   width:20%;
+  font-size: 3vw;
+}
+
+.backHome{  
+  width:50%;
+  font-size: 3vw;
 }
 
 .center {
@@ -221,4 +235,8 @@ button {
 input{
   width: 60%;
   font-size: 4vw;
+}
+
+p {
+  font-size: 2vw;
 }

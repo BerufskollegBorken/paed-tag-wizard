@@ -6,24 +6,23 @@
     </head>
     <body>   
             <div class="alert">
-                    <h1>Pädagogischer Tag 2019 am 5.3.2019!</h1>            
-                    <h2>Tagesablauf</h2>                    
-                    <p>
-                        Hier finden Sie den voraussichtlichen Tagesablauf für den pädagogischen Tag am
-                        5.3.2019.
-                    </p>
+                <h1><%= themaDesTages %></h1>            
+                <h2><%= tagesablauf.titel %></h2>                    
+                <p><%= tagesablauf.beschreibung %></p>
             </div>    
-            <hr>                
-            <% for(var i=0; i < anzeigen.length; i++) {%>
-                <div class="alert" style="background-color: yellow; border-radius: 5px;">
-                    <h1><%- anzeigen[i] %></h1>
-                </div>
-                <br>                
-            <% } %>    
+            <div class="center">
+                <% if(tagesablauf){ %>                            
+                    <% for(var i=0; i < tagesablauf.length; i++) {%>
+                        <hr>
+                        <h2><%- tagesablauf[i].von %>-<%- tagesablauf[i].bis %></h2>
+                        <h2><%- tagesablauf[i].thema %></h2>                        
+                        <p><%- tagesablauf[i].beschreibung %></p>                                            
+                    <% } %>                                                
+                    <% } %> 
+                    <hr>
+                </div>                    
             <div>
-                <form method="GET">                                                
-                    <button formaction="/">Zurück zur Startseite</button>                    
-                </form>  
+                <a href="/" class="button backHome">Zurück zur Startseite</a>                
             </div>    
             <div class="signature" >            
               <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>

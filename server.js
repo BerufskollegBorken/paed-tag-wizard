@@ -104,7 +104,7 @@ app.get('/',(req, res, next) => {
                 let badges = []            
                 badges.push({type:"danger", links:'<i class="fa fa-heart" aria-hidden="true"></i>', rechts:"Willkommen, " + lehrerKrz + "!"})                
                 for(i = 0; i < wahlen.length; i++){          
-                    let rechts = "noch nichts gewählt"
+                    let rechts = "nichts gewählt"
                     if(eval('rows[0].' + wahlen[i].dbFeld)){
                         rechts = eval('rows[0].' + wahlen[i].dbFeld)                        
                     }
@@ -149,7 +149,7 @@ app.post('/',(req, res, next) => {
             let badges = []            
             badges.push({type:"danger", links:'<i class="fa fa-heart" aria-hidden="true"></i>', rechts:"Willkommen, " + lehrerKrz + "!"})                
             for(i = 0; i < wahlen.length; i++){          
-                let rechts = "noch nichts gewählt"
+                let rechts = "nichts gewählt"
                 if(eval('rows[0].' + wahlen[i].dbFeld)){
                     rechts = eval('rows[0].' + wahlen[i].dbFeld)                        
                 }
@@ -249,7 +249,7 @@ app.get('/wahl',(req, res, next) => {
             if (err) return next(err)       
         
             badges = []
-            let rechts = "noch nichts gewählt"
+            let rechts = "nichts gewählt"
             
             if(eval('rows[0].' + wahlen[req.query.w].dbFeld)){
                 rechts = eval('rows[0].' + wahlen[req.query.w].dbFeld)
@@ -387,7 +387,7 @@ function renderBadges(badges){
         renderedBadges += '<div class="double-val-label"><span class="' + badges[i].type + '">'+ badges[i].links +'</span><span>' + badges[i].rechts + '</span></div><p></p>'
 
         if(badges[i].beschreibung){    
-            renderedBadges += '<p style="text-align:justify">' + badges[i].beschreibung + '</p>' 
+            renderedBadges += '<p style="text-align:center">' + badges[i].beschreibung + '</p>' 
         }
     }
     return renderedBadges

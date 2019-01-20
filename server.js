@@ -12,7 +12,7 @@ class Wahl{
 let tagesablauf = []
 tagesablauf.themaDesTages = "Pädagogischer Tag 2019"
 tagesablauf.titel = "Tagesablauf"
-tagesablauf.beschreibung = "Hier finden Sie den voraussichtlichen Tagesablauf für den pädagogischen Tag am 5.3.2019."
+tagesablauf.beschreibung = "Am 5.3.2019 steht unser gemeinsamer, erster Pädagogischer Tag 2019 an. Jede Kollegin und jeder Kollege ist herzlich engeladen, an zwei Workshops und der Anwendungsphase teilzunehmen. Bitte wählen Sie auf dieser Webseite aus dem interessanten Angebot."
 tagesablauf.push({von:"08:30", bis:"09:00", thema:"Eingangsreferat", beschreibung: "Von und mit Gerti Kohlruss"})
 tagesablauf.push({von:"09:45", bis:"10:45", thema:"1. Workshop", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen!"})
 tagesablauf.push({von:"11:00", bis:"12:00", thema:"2. Workshop", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen!"})
@@ -97,7 +97,7 @@ app.get('/',(req, res, next) => {
                 console.log("Cookies werden gelöscht .")
                 res.cookie('istAngemeldetAls', '')              
                 res.render('anmelden.ejs', {               
-                    header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+                    header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
                     footer : footer
                 })
             }else{                
@@ -112,7 +112,7 @@ app.get('/',(req, res, next) => {
                 }
 
                 res.render('index.ejs', {                     
-                    header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag","Hallo"),
+                    header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag",tagesablauf.beschreibung),
                     badges : renderBadges(badges),                    
                     wahlen : wahlen,
                     footer : footer
@@ -140,7 +140,7 @@ app.post('/',(req, res, next) => {
             console.log("Cookies werden gelöscht ....")                
             res.cookie('istAngemeldetAls', '')            
             res.render('anmelden.ejs', {               
-                header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+                header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
                 footer : footer            
             })
         }else{     
@@ -157,7 +157,7 @@ app.post('/',(req, res, next) => {
             }            
         
             res.render('index.ejs', {   
-                header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag","Hallo"),
+                header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag",tagesablauf.beschreibung),
                 badges : renderBadges(badges),                    
                 wahlen : wahlen,
                 footer : footer                
@@ -170,7 +170,7 @@ app.post('/',(req, res, next) => {
 app.post('/anmelden',(req, res, next) => {                
     res.cookie('istAngemeldetAls', '')    
     res.render('anmelden.ejs', {               
-        header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+        header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
         footer : footer
     })
 })
@@ -178,7 +178,7 @@ app.post('/anmelden',(req, res, next) => {
 app.get('/anmelden',(req, res, next) => {                
     res.cookie('istAngemeldetAls', '')    
     res.render('anmelden.ejs', {               
-        header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+        header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
         footer : footer
     })
 })
@@ -198,7 +198,7 @@ app.get('/tagesablauf',(req, res, next) => {
         })   
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Sie müssen sich anmelden", "Die Zugangsdaten sind Ihnen per E-Mail zugegangen."),                                  
+            header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
             footer : footer   
         })
     }   
@@ -220,7 +220,7 @@ app.get('/workshops',(req, res, next) => {
         })    
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Sie müssen sich anmelden", "Die Zugangsdaten sind Ihnen per E-Mail zugegangen."),                                  
+            header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
             footer : footer   
         })
     }  
@@ -235,7 +235,7 @@ app.get('/about',(req, res, next) => {
         })  
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Sie müssen sich anmelden", "Die Zugangsdaten sind Ihnen per E-Mail zugegangen."),                                  
+            header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
             footer : footer   
         })
     }  
@@ -268,14 +268,14 @@ app.get('/wahl',(req, res, next) => {
                 })
             }else{
                 res.render('anmelden.ejs', {               
-                    header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+                    header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
                     footer : footer
                 })
             }
         })
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Sie müssen sich anmelden", "Die Zugangsdaten sind Ihnen per E-Mail zugegangen."),                                  
+            header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
             footer : footer   
         })
     }
@@ -373,7 +373,7 @@ function renderFooter(wahlen){
 
 function renderHeader(h1,h2,p){
 
-return '<div class="top-container"><h1>' + h1 + '</h1><p>' + p + '</p></div><div class="header" id="myHeader"><h2>' + h2 + '</h2></div>'
+return '<div class="top-container"><h1>' + h1 + '</h1><p style="text-align:justify">' + p + '</p></div><div class="header" id="myHeader"><h2>' + h2 + '</h2></div>'
 }
 
 

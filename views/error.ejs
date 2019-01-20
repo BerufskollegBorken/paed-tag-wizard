@@ -11,27 +11,22 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
     </head>
-    <body>        
+    <body>            
+        <%- header %>
+        <div class="center">
+        <% if(error){ %>                            
+            <% for(var i=0; i < error.length; i++) {%>
+                <p><%- error[i] %></p><hr>                    
+            <% } %>                                                
+            <% } %> 
+        </div>                    
         
-            <div class="alert">
-                    <h1>F E H L E R</h1>                                
-            </div>
-            <div class="center">
-            <% if(error){ %>                            
-                <% for(var i=0; i < error.length; i++) {%>
-                    <p><%- error[i] %></p><hr>                    
-                <% } %>                                                
-                <% } %> 
-            </div>                    
-            <p>&copy; 2018 Mein Name</p>         
+        <%- footer %>
         
         <script>
-                setTimeout(function () {                   
-                   window.location = "/";
-                }, 7000)
-              </script>     
-              <div class="signature" >                
-              <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
-            </div>          
+            setTimeout(function () {                   
+                window.location = "/";
+            }, 7000)
+        </script>                   
     </body>
 </html>

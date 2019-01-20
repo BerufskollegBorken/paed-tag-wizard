@@ -1,63 +1,43 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <meta charset="UTF-8">        
-        <link rel="stylesheet" href="styles.css">          
+        <meta charset="UTF-8">
+        <title>Pädagogischer Tag 2019</title>  
+        <link rel="stylesheet" href="styles.css">  
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="msapplication-TileColor" content="#da532c">        
+        <meta name="theme-color" content="#ffffff">              
     </head>
-    <body>   
-        <div class="top-container">
-            <h1><%= themaDesTages %></h1>
-            <p><%= beschreibung %></p>
-        </div>
-        <div class="header" id="myHeader">
-            <h2><%= hinweis %></h2>            
-        </div>
-        
-        <% if(badgeTitle){ %>
-                <div class="double-val-label">
-                    <span class="success"><%- badgeTitle %></span>
-                    <span><%- badgeBody %></span>
-                </div>       
-        <% } %> 
+    <body>           
+        <%- header %>
+        <div class="content">                                                
+            <%- badges %>
 
-        <div class="container">                                    
             <form method="POST" action="/wahl?w=<%= index %>">
                 <input type="hidden" id="index" name="index" value="<%= index %>">
-                <ul>
-                    <% for(var i=0; i < items.optionen.length; i++) {%>            
-                        <li>
-                            <input type="radio" id="<%=items.optionen[i].id%>" name="element" value="<%=items.optionen[i].id%>">
-                            <label for="<%=items.optionen[i].id%>"><%=items.optionen[i].label%></label>                                
-                            <div class="check"><div class="inside"></div></div>
-                        </li>
+                <span class="chb">
+                    <% for(var i=0; i < items.optionen.length; i++) {%>                                    
+                        <input type="radio" id="<%=items.optionen[i].id%>" name="element" value="<%=items.optionen[i].id%>">
+                        <label for="<%=items.optionen[i].id%>"><%=items.optionen[i].label%></label><br>        
                     <% } %>
-                </ul>
+                </span>
                 <br>                
                 <button class="button" style="width: 80%">Speichern</button>
             </form>
-            <br>        
-        </div>
-                
-        <footer class="footer-distributed">        
-                <div class="footer-left">        
-                    <p class="footer-links">
-                        <a href="/">HOME</a>
-                        ·
-                        <a href="/Tagesablauf">Tagesablauf</a>
-                        ·
-                        <a href="/workshops">Workshops</a>
-                        ·                            
-                        <% for(var i=0; i < wahlen.length; i++) {%>            
-                            <a href="/wahl?w=<%- i %>"> <%- wahlen[i].name %></a>                                    
-                        <% } %>
-                        ·
-                        <a href="/about">About</a>
-                        ·
-                        <a href="/abmelden">Logout</a>
-                    </p>
-    
-                    <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
-                </div>        
-    </footer>
+            <br>     
+            <div>
+                <a href="/" class="button backHome">Zurück zur Startseite</a>                
+            </div>               
+               
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>                
+        <%- footer %>
     </body>
 </html>

@@ -8,65 +8,28 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="msapplication-TileColor" content="#da532c">        
         <meta name="theme-color" content="#ffffff">              
     </head>
     <body>   
-
-            <div class="top-container">
-                    <h1><%= themaDesTages %></h1>
-                    <p>Scroll down to see the sticky effect.</p>
-                  </div>
-                  
-                  <div class="header" id="myHeader">
-                    <h2>My Header</h2>
-                  </div>
-        
-        <% if(badgeTitle){ %>
-
-            <div class="double-val-label">
-                    <span class="danger"><i class="fa fa-heart" aria-hidden="true"></i></span>
-                    <span>Danke für Ihre Wahl:</span>
-                  </div>
-
-            <% for(var i=0; i < badgeTitle.length; i++) {%>            
-                <div class="double-val-label">
-                        <span class="success"><%- badgeTitle[i] %></span>
-                        <span><%- badgeBody[i] %></span>
-                      </div>         
-            <% } %>
-        <% } %> 
-
-
-        <div class="container">                                                   
-            <a href="/tagesablauf" class="button6">Unser Tagesablauf</a>    
-            <br>
-            <a href="/workshops" class="button">Das Workshop-Angebot</a>    
-            <br>
-            
-            <p>Hier müssen Sie verbindlich <%- wahlen.length %>x wählen:</p>
-
-            <% for(var i=0; i < wahlen.length; i++) {%>            
-                <a href="/wahl?w=<%- i %>" class="button"> <%- wahlen[i].name %></a>    
-                <br>    
-            <% } %>
-        </div>        
-        
-        <div class="signature" >
+        <%- header %>
+        <div class="content">                    
+            <%- badges %>
+            <hr>        
+            <a href="/tagesablauf" class="button">Tagesablauf</a>
             <p>
-                <% for(var i=0; i < anzeigen.length; i++) {%>            
-                    <%- anzeigen[i] %>
-                <% } %>
-            </p>
-            <p>Made with <i class="much-heart"></i> by GW12A &  <a href='mailto:stefan.baeumer@berufskolleg-borken.de?Subject=Hallo' target='_top'>Stefan Bäumer</a></p>
-            <p><a href='/about'>Päd-Tag-Wizard</a></p>
-        </div>
-        <form method="POST">                        
-                <button class="button logout" formaction="/anmelden">logout</button>                
-        </form>
-        
-        
-
-        
+            <a href="/workshops" class="button">Die Workshops stellen sich vor</a>
+            <p>                
+            <% for(var i=0; i < wahlen.length; i++) {%>            
+                <a href="/wahl?w=<%= i %>" class="button"><i class="fa fa-close"></i> <%- wahlen[i].name %> wählen</a>
+                <p>
+            <% } %>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>        
+        <%- footer %>
     </body>
 </html>

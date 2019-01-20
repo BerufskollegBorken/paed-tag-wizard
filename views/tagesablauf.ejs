@@ -5,46 +5,11 @@
         <link rel="stylesheet" href="styles.css">          
     </head>
     <body>   
-        <div class="top-container">
-            <h1><%= themaDesTages %></h1>
-            <p><%= tagesablauf.beschreibung %></p>
+        <%- header %>        
+        <div class="content">                                 
+            <%- badges %>
+            <a href="/" class="button backHome">Zurück zur Startseite</a>                
         </div>
-        <div class="header" id="myHeader">
-            <h2><%= tagesablauf.titel %></h2>            
-        </div>
-            <div class="center">
-                <% if(tagesablauf){ %>                            
-                    <% for(var i=0; i < tagesablauf.length; i++) {%>
-                        <hr>
-                        <h2><%- tagesablauf[i].von %>-<%- tagesablauf[i].bis %> <%- tagesablauf[i].thema %></h2>                        
-                        <p><%- tagesablauf[i].beschreibung %></p>                                            
-                    <% } %>                                                
-                    <% } %> 
-                    <hr>
-                </div>                    
-            <div>
-                <a href="/" class="button backHome">Zurück zur Startseite</a>                
-            </div>                
-            <footer class="footer-distributed">        
-                    <div class="footer-left">        
-                        <p class="footer-links">
-                            <a href="/">HOME</a>
-                            ·
-                            <a href="/Tagesablauf">Tagesablauf</a>
-                            ·
-                            <a href="/workshops">Workshops</a>
-                            ·                            
-                            <% for(var i=0; i < wahlen.length; i++) {%>            
-                                <a href="/wahl?w=<%- i %>"> <%- wahlen[i].name %></a>                                    
-                            <% } %>
-                            ·
-                            <a href="/about">About</a>
-                            ·
-                            <a href="/abmelden">Logout</a>
-                        </p>
-        
-                        <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
-                    </div>        
-        </footer>
+        <%- footer %>
     </body>
 </html>

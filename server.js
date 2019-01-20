@@ -10,8 +10,8 @@ class Wahl{
 }
 
 let tagesablauf = []
-tagesablauf.themaDesTages = "Pädagogischer Tag 2019 am 5. März"
-tagesablauf.titel = "Unser Tagesablauf"
+tagesablauf.themaDesTages = "Pädagogischer Tag 2019"
+tagesablauf.titel = "Tagesablauf"
 tagesablauf.beschreibung = "Hier finden Sie den voraussichtlichen Tagesablauf für den pädagogischen Tag am 5.3.2019."
 tagesablauf.push({von:"08:30", bis:"09:00", thema:"Eingangsreferat", beschreibung: "Von und mit Gerti Kohlruss"})
 tagesablauf.push({von:"09:45", bis:"10:45", thema:"1. Workshop", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen!"})
@@ -105,16 +105,18 @@ app.get('/',(req, res, next) => {
                 })
             }else{                
 
-                let alert = []
-
+                let badgeTitle = []
+                let badgeBody = []
                 for(i = 0; i < wahlen.length; i++){
                     if(eval('rows[0].' + wahlen[i].dbFeld)){
-                        alert.push(wahlen[i].name + ": Sie haben " + eval('rows[0].' + wahlen[i].dbFeld) + " gewählt. " + zuspruch[Math.floor(Math.random()*zuspruch.length)] )
+                        badgeTitle.push(wahlen[i].name)
+                        badgeBody.push(eval('rows[0].' + wahlen[i].dbFeld))
                     }
                 }
 
                 res.render('index.ejs', {     
-                    alert: alert,
+                    badgeTitle : badgeTitle,
+                    badgeBody : badgeBody,
                     themaDesTages: tagesablauf.themaDesTages,               
                     wahlen : wahlen,
                     anzeigen: ["Sie sind erfolgreich angemeldet!", "Gut gemacht, " + lehrerKrz + "!", "Wie Sie das immer wieder hinkriegen!"],                
@@ -158,14 +160,17 @@ app.post('/',(req, res, next) => {
             })
         }else{     
             res.cookie('istAngemeldetAls', lehrerKrz)
-            let alert = []
+            let badgeTitle = []
+            let badgeBody = []
             for(i = 0; i < wahlen.length; i++){
                 if(eval('rows[0].' + wahlen[i].dbFeld)){
-                    alert.push(wahlen[i].name + ": Sie haben " + eval('rows[0].' + wahlen[i].dbFeld) + " gewählt. "  + zuspruch[Math.floor(Math.random()*zuspruch.length)] )
+                    badgeTitle.push(wahlen[i].name)
+                    badgeBody.push(eval('rows[0].' + wahlen[i].dbFeld))
                 }
             }            
             res.render('index.ejs', {   
-                alert: alert,
+                badgeTitle : badgeTitle,
+                badgeBody : badgeBody,
                 themaDesTages: tagesablauf.themaDesTages,                 
                 wahlen : wahlen,
                 anzeigen: ["Sie sind erfolgreich angemeldet!", "Gut gemacht, " + lehrerKrz + "!", "Wie Sie das immer wieder hinkriegen!"],                
@@ -197,6 +202,7 @@ app.get('/anmelden',(req, res, next) => {
 
 app.get('/tagesablauf',(req, res, next) => {              
     res.render('tagesablauf.ejs', {       
+        wahlen : wahlen,
         themaDesTages: tagesablauf.themaDesTages,             
         tagesablauf: tagesablauf
     })    

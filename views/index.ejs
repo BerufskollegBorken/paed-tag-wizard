@@ -12,36 +12,46 @@
         <meta name="theme-color" content="#ffffff">              
     </head>
     <body>   
-        <div class="alert">
-                <h1><%= themaDesTages %></h1>            
-                <p>Am 5.3. findet der Pädagogische Tag am BKB statt.
-                     Alle Kolleginnen und Kollegen sind dazu eingeladen, sich über diese Webseite anzumelden.</p>
-        </div>
 
-        <% if(alert){ %>
-            <% for(var i=0; i < alert.length; i++) {%>            
-                <br>
-                <div class="alert" style="background-color: orange;">                    
-                    <h2><%- alert[i] %></h2>                    
-                </div>                                            
+            <div class="top-container">
+                    <h1><%= themaDesTages %></h1>
+                    <p>Scroll down to see the sticky effect.</p>
+                  </div>
+                  
+                  <div class="header" id="myHeader">
+                    <h2>My Header</h2>
+                  </div>
+        
+        <% if(badgeTitle){ %>
+
+            <div class="double-val-label">
+                    <span class="danger"><i class="fa fa-heart" aria-hidden="true"></i></span>
+                    <span>Danke für Ihre Wahl:</span>
+                  </div>
+
+            <% for(var i=0; i < badgeTitle.length; i++) {%>            
+                <div class="double-val-label">
+                        <span class="success"><%- badgeTitle[i] %></span>
+                        <span><%- badgeBody[i] %></span>
+                      </div>         
             <% } %>
         <% } %> 
 
 
         <div class="container">                                                   
-            <a href="/tagesablauf" class="button">Unser Tagesablauf</a>    
+            <a href="/tagesablauf" class="button6">Unser Tagesablauf</a>    
             <br>
             <a href="/workshops" class="button">Das Workshop-Angebot</a>    
             <br>
             
-            <h2>Hier müssen Sie verbindlich <%- wahlen.length %>x wählen:</h2>
+            <p>Hier müssen Sie verbindlich <%- wahlen.length %>x wählen:</p>
 
             <% for(var i=0; i < wahlen.length; i++) {%>            
-                <a href="/wahl?w=<%- i %>" class="button"> <%- wahlen[i].name %><br><%- wahlen[i].von %>-<%- wahlen[i].bis %></a>    
+                <a href="/wahl?w=<%- i %>" class="button"> <%- wahlen[i].name %></a>    
                 <br>    
             <% } %>
         </div>        
-        <hr>
+        
         <div class="signature" >
             <p>
                 <% for(var i=0; i < anzeigen.length; i++) {%>            
@@ -53,6 +63,10 @@
         </div>
         <form method="POST">                        
                 <button class="button logout" formaction="/anmelden">logout</button>                
-        </form>                                                                 
+        </form>
+        
+        
+
+        
     </body>
 </html>

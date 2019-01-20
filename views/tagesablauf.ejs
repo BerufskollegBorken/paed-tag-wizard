@@ -5,17 +5,20 @@
         <link rel="stylesheet" href="styles.css">          
     </head>
     <body>   
-            <div class="alert">
-                <h1><%= themaDesTages %></h1>            
-                <h2><%= tagesablauf.titel %></h2>                    
-                <p><%= tagesablauf.beschreibung %></p>
-            </div>    
+        <div class="top-container">
+            <h1><%= themaDesTages %></h1>
+            <p><%= tagesablauf.beschreibung %></p>
+        </div>
+        <div class="header" id="myHeader">
+            <h2><%= tagesablauf.titel %></h2>
+        </div>
+
+
             <div class="center">
                 <% if(tagesablauf){ %>                            
                     <% for(var i=0; i < tagesablauf.length; i++) {%>
                         <hr>
-                        <h2><%- tagesablauf[i].von %>-<%- tagesablauf[i].bis %></h2>
-                        <h2><%- tagesablauf[i].thema %></h2>                        
+                        <h2><%- tagesablauf[i].von %>-<%- tagesablauf[i].bis %> <%- tagesablauf[i].thema %></h2>                        
                         <p><%- tagesablauf[i].beschreibung %></p>                                            
                     <% } %>                                                
                     <% } %> 
@@ -25,7 +28,45 @@
                 <a href="/" class="button backHome">Zurück zur Startseite</a>                
             </div>    
             <div class="signature" >            
-              <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+              <p></p>
             </div>          
+
+
+
+            <footer class="footer-distributed">
+
+                    <div class="footer-right">
+        
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+        
+                    </div>
+        
+                    <div class="footer-left">
+        
+                        <p class="footer-links">
+                            <a href="/">Home</a>
+                            ·
+                            <a href="/Tagesablauf">Tagesablauf</a>
+                            ·
+                            <a href="/workshops">Workshops</a>
+                            ·
+                            <a href="/about">About</a>
+                            ·
+                            <a href="/abmelden">Logout</a>
+                            
+                            <% for(var i=0; i < wahlen.length; i++) {%>            
+                                <a href="/wahl?w=<%- i %>"> <%- wahlen[i].name %></a>    
+                                <br>    
+                            <% } %>
+
+
+                        </p>
+        
+                        <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+                    </div>        
+        </footer>
     </body>
 </html>

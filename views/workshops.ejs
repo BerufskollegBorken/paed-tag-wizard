@@ -5,12 +5,13 @@
         <link rel="stylesheet" href="styles.css">          
     </head>
     <body>   
-        <div class="alert">
-            <h1><%= themaDesTages %></h1>            
-            <h2><%= optionen.titel %></h2>                    
+        <div class="top-container">
+            <h1><%= themaDesTages %></h1>
             <p><%= optionen.beschreibung %></p>
-        </div>    
-        <hr>            
+        </div>
+        <div class="header" id="myHeader">
+            <h2><%= optionen.titel %></h2>            
+        </div>
         <div class="center">
             <% if(optionen){ %>                            
                 <% for(var i=0; i < optionen.length; i++) {%>
@@ -20,11 +21,26 @@
                 <% } %>                                                
                 <% } %> 
             </div>                    
-        <div>
-            <a href="/" class="button backHome">Zurück zur Startseite</a>                
-        </div>    
-        <div class="signature" >            
-                <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
-              </div>          
+            <footer class="footer-distributed">        
+                    <div class="footer-left">        
+                        <p class="footer-links">
+                            <a href="/">HOME</a>
+                            ·
+                            <a href="/Tagesablauf">Tagesablauf</a>
+                            ·
+                            <a href="/workshops">Workshops</a>
+                            ·                            
+                            <% for(var i=0; i < wahlen.length; i++) {%>            
+                                <a href="/wahl?w=<%- i %>"> <%- wahlen[i].name %></a>                                    
+                            <% } %>
+                            ·
+                            <a href="/about">About</a>
+                            ·
+                            <a href="/abmelden">Logout</a>
+                        </p>
+        
+                        <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+                    </div>        
+        </footer>
     </body>
 </html>

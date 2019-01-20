@@ -10,10 +10,8 @@
             <p><%= tagesablauf.beschreibung %></p>
         </div>
         <div class="header" id="myHeader">
-            <h2><%= tagesablauf.titel %></h2>
+            <h2><%= tagesablauf.titel %></h2>            
         </div>
-
-
             <div class="center">
                 <% if(tagesablauf){ %>                            
                     <% for(var i=0; i < tagesablauf.length; i++) {%>
@@ -26,43 +24,23 @@
                 </div>                    
             <div>
                 <a href="/" class="button backHome">Zurück zur Startseite</a>                
-            </div>    
-            <div class="signature" >            
-              <p></p>
-            </div>          
-
-
-
-            <footer class="footer-distributed">
-
-                    <div class="footer-right">
-        
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-github"></i></a>
-        
-                    </div>
-        
-                    <div class="footer-left">
-        
+            </div>                
+            <footer class="footer-distributed">        
+                    <div class="footer-left">        
                         <p class="footer-links">
-                            <a href="/">Home</a>
+                            <a href="/">HOME</a>
                             ·
                             <a href="/Tagesablauf">Tagesablauf</a>
                             ·
                             <a href="/workshops">Workshops</a>
+                            ·                            
+                            <% for(var i=0; i < wahlen.length; i++) {%>            
+                                <a href="/wahl?w=<%- i %>"> <%- wahlen[i].name %></a>                                    
+                            <% } %>
                             ·
                             <a href="/about">About</a>
                             ·
                             <a href="/abmelden">Logout</a>
-                            
-                            <% for(var i=0; i < wahlen.length; i++) {%>            
-                                <a href="/wahl?w=<%- i %>"> <%- wahlen[i].name %></a>    
-                                <br>    
-                            <% } %>
-
-
                         </p>
         
                         <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>

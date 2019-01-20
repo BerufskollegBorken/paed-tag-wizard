@@ -5,19 +5,22 @@
         <link rel="stylesheet" href="styles.css">          
     </head>
     <body>   
-        <div class="alert">
-                <h1><%= themaDesTages %></h1>                    
-                <h2><%= titel %></h2>                    
-                <p><%= beschreibung %></p>
-        </div>    
-        <hr>
-        <% if(alert){ %>
-            <div class="alert" style="background-color: orange;">
-                <h1><%- alert %></h1>                    
-            </div>                                            
+        <div class="top-container">
+            <h1><%= themaDesTages %></h1>
+            <p><%= beschreibung %></p>
+        </div>
+        <div class="header" id="myHeader">
+            <h2><%= hinweis %></h2>            
+        </div>
+        
+        <% if(badgeTitle){ %>
+                <div class="double-val-label">
+                    <span class="success"><%- badgeTitle %></span>
+                    <span><%- badgeBody %></span>
+                </div>       
         <% } %> 
-        <div class="container">                        
-            <h2><%- hinweis %></h2>      
+
+        <div class="container">                                    
             <form method="POST" action="/wahl?w=<%= index %>">
                 <input type="hidden" id="index" name="index" value="<%= index %>">
                 <ul>
@@ -32,12 +35,29 @@
                 <br>                
                 <button class="button" style="width: 80%">Speichern</button>
             </form>
-            <br>
-            <a href="/" class="button">Zurück zur Startseite</a>                
+            <br>        
         </div>
                 
-        <div class="signature" >            
-          <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
-        </div>          
+        <footer class="footer-distributed">        
+                <div class="footer-left">        
+                    <p class="footer-links">
+                        <a href="/">HOME</a>
+                        ·
+                        <a href="/Tagesablauf">Tagesablauf</a>
+                        ·
+                        <a href="/workshops">Workshops</a>
+                        ·                            
+                        <% for(var i=0; i < wahlen.length; i++) {%>            
+                            <a href="/wahl?w=<%- i %>"> <%- wahlen[i].name %></a>                                    
+                        <% } %>
+                        ·
+                        <a href="/about">About</a>
+                        ·
+                        <a href="/abmelden">Logout</a>
+                    </p>
+    
+                    <p>Made with <i class="much-heart"></i> by GW12A & Stefan Bäumer</p>
+                </div>        
+    </footer>
     </body>
 </html>

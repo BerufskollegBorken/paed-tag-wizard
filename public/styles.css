@@ -1,7 +1,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);
-
 #main-title {
 	font-family: 'Roboto', sans-serif;
 	font-size : 3em;
@@ -54,7 +53,7 @@
 
 .header {
   padding: 10px 16px;
-  background: #555;
+  background:#292c2f;
   color: #f1f1f1;
 }
 
@@ -71,7 +70,6 @@
 .sticky + .content {
   padding-top: 102px;
 }
-
 
 body {
   height: 100%;

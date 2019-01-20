@@ -209,7 +209,8 @@ app.get('/tagesablauf',(req, res, next) => {
 })
 
 app.get('/workshops',(req, res, next) => {           
-    res.render('workshops.ejs', {         
+    res.render('workshops.ejs', {   
+        wahlen : wahlen,      
         themaDesTages: tagesablauf.themaDesTages,             
         optionen: wahlen[0].optionen
     })    
@@ -227,28 +228,30 @@ app.get('/wahl',(req, res, next) => {
 
     if(req.query.w >= wahlen.length) return next(new Error("Unzulässiger Parameter!"))
 
-    let alert = "Ihre vorzügliche Wahl für " + wahlen[req.query.w].name + ": " 
-
+    let badgeTitle = "Ihre Wahl für " + wahlen[req.query.w].name 
+    let badgeBody = ""
+    
     dbVerbindung.query("SELECT " + wahlen[req.query.w].dbFeld + " FROM lehrer WHERE lehrerKrz = '" + istAngemeldetAls(req.cookies) + "';", (err, rows) => { 
-        
         if (err) return next(err)       
     
         if(eval('rows[0].' + wahlen[req.query.w].dbFeld)){
-            alert += eval('rows[0].' + wahlen[req.query.w].dbFeld)
+            badgeBody = eval('rows[0].' + wahlen[req.query.w].dbFeld)
         }else{
-            alert = ""
+            badgeBody = "nichts"
         }
 
         if(istAngemeldetAls(req.cookies)){        
             res.render('wahl.ejs', { 
                 themaDesTages: tagesablauf.themaDesTages,
                 titel: wahlen.titel,
-                alert: alert,
+                badgeBody: badgeBody,
+                badgeTitle: badgeTitle, 
                 beschreibung: wahlen.beschreibung,        
                 hinweis : wahlen[req.query.w].beschreibung,
                 index: req.query.w,
                 anzeigen : [],
-                items : wahlen[req.query.w]
+                items : wahlen[req.query.w],
+                wahlen: wahlen
             })
         }else{
             res.render('anmelden.ejs', {            

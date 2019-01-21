@@ -97,24 +97,35 @@ app.get('/',(req, res, next) => {
                 console.log("Cookies werden gelöscht .")
                 res.cookie('istAngemeldetAls', '')              
                 res.render('anmelden.ejs', {               
-                    header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+                    header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                     footer : footer
                 })
             }else{                
                 let badges = []            
+                let lehrerWahlen = []
+
                 badges.push({type:"danger", links:'<i class="fa fa-heart" aria-hidden="true"></i>', rechts:"Willkommen, " + lehrerKrz + "!"})                
+                
                 for(i = 0; i < wahlen.length; i++){          
                     let rechts = "nichts gewählt"
+                    let color = "red"
+                    let icon = "close"
+                    let label = "Bitte " + wahlen[i].name + " wählen!"
+
                     if(eval('rows[0].' + wahlen[i].dbFeld)){
                         rechts = eval('rows[0].' + wahlen[i].dbFeld)                        
+                        color="green"
+                        icon="check"
+                        label = wahlen[i].name + " gewählt"
                     }
-                    badges.push({type:"success", links:wahlen[i].name, rechts:rechts})
+                    // badges.push({type:"success", links:wahlen[i].name, rechts:rechts})
+                    lehrerWahlen.push({name: wahlen[i].name, color: color, icon: icon, label: label })
                 }
 
                 res.render('index.ejs', {                     
-                    header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag",tagesablauf.beschreibung),
+                    header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                     badges : renderBadges(badges),                    
-                    wahlen : wahlen,
+                    lehrerWahlen : lehrerWahlen,
                     footer : footer
                 })
             }        
@@ -123,7 +134,7 @@ app.get('/',(req, res, next) => {
         console.log("Cookies werden gelöscht ......")
         res.cookie('istAngemeldetAls', '')
         res.render('anmelden.ejs', {               
-            header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+            header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             footer : footer
         })
     }
@@ -140,26 +151,37 @@ app.post('/',(req, res, next) => {
             console.log("Cookies werden gelöscht ....")                
             res.cookie('istAngemeldetAls', '')            
             res.render('anmelden.ejs', {               
-                header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+                header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                 footer : footer            
             })
         }else{     
             res.cookie('istAngemeldetAls', lehrerKrz)
-
+            
+            let lehrerWahlen = []
             let badges = []            
+            
             badges.push({type:"danger", links:'<i class="fa fa-heart" aria-hidden="true"></i>', rechts:"Willkommen, " + lehrerKrz + "!"})                
+            
             for(i = 0; i < wahlen.length; i++){          
                 let rechts = "nichts gewählt"
+                let color = "red"
+                let icon = "" //"close"
+                let label = "Bitte " + wahlen[i].name + " wählen!"
+
                 if(eval('rows[0].' + wahlen[i].dbFeld)){
-                    rechts = eval('rows[0].' + wahlen[i].dbFeld)                        
+                    rechts = eval('rows[0].' + wahlen[i].dbFeld)  
+                    color="green"
+                    icon="check"       
+                    label = wahlen[i].name + " gewählt."               
                 }
-                badges.push({type:"success", links:wahlen[i].name, rechts:rechts})
+                // badges.push({type:"success", links:wahlen[i].name, rechts:rechts})
+                lehrerWahlen.push({name: wahlen[i].name, color: color, icon: icon, label: label })
             }            
         
             res.render('index.ejs', {   
-                header : renderHeader(tagesablauf.themaDesTages,"Infos und Wahlen zum Projekttag",tagesablauf.beschreibung),
+                header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                 badges : renderBadges(badges),                    
-                wahlen : wahlen,
+                lehrerWahlen : lehrerWahlen,
                 footer : footer                
             })
         }        
@@ -170,7 +192,7 @@ app.post('/',(req, res, next) => {
 app.post('/anmelden',(req, res, next) => {                
     res.cookie('istAngemeldetAls', '')    
     res.render('anmelden.ejs', {               
-        header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+        header : renderHeader(tagesablauf.themaDesTages,"",false, false),
         footer : footer
     })
 })
@@ -178,7 +200,7 @@ app.post('/anmelden',(req, res, next) => {
 app.get('/anmelden',(req, res, next) => {                
     res.cookie('istAngemeldetAls', '')    
     res.render('anmelden.ejs', {               
-        header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+        header : renderHeader(tagesablauf.themaDesTages,"",false, false),
         footer : footer
     })
 })
@@ -192,13 +214,13 @@ app.get('/tagesablauf',(req, res, next) => {
         }      
 
         res.render('tagesablauf.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,tagesablauf.titel,tagesablauf.beschreibung),                
+            header : renderHeader(tagesablauf.themaDesTages,"", true, false),                
             badges : renderBadges(badges),
             footer: footer
         })   
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+            header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             footer : footer   
         })
     }   
@@ -214,13 +236,13 @@ app.get('/workshops',(req, res, next) => {
         }      
         
         res.render('workshops.ejs', {   
-            header : renderHeader(tagesablauf.themaDesTages,wahlen[0].optionen.titel,wahlen[0].optionen.beschreibung),                
+            header : renderHeader(tagesablauf.themaDesTages,"", true, false),                
             badges : renderBadges(badges),        
             footer : footer
         })    
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+            header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             footer : footer   
         })
     }  
@@ -229,13 +251,13 @@ app.get('/workshops',(req, res, next) => {
 app.get('/about',(req, res, next) => {  
     if(istAngemeldetAls(req.cookies)){         
         res.render('about.ejs', {                 
-            header : renderHeader(tagesablauf.themaDesTages,"About", "über den Päd-Tag-Wizard"),
+            header : renderHeader(tagesablauf.themaDesTages,"", true, false),
             jahr : (new Date()).getFullYear(),        
             footer : footer
         })  
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+            header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             footer : footer   
         })
     }  
@@ -260,7 +282,7 @@ app.get('/wahl',(req, res, next) => {
 
             if(istAngemeldetAls(req.cookies)){        
                 res.render('wahl.ejs', { 
-                    header : renderHeader(tagesablauf.themaDesTages, wahlen[req.query.w].name + ": " + wahlen.titel, wahlen.beschreibung),
+                    header : renderHeader(tagesablauf.themaDesTages, "", true, true),
                     badges : renderBadges(badges),                    
                     items : wahlen[req.query.w],
                     index: req.query.w,
@@ -268,14 +290,14 @@ app.get('/wahl',(req, res, next) => {
                 })
             }else{
                 res.render('anmelden.ejs', {               
-                    header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+                    header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                     footer : footer
                 })
             }
         })
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Bitte anmelden","Bitte melden Sie sich mit den Zugangsdaten an, die Ihnen per E-Mail zugegangen sind."),
+            header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             footer : footer   
         })
     }
@@ -307,7 +329,7 @@ app.post('/wahl',(req, res, next) => {
                         badges.push({type:"danger", links:req.body.element + " 2x wählen?", rechts:"Das geht nicht!"})
 
                         res.render('wahl.ejs', {
-                            header : renderHeader(tagesablauf.themaDesTages,"Wählen Sie aus:", "Speichern nicht vergessen :-)"),                      
+                            header : renderHeader(tagesablauf.themaDesTages,"", true, true),                      
                             badges : renderBadges(badges),                    
                             index: req.body.index,                            
                             items : wahlen[req.body.index],
@@ -326,7 +348,7 @@ app.post('/wahl',(req, res, next) => {
                 }
                 
                 res.render('wahl.ejs', {                      
-                    header : renderHeader(tagesablauf.themaDesTages,"Wählen Sie aus:", "Speichern nicht vergessen :-)"),                      
+                    header : renderHeader(tagesablauf.themaDesTages, "", true, true),                      
                     badges : renderBadges(badges),                    
                     index: req.body.index,                            
                     items : wahlen[req.body.index],
@@ -336,7 +358,7 @@ app.post('/wahl',(req, res, next) => {
         })
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages,"Sie müssen sich anmelden", "Speichern nicht vergessen :-)"),                                  
+            header : renderHeader(tagesablauf.themaDesTages, "",false, false),                                  
             footer : footer   
         })
     }
@@ -345,12 +367,11 @@ app.post('/wahl',(req, res, next) => {
 app.use((err, req, res, next) => {    
     console.log(err.stack)
     res.render('error.ejs', {  
-        header : renderHeader(tagesablauf.themaDesTages, "F E H L E R", "HOLY CRAP!!!"),        
+        header : renderHeader(tagesablauf.themaDesTages, "Fehler", true, false),        
         footer : footer,         
         error:["Das hätte absolut <b>nicht</b> passieren dürfen!", "Try again, Sam!", err.message, "Falls Du nicht automatisch weitergeleitet wirst, dann Startseite neu laden, um fortzufahren."]
     }) 
 })
-
 
 function renderFooter(wahlen){
     let footer = '<footer class="footer-distributed">\
@@ -371,12 +392,23 @@ function renderFooter(wahlen){
     return footer
 }
 
-function renderHeader(h1,h2,p){
+function renderHeader(h1, p, backHome, save){
 
-return '<div class="top-container"><h1>' + h1 + '</h1><p style="text-align:justify">' + p + '</p></div><div class="header" id="myHeader"><h2>' + h2 + '</h2></div>'
+    renderBackHome = ''
+    renderSave = ''
+
+    if(backHome){
+        renderBackHome = '<a href="/" class="menuButton" ><i class="fa fa-home"></i> Zurück zur Startseite</a>'
+    }
+
+    if(save){
+        renderSave = '<label tabindex="0" for="absenden" class="menuButton"><i class="fa fa-check"></i> Speichern</label>'
+    }
+
+//<h1>' + h1 + '</h1>
+
+    return '<div class="top-container"><img style="width:100%;" id="image" src="images/head.png"><p style="text-align:justify">' + p + '</p></div><div class="header" id="myHeader">' + renderBackHome + renderSave + '</div>'
 }
-
-
 
 function renderBadges(badges){
     

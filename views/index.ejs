@@ -17,18 +17,14 @@
         <div class="content">                    
             <%- badges %>
             <br>
-            <a href="/tagesablauf" class="button">Tagesablauf</a>
+            <a href="/tagesablauf" class="button">Tagesablauf ansehen</a>
             <p>
-            <a href="/workshops" class="button">Die Workshops stellen sich vor</a>
+            <a href="/workshops" class="button">über Workshops informieren</a>
             <p>                
-            <% for(var i=0; i < wahlen.length; i++) {%>            
-                <a href="/wahl?w=<%= i %>" class="button"><i class="fa fa-close"></i> <%- wahlen[i].name %> wählen</a>
+            <% for(var i=0; i < lehrerWahlen.length; i++) {%>            
+                <a href="/wahl?w=<%= i %>" style="background-color:<%= lehrerWahlen[i].color %>" class="button"><i class="fa fa-<%= lehrerWahlen[i].icon %>"></i> <%- lehrerWahlen[i].label %></a>
                 <p>
-            <% } %>
-            <br>
-            <br>
-            <br>
-            <br>
+            <% } %>    
         </div>        
         <%- footer %>
     </body>

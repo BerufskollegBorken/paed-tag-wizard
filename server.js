@@ -24,11 +24,31 @@ let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
 
+let beschreibungPadlet = '<h1>Padlet – Digitale Tafeln im Unterricht nutzen</h1>\
+<b>Moderator:</b> Stefan Bäumer\
+<h2>Beschreibung</h2>\
+<p>Mit Hilfe einer  digitalen Tafel lässt sich die Beteiligung der Lernenden erhöhen, so kann man:</p>\
+<ul>\
+<li>Padlet für das kollaborative Sammeln von Ideen und Beiträgen nutzen,</li> \
+<li>Informationen strukturiert sammeln </li>\
+<li>Feedbackmöglichkeiten: Beiträge können auch kommentiert und bewertet werden.</li> \
+<li>Ressourcen zur Verfügung stellen („das papierlose Stationenlernen“)</li>\
+</ul>\
+<p>Hierzu können folgende Funktionen des Tools Padlet kennengelernt und ausprobiert werden:</p>\
+<ul>\
+<li>Eine Tafel anlegen und mit den Lernenden teilen</li>\
+<li>Informationen ergänzen: Bilder, Links, weitere Padlets, …</li>\
+<li>Rechte und Einstellungen für die Tafel (Leserecht, Schreibrecht, Moderationsrecht)</li>\
+</ul>\
+<h2>Anmerkung:</h2>\
+<p>Für das Tool muss sich der Erstellende registrieren. Bis zu 3 Padlets können alle kostenlos nutzen.</p>\
+<p>Das Tool läuft im Browser (Chrome, Firefox).</p>'
+
 let optionen = []        
 optionen.titel = "Das Workshop-Angebot für Sie:"
 optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
 optionen.push({id:"Laptops", name:"Workshop", label:"Umgang mit (Schüler-)Laptops", beschreibung:"", moderator: ""})
-optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:"Padlet Beschreibung", moderator: ""})
+optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: ""})
 optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:"", moderator: ""})
 optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:"", moderator: ""})
 optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:"", moderator: ""})

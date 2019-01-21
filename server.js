@@ -116,6 +116,8 @@ app.get('/',(req, res, next) => {
                 res.cookie('istAngemeldetAls', '')              
                 res.render('anmelden.ejs', {               
                     header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+                    lehrerKrz : req.query.lehrerKrz,
+                    pin : req.query.pin,
                     footer : footer
                 })
             }else{                
@@ -153,6 +155,8 @@ app.get('/',(req, res, next) => {
         res.cookie('istAngemeldetAls', '')
         res.render('anmelden.ejs', {               
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+            lehrerKrz : req.query.lehrerKrz,
+            pin : req.query.pin,
             footer : footer
         })
     }
@@ -170,6 +174,8 @@ app.post('/',(req, res, next) => {
             res.cookie('istAngemeldetAls', '')            
             res.render('anmelden.ejs', {               
                 header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+                lehrerKrz : req.query.lehrerKrz,
+                pin : req.query.pin,
                 footer : footer            
             })
         }else{     
@@ -211,14 +217,19 @@ app.post('/anmelden',(req, res, next) => {
     res.cookie('istAngemeldetAls', '')    
     res.render('anmelden.ejs', {               
         header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+        lehrerKrz : req.query.lehrerKrz,
+        pin : req.query.pin,
         footer : footer
     })
 })
 
 app.get('/anmelden',(req, res, next) => {                
+    console.log(req.query.user)
     res.cookie('istAngemeldetAls', '')    
     res.render('anmelden.ejs', {               
         header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+        lehrerKrz : req.query.lehrerKrz,
+        pin : req.query.pin,
         footer : footer
     })
 })
@@ -239,6 +250,8 @@ app.get('/tagesablauf',(req, res, next) => {
     }else{
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+            lehrerKrz : req.query.lehrerKrz,
+            pin : req.query.pin,
             footer : footer   
         })
     }   
@@ -261,6 +274,8 @@ app.get('/workshops',(req, res, next) => {
     }else{
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+            lehrerKrz : req.query.lehrerKrz,
+            pin : req.query.pin,
             footer : footer   
         })
     }  
@@ -276,6 +291,8 @@ app.get('/about',(req, res, next) => {
     }else{
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+            lehrerKrz : req.query.lehrerKrz,
+            pin : req.query.pin,
             footer : footer   
         })
     }  
@@ -309,6 +326,8 @@ app.get('/wahl',(req, res, next) => {
             }else{
                 res.render('anmelden.ejs', {               
                     header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+                    lehrerKrz : req.query.lehrerKrz,
+                    pin : req.query.pin,
                     footer : footer
                 })
             }
@@ -316,6 +335,8 @@ app.get('/wahl',(req, res, next) => {
     }else{
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+            lehrerKrz : req.query.lehrerKrz,
+            pin : req.query.pin,
             footer : footer   
         })
     }
@@ -376,7 +397,9 @@ app.post('/wahl',(req, res, next) => {
         })
     }else{
         res.render('anmelden.ejs', {       
-            header : renderHeader(tagesablauf.themaDesTages, "",false, false),                                  
+            header : renderHeader(tagesablauf.themaDesTages, "",false, false),  
+            lehrerKrz : req.query.lehrerKrz,
+            pin : req.query.pin,                                
             footer : footer   
         })
     }
@@ -392,8 +415,8 @@ app.use((err, req, res, next) => {
 })
 
 function renderFooter(wahlen){
-    let footer = '<footer class="footer-distributed">\
-                    <div class="footer-left"><p class="footer-links">\
+    let footer = '<footer>\
+                    \
                     <a href="/">HOME</a>\
                     ·\
                     <a href="/Tagesablauf">Tagesablauf</a>\
@@ -401,11 +424,11 @@ function renderFooter(wahlen){
                     <a href="/workshops">Workshops</a>\
                     ·'
 
-    for(var i=0; i < wahlen.length; i++){
-        footer += footer + ' <a href="/wahl?w=' + i + '"> ' + wahlen[i].name + '</a> ·'  
-    }
+    /*for(var i=0; i < wahlen.length; i++){
+        footer += ' <a href="/wahl?w=' + i + '"> ' + wahlen[i].name + '</a> ·'  
+    }*/
 
-    footer += footer + ' <a href="/about">About</a> · <a href="/anmelden">Logout</a></p><p>Made with <i class="fa fa-heart"> by GW12A & Stefan Bäumer</p></div></footer>'
+    footer += ' <a href="/about">About</a> · <a href="/anmelden">Logout</a> · Made with <i class="fa fa-heart"> by GW12A & Stefan Bäumer</footer>'
     
     return footer
 }

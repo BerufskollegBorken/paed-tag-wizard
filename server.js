@@ -402,7 +402,7 @@ function renderHeader(h1, p, backHome, save){
     }
 
     if(save){
-        renderSave = '<label tabindex="0" for="absenden" class="menuButton"><i class="fa fa-check"></i> Speichern</label>'
+        renderSave = '<label tabindex="0" for="absenden" class="menuButton"><i class="fa fa-save"></i> Speichern</label>'
     }
 
     return '<div class="header" id="myHeader">' + renderBackHome + renderSave + '</div>'

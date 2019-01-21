@@ -20,8 +20,6 @@ tagesablauf.push({von:"12:15", bis:"13:00", thema:"Mittagspause", beschreibung: 
 tagesablauf.push({von:"13:15", bis:"14:15", thema:"Anwendungsphase", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen! Zuordnung nach Fächern. Leitfrage: Was kann ich konkret in meinem Unterricht umsetzen?"})
 tagesablauf.push({von:"13:15", bis:"14:15", thema:"Plenum", beschreibung: "Gemeinsame Auswertung."})
 
-let zuspruch = ["Wunderbar!", "Vorzüglich!", "Sehr schön!", "Wow!", "Traumhaft!", "Herrlich!", "Ausgezeichnet!"]
-
 let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
@@ -348,7 +346,7 @@ app.post('/wahl',(req, res, next) => {
                 }
                 
                 res.render('wahl.ejs', {                      
-                    header : renderHeader(tagesablauf.themaDesTages, "", true, true),                      
+                    header : renderHeader(tagesablauf.themaDesTages, "", true, false),                      
                     badges : renderBadges(badges),                    
                     index: req.body.index,                            
                     items : wahlen[req.body.index],

@@ -21,7 +21,7 @@
                 <div>
                     <label class="desc" id="title1" for="Field1">Lehrerkürzel:</label>
                     <div>
-                    <input class="input id="Field1" name="lehrerKrz" type="text" class="field text fn" value="" size="8" tabindex="1">
+                    <input class="input id="Field1" name="lehrerKrz" type="text" class="field text fn" value="" size="8" tabindex="1" required>
                     </div>
                 </div>
                     
@@ -30,8 +30,8 @@
                     PIN:
                     </label>
                     <div>
-                    <input class="input" id="Field3" name="pin" type="password" spellcheck="false" value="" maxlength="255" tabindex="3"> 
-                    </div>
+                    <input class="input" id="Field3" name="pin" type="password" pattern="\d{3}"  spellcheck="false" value="" maxlength="4" tabindex="3" required> 
+                    </div>                    
                 </div>
                 <div>
                     <div>
@@ -40,6 +40,13 @@
                 </div>            
             </form>
         </div>            
+
+        <div id="message">
+            <h3>Für die :</h3>
+            <p id="letter" class="invalid">Kürzel zwei- oder dreistellig</p>            
+            <p id="number" class="invalid">PIN viestellige Zahl</b></p>            
+        </div>
+
         <%- footer %>
     </div>          
     </body>

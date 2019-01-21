@@ -405,9 +405,7 @@ function renderHeader(h1, p, backHome, save){
         renderSave = '<label tabindex="0" for="absenden" class="menuButton"><i class="fa fa-check"></i> Speichern</label>'
     }
 
-//<h1>' + h1 + '</h1>
-
-    return '<div class="top-container"><img style="width:100%;" id="image" src="images/head.png"><p style="text-align:justify">' + p + '</p></div><div class="header" id="myHeader">' + renderBackHome + renderSave + '</div>'
+    return '<div class="header" id="myHeader">' + renderBackHome + renderSave + '</div>'
 }
 
 function renderBadges(badges){

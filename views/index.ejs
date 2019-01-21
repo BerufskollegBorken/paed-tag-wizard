@@ -13,6 +13,9 @@
         <meta name="theme-color" content="#ffffff">              
     </head>
     <body>   
+        <div class="top-container">
+            <img style="width:100%;" src="images/head.png">
+        </div>
         <%- header %>
         <div class="content">                    
             <%- badges %>
@@ -25,6 +28,12 @@
                 <a href="/wahl?w=<%= i %>" style="background-color:<%= lehrerWahlen[i].color %>" class="button"><i class="fa fa-<%= lehrerWahlen[i].icon %>"></i> <%- lehrerWahlen[i].label %></a>
                 <p>
             <% } %>    
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>        
         <%- footer %>
     </body>

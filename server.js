@@ -415,20 +415,20 @@ app.use((err, req, res, next) => {
 })
 
 function renderFooter(wahlen){
-    let footer = '<footer>\
+    let footer = '<footer >\
                     \
                     <a href="/">HOME</a>\
                     ·\
                     <a href="/Tagesablauf">Tagesablauf</a>\
                     ·\
                     <a href="/workshops">Workshops</a>\
-                    ·'
-
-    /*for(var i=0; i < wahlen.length; i++){
-        footer += ' <a href="/wahl?w=' + i + '"> ' + wahlen[i].name + '</a> ·'  
-    }*/
-
-    footer += ' <a href="/about">About</a> · <a href="/anmelden">Logout</a> · Made with <i class="fa fa-heart"> by GW12A & Stefan Bäumer</footer>'
+                    ·\
+                    <a href="/about">About</a>\
+                    ·\
+                    <a href="/anmelden">Logout</a>\
+                    ·\
+                    <a href="mailto:stefan.baeumer@berufskolleg-borken.de">Stefan Bäumer</a>\
+                    </footer>'
     
     return footer
 }

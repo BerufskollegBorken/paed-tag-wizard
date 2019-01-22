@@ -14,10 +14,10 @@ tagesablauf.themaDesTages = "Pädagogischer Tag 2019"
 tagesablauf.titel = "Tagesablauf"
 tagesablauf.beschreibung = "Am 5.3.2019 steht unser gemeinsamer, erster Pädagogischer Tag 2019 an. Jede Kollegin und jeder Kollege ist herzlich engeladen, an zwei Workshops und der Anwendungsphase teilzunehmen. Bitte wählen Sie auf dieser Webseite aus dem interessanten Angebot."
 tagesablauf.push({von:"08:30", bis:"09:00", thema:"Eingangsreferat", beschreibung: "Von und mit Gerti Kohlruss"})
-tagesablauf.push({von:"09:45", bis:"10:45", thema:"1. Workshop", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen!"})
-tagesablauf.push({von:"11:00", bis:"12:00", thema:"2. Workshop", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen!"})
+tagesablauf.push({von:"09:45", bis:"10:45", thema:"1. Workshop", beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
+tagesablauf.push({von:"11:00", bis:"12:00", thema:"2. Workshop", beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
 tagesablauf.push({von:"12:15", bis:"13:00", thema:"Mittagspause", beschreibung: "Guten Appetit!"})
-tagesablauf.push({von:"13:15", bis:"14:15", thema:"Anwendungsphase", beschreibung: "Jeder muss sich bis Mitte Februar einem Workshopangebot zuordnen! Zuordnung nach Fächern. Leitfrage: Was kann ich konkret in meinem Unterricht umsetzen?"})
+tagesablauf.push({von:"13:15", bis:"14:15", thema:"Anwendungsphase", beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen. Es ist angedacht, dass sich jeder nach Fächern, Bereich und / oder Neigung zu einer Gruppe zuordnet. Leitfrage: Was kann ich konkret in meinem Unterricht umsetzen?"})
 tagesablauf.push({von:"13:15", bis:"14:15", thema:"Plenum", beschreibung: "Gemeinsame Auswertung."})
 
 let wahlen = []
@@ -458,7 +458,7 @@ function renderBadges(badges){
         renderedBadges += '<div class="double-val-label"><span class="' + badges[i].type + '">'+ badges[i].links +'</span><span>' + badges[i].rechts + '</span></div><p></p>'
 
         if(badges[i].beschreibung){    
-            renderedBadges += '<p style="text-align:center">' + badges[i].beschreibung + '</p>' 
+            renderedBadges += '<p style="text-align:center; font-size:2vw">' + badges[i].beschreibung + '</p>' 
         }
     }
     return renderedBadges

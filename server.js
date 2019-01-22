@@ -124,7 +124,7 @@ app.get('/',(req, res, next) => {
                 let badges = []            
                 let lehrerWahlen = []
 
-                badges.push({type:"danger", links:'Das Berufskolleg Borken', rechts:"heißt Sie Willkommen, " + lehrerKrz + "!"})                
+                badges.push({type:"danger", links:'Das BKB', rechts:'heißt Sie <i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz + "!"})                
                 
                 for(i = 0; i < wahlen.length; i++){          
                     let rechts = "nichts gewählt"
@@ -417,7 +417,7 @@ app.use((err, req, res, next) => {
 function renderFooter(wahlen){
     let footer = '<footer ><div class="divFooter">\
                     \
-                    <a href="/">HOME</a>\
+                    <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>\
                     ·\
                     <a href="/Tagesablauf">Tagesablauf</a>\
                     ·\

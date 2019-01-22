@@ -37,7 +37,7 @@
 	background-color: #f0ad4e;
 }
 .double-val-label>span.danger {
-	background-color: #d9534f;
+	background-color: rgb(32, 165, 32);
 }
 
 * {
@@ -226,7 +226,7 @@ a {
 }
 
   .button {
-    background-color: DodgerBlue;
+    background-color: rgb(110, 125, 139);
     border: none;
     width: 70vw;
     color: white;

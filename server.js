@@ -465,7 +465,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1){
     console.log("1. " + "danger" +  "  " + renderBackHome + " " + renderSave)
 
     if(h1){        
-        renderedBadges += '<h1>' + h1 + '</h1>'
+        renderedBadges += '<h1  align="center">' + h1 + '</h1><br>'
     }
     
 

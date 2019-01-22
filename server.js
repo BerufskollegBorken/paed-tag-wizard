@@ -13,12 +13,12 @@ let tagesablauf = []
 tagesablauf.themaDesTages = "Pädagogischer Tag 2019"
 tagesablauf.titel = "Tagesablauf"
 tagesablauf.beschreibung = "Am 5.3.2019 steht unser gemeinsamer, erster Pädagogischer Tag 2019 an. Jede Kollegin und jeder Kollege ist herzlich engeladen, an zwei Workshops und der Anwendungsphase teilzunehmen. Bitte wählen Sie auf dieser Webseite aus dem interessanten Angebot."
-tagesablauf.push({von:"08:30", bis:"09:00", thema:"Eingangsreferat", beschreibung: "Von und mit Gerti Kohlruss"})
-tagesablauf.push({von:"09:45", bis:"10:45", thema:"1. Workshop", beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
-tagesablauf.push({von:"11:00", bis:"12:00", thema:"2. Workshop", beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
-tagesablauf.push({von:"12:15", bis:"13:00", thema:"Mittagspause", beschreibung: "Guten Appetit!"})
-tagesablauf.push({von:"13:15", bis:"14:15", thema:"Anwendungsphase", beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen. Es ist angedacht, dass sich jeder nach Fächern, Bereich und / oder Neigung zu einer Gruppe zuordnet. Leitfrage: Was kann ich konkret in meinem Unterricht umsetzen?"})
-tagesablauf.push({von:"13:15", bis:"14:15", thema:"Plenum", beschreibung: "Gemeinsame Auswertung."})
+tagesablauf.push({von:"08:30", bis:"09:00", thema:'<i class="fa fa-fire"></i> Eingangsreferat', beschreibung: "Von und mit Gerti Kohlruss"})
+tagesablauf.push({von:"09:45", bis:"10:45", thema:'<i class="fa fa-caret-square-o-right"></i> 1. Workshop', beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
+tagesablauf.push({von:"11:00", bis:"12:00", thema:'<i class="fa fa-caret-square-o-right"></i> 2. Workshop', beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
+tagesablauf.push({von:"12:15", bis:"13:00", thema:'<i class="fa fa-cutlery"></i> Mittagspause', beschreibung: 'Guten Appetit!'})
+tagesablauf.push({von:"13:15", bis:"14:15", thema:'<i class="fa fa-caret-square-o-up"></i> Anwendungsphase', beschreibung: "Jeder ist eingeladen, zu wählen. Es ist angedacht, dass sich jeder nach Fächern, Bereich und / oder Neigung zu einer Gruppe zuordnet. Leitfrage: Was kann ich konkret in meinem Unterricht umsetzen?"})
+tagesablauf.push({von:"13:15", bis:"14:15", thema:'<i class="fa fa-group"></i> Plenum', beschreibung: 'Gemeinsame Auswertung.'})
 
 let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"
@@ -280,7 +280,7 @@ app.get('/workshops',(req, res, next) => {
 app.get('/about',(req, res, next) => {  
     if(istAngemeldetAls(req.cookies)){         
         res.render('about.ejs', {                 
-            header : renderHeader(tagesablauf.themaDesTages,"", true, false),
+            badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), ""),    
             jahr : (new Date()).getFullYear(),        
             footer : footer
         })  
@@ -302,14 +302,14 @@ app.get('/wahl',(req, res, next) => {
             if (err) return next(err)       
         
             badges = []
-            let rechts = "nichts gewählt"
+            let rechts = '<i class="fa fa-meh-o"></i> nichts gewählt'
             
             if(eval('rows[0].' + wahlen[req.query.w].dbFeld)){
                 rechts = eval('rows[0].' + wahlen[req.query.w].dbFeld)
-                badges.push({type:"warning", links:"Sie haben bereits gewählt.", rechts:"Nochmal ändern?"})
+                badges.push({type:"warning", links:'Sie haben bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'Nochmal ändern <i class="fa fa-question-circle"></i>'})
             }
 
-            badges.push({type:"success", links:"Ihre bisherige Wahl:", rechts:rechts})
+            badges.push({type:"success", links:'<i class="fa fa-smile-o"></i> Ihre bisherige Wahl:', rechts:rechts})
 
             if(istAngemeldetAls(req.cookies)){        
                 res.render('wahl.ejs', {                     
@@ -346,7 +346,7 @@ app.post('/wahl',(req, res, next) => {
             if(!rows[0]) return next(new Error("Fehlerhafte Abfrage."))            
          
             if(!req.body.element){            
-                badges.push({type:"warning", links:"Nichts gewählt", rechts:"bzw. Wahl gelöscht"})
+                badges.push({type:"warning", links:"Nichts gewählt", rechts:'bzw. Wahl gelöscht <i class="fa fa-frown-o"></i>'})
             }else{
                 wahl = req.body.element
             }
@@ -360,7 +360,7 @@ app.post('/wahl',(req, res, next) => {
                             badges.push({type:"success", links:"Ihre bisherige Wahl:", rechts:eval('rows[0].' + wahlen[req.body.index].dbFeld)})
                         }
                         console.log()
-                        badges.push({type:"warning", links:req.body.element + " 2x wählen?", rechts:"Das geht nicht!"})
+                        badges.push({type:"warning", links:req.body.element + ' 2x wählen <i class="fa fa-question-circle-o"></i>', rechts:"Das geht nicht!"})
 
                         res.render('wahl.ejs', {                            
                             badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), ""),                                    
@@ -378,7 +378,7 @@ app.post('/wahl',(req, res, next) => {
                 
                 if(req.body.element){
                     
-                    badges.push({type:"success", links:"Sie haben gewählt:", rechts:req.body.element})
+                    badges.push({type:"success", links:'<i class="fa fa-thumbs-o-up"></i> Sie haben gewählt:', rechts:req.body.element})
                 }
                 
                 res.render('wahl.ejs', {                                          
@@ -421,7 +421,7 @@ function renderFooter(wahlen){
                     ·\
                     <a href="/anmelden">Logout</a>\
                     ·\
-                    <a href="mailto:stefan.baeumer@berufskolleg-borken.de">Stefan Bäumer</a></div>\
+                    <a href="mailto:stefan.baeumer@berufskolleg-borken.de"> <i class="fa fa-envelope-o"></i></a></div>\
                     </footer>'
     
     return footer

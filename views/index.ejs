@@ -18,9 +18,9 @@
         <div class="content">                    
             <%- badges %>
             <br>
-            <a href="/tagesablauf" class="button">Tagesablauf ansehen</a>
+            <a href="/tagesablauf" class="button"><i class="fa fa-paper-plane-o"></i> Tagesablauf ansehen</a>
             <p>
-            <a href="/workshops" class="button">über Workshops informieren</a>
+            <a href="/workshops" class="button"><i class="fa fa-paper-plane-o"></i> Workshops erkunden</a>
             <p>                
             <% for(var i=0; i < lehrerWahlen.length; i++) {%>            
                 <a href="/wahl?w=<%= i %>" style="background-color:<%= lehrerWahlen[i].color %>" class="button"><i class="fa fa-<%= lehrerWahlen[i].icon %>"></i> <%- lehrerWahlen[i].label %></a>

@@ -415,7 +415,7 @@ app.use((err, req, res, next) => {
 })
 
 function renderFooter(wahlen){
-    let footer = '<footer >\
+    let footer = '<footer ><div class="divFooter">\
                     \
                     <a href="/">HOME</a>\
                     ·\
@@ -427,7 +427,7 @@ function renderFooter(wahlen){
                     ·\
                     <a href="/anmelden">Logout</a>\
                     ·\
-                    <a href="mailto:stefan.baeumer@berufskolleg-borken.de">Stefan Bäumer</a>\
+                    <a href="mailto:stefan.baeumer@berufskolleg-borken.de">Stefan Bäumer</a></div>\
                     </footer>'
     
     return footer

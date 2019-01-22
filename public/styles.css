@@ -28,16 +28,16 @@
 	background-color: #337ab7;
 }
 .double-val-label>span.success {
-	background-color: #5cb85c;
+	background-color: orange;
 }
 .double-val-label>span.info {
 	background-color: #5bc0de;
 }
 .double-val-label>span.warning {
-	background-color: #f0ad4e;
+	background-color: red;
 }
 .double-val-label>span.danger {
-	background-color: rgb(32, 165, 32);
+	background-color: green;
 }
 
 * {

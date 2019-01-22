@@ -455,7 +455,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1){
     }
 
     if(save){
-        renderSave = '<label tabindex="0" for="absenden" ><i class="fa fa-save"></i> Speichern</label>'
+        renderSave = '<label style="border-style: solid;border-radius: 5px;" tabindex="0" for="absenden" > ---  <i class="fa fa-save"> </i> Speichern ---</label>'
     }else{
         renderSave = '<i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz + "!"
     }

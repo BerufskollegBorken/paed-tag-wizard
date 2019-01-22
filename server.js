@@ -124,7 +124,7 @@ app.get('/',(req, res, next) => {
                 let badges = []            
                 let lehrerWahlen = []
 
-                badges.push({type:"danger", links:'<i class="fa fa-heart" aria-hidden="true"></i>', rechts:"Willkommen, " + lehrerKrz + "!"})                
+                badges.push({type:"danger", links:'Das Berufskolleg Borken', rechts:"heißt Sie Willkommen, " + lehrerKrz + "!"})                
                 
                 for(i = 0; i < wahlen.length; i++){          
                     let rechts = "nichts gewählt"

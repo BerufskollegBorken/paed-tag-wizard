@@ -25,7 +25,7 @@ wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
 
 let beschreibungPadlet = '<h1>Padlet – Digitale Tafeln im Unterricht nutzen</h1>\
-<b>Moderator:</b> Stefan Bäumer\
+<p><b>Moderator:</b> Stefan Bäumer</p>\
 <h2>Beschreibung</h2>\
 <p>Mit Hilfe einer  digitalen Tafel lässt sich die Beteiligung der Lernenden erhöhen, so kann man:</p>\
 <ul>\
@@ -33,13 +33,13 @@ let beschreibungPadlet = '<h1>Padlet – Digitale Tafeln im Unterricht nutzen</h
 <li>Informationen strukturiert sammeln </li>\
 <li>Feedbackmöglichkeiten: Beiträge können auch kommentiert und bewertet werden.</li> \
 <li>Ressourcen zur Verfügung stellen („das papierlose Stationenlernen“)</li>\
-</ul>\
+<p></ul>\
 <p>Hierzu können folgende Funktionen des Tools Padlet kennengelernt und ausprobiert werden:</p>\
 <ul>\
 <li>Eine Tafel anlegen und mit den Lernenden teilen</li>\
 <li>Informationen ergänzen: Bilder, Links, weitere Padlets, …</li>\
 <li>Rechte und Einstellungen für die Tafel (Leserecht, Schreibrecht, Moderationsrecht)</li>\
-</ul>\
+</ul></p>\
 <h2>Anmerkung:</h2>\
 <p>Für das Tool muss sich der Erstellende registrieren. Bis zu 3 Padlets können alle kostenlos nutzen.</p>\
 <p>Das Tool läuft im Browser (Chrome, Firefox).</p>'

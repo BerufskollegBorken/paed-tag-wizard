@@ -52,22 +52,6 @@
   text-align: center;
 }
 
-.wrapper {
-  min-height: 100%;
-  
-  /* This is the same as the height of the footer */
-  margin-bottom: -100px; 
-}
-/* The height of the footer and push must be the same */
-.footer,
-.push {
-  height: 100px;
-}
-.footer {
-  /* Trivial style to differentiate the footer */
-  background-color: #a12444; 
-}
-
 .header {
   padding: 10px 16px;
   background:#292c2f;
@@ -99,11 +83,6 @@ body {
 
 main {
   flex: 1;
-}
-
-footer {
-  /* Trivial style to differentiate the footer */
-  background-color: black;
 }
 
 form header {
@@ -327,5 +306,17 @@ a {
 
 label{
   font-size: 3vw;
+}
+
+p {
+font-size: 2vw
+}
+
+h1{
+font-size: 4vw
+}
+
+h2{
+  font-size: 3vw
 }
 

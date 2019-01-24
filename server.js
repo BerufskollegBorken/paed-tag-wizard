@@ -209,6 +209,9 @@ app.post('/',(req, res, next) => {
                 label = wahlen[i].name + " gewählt"
 
                 if(eval('rows[0].' + wahlen[i].dbFeld)){
+
+                    let x = eval('rows[0].' + wahlen[i].dbFeld)
+
                     rechts = eval('rows[0].' + wahlen[i].dbFeld)  
                     color="green"
                     icon="check"       

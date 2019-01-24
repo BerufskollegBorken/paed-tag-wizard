@@ -148,7 +148,7 @@ app.get('/',(req, res, next) => {
                         for(o = 0; o < wahlen[i].optionen.length; o++){      
                             //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                             if(x == (wahlen[i].optionen[o].id)){                        
-                                label = wahlen[i].name + " gewählt<br>Raum: " + wahlen[i].optionen[o].raum                    
+                                label = wahlen[i].name + " gewählt<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
                                 //console.log("Treffer" +  label)
                             }
                         }
@@ -220,7 +220,7 @@ app.post('/',(req, res, next) => {
                     for(o = 0; o < wahlen[i].optionen.length; o++){      
                         //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                         if(x == (wahlen[i].optionen[o].id)){                        
-                            label = wahlen[i].name + " gewählt<br>Raum: " + wahlen[i].optionen[o].raum                    
+                            label = wahlen[i].name + " gewählt<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
                             //console.log("Treffer" +  label)
                         }
                     }

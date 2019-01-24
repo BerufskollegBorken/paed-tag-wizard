@@ -23,7 +23,7 @@ tagesablauf.push({von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> P
 let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
-wahlen.hinweis='Wer hat und mag, möge sein Smartphone am Pädagogischen Tag mitbringen und zurvor einen QR-Scanner installieren.'
+wahlen.hinweis='<p style="text-size:4vw;text-align:justify;" >Wer hat und mag, möge sein Smartphone am Pädagogischen Tag mitbringen und zuvor einen QR-Scanner installieren.</p>'
 
 let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_top">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
 <p><b>Moderator:</b> Stefan Bäumer</p>\
@@ -146,10 +146,10 @@ app.get('/',(req, res, next) => {
                         label = wahlen[i].name + " gewählt"
 
                         for(o = 0; o < wahlen[i].optionen.length; o++){      
-                            console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
+                            //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                             if(x == (wahlen[i].optionen[o].id)){                        
                                 label = wahlen[i].name + " gewählt<br>Raum: " + wahlen[i].optionen[o].raum                    
-                                console.log("Treffer" +  label)
+                                //console.log("Treffer" +  label)
                             }
                         }
                     }                    
@@ -218,10 +218,10 @@ app.post('/',(req, res, next) => {
                     label = wahlen[i].name + " gewählt."               
 
                     for(o = 0; o < wahlen[i].optionen.length; o++){      
-                        console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
+                        //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                         if(x == (wahlen[i].optionen[o].id)){                        
                             label = wahlen[i].name + " gewählt<br>Raum: " + wahlen[i].optionen[o].raum                    
-                            console.log("Treffer" +  label)
+                            //console.log("Treffer" +  label)
                         }
                     }
                 }

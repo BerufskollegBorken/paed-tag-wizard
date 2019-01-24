@@ -13,7 +13,7 @@
   width: 100%;  
 }
 .double-val-label>span {
-	background-color: #656565;
+	background-color: #969694;
 	color: #ffffff;
 	display: table-cell;
 	font-size: 4vw;
@@ -37,7 +37,7 @@
 	background-color: red;
 }
 .double-val-label>span.danger {
-	background-color: green;
+	background-color: #31982d;
 }
 
 * {
@@ -90,7 +90,7 @@ form header {
 }
 form header div {
   font-size: 90%;
-  color: #999;
+  color: #969694;
 }
 form header h2 {
   margin: 0 0 5px 0;
@@ -181,7 +181,7 @@ textarea:focus {
 }
 
 input[type=submit] {
-  background-color: #4CAF50;
+  background-color: #31982d;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -191,7 +191,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #31982d;
 }
 
 .wrapper {
@@ -226,7 +226,7 @@ a {
 }
 
   .button {
-    background-color: rgb(110, 125, 139);
+    background-color: #969694;
     border: none;
     width: 70vw;
     color: white;

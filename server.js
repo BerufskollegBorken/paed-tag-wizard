@@ -58,8 +58,8 @@ optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:
 optionen.push({id:"Brainstorming",name:"Workshop", label:"Andere Art 'brainstorming'", beschreibung:"", moderator: "", raum:"N.N."})
 optionen.push({id:"Schreibwerkstatt",name:"Workshop", label:"Schreibwerkstatt", beschreibung:"", moderator: "", raum:"N.N."})
 
-wahlen.push(new Wahl("Workshop 1", "09:15","10:45", "Bitte wählen Sie Ihren Workshop für Phase 1.", optionen, "workshop1")) 
-wahlen.push(new Wahl("Workshop 2", "11:00","12:30", "Bitte wählen Sie Ihren Workshop für Phase 2.", optionen, "workshop2")) 
+wahlen.push(new Wahl("Workshop 1", "09:15","10:45", "", optionen, "workshop1")) 
+wahlen.push(new Wahl("Workshop 2", "11:00","12:30", "", optionen, "workshop2")) 
 
 optionen = []
 optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch, Spanisch", moderator:"Reinhild Conrad", raum:"N.N."})
@@ -148,7 +148,7 @@ app.get('/',(req, res, next) => {
                         for(o = 0; o < wahlen[i].optionen.length; o++){      
                             //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                             if(x == (wahlen[i].optionen[o].id)){                        
-                                label = wahlen[i].name + " gewählt<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
+                                label = wahlen[i].name + ":" +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
                                 //console.log("Treffer" +  label)
                             }
                         }
@@ -220,7 +220,7 @@ app.post('/',(req, res, next) => {
                     for(o = 0; o < wahlen[i].optionen.length; o++){      
                         //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                         if(x == (wahlen[i].optionen[o].id)){                        
-                            label = wahlen[i].name + " gewählt<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
+                            label = wahlen[i].name + ":" +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
                             //console.log("Treffer" +  label)
                         }
                     }

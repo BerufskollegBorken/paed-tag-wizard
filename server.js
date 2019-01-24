@@ -496,7 +496,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
     }
  
     if(paragraph){        
-        renderedBadges += '<p style="text-size:4vw;text-align:justify;" >' + paragraph + '</p>'
+        renderedBadges += '<p style="font-size:4vw;text-align:justify;">' + paragraph + '</p>'
     }
  
 

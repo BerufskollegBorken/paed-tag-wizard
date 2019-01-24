@@ -23,7 +23,7 @@ tagesablauf.push({von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> P
 let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
-wahlen.hinweis='<p style="text-size:4vw;text-align:justify;" >Wer hat und mag, möge sein Smartphone am Pädagogischen Tag mitbringen und zuvor einen QR-Scanner installieren.</p>'
+wahlen.hinweis='Wer hat und mag, möge sein Smartphone am Pädagogischen Tag mitbringen und zuvor einen QR-Scanner installieren.'
 
 let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_top">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
 <p><b>Moderator:</b> Stefan Bäumer</p>\
@@ -496,7 +496,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
     }
  
     if(paragraph){        
-        renderedBadges += '<p  align="justify">' + paragraph + '</p>'
+        renderedBadges += '<p style="text-size:4vw;text-align:justify;" >' + paragraph + '</p>'
     }
  
 

@@ -23,7 +23,7 @@ tagesablauf.push({von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> P
 let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
-wahlen.hinweis='Wer hat und mag, möge sein Smartphone am Pädagogischen Tag mitbringen und zuvor einen QR-Scanner installieren.'
+wahlen.hinweis='Wer hat und mag, möge sein Smartphone am Pädagogischen Tag mitbringen und zuvor einen QR-Scanner installieren.<br>Details können sich noch ändern oder stehen noch nicht fest. Alles wird zur gegebenen Zeit an dieser Stelle veröffentlicht werden. Also am besten den Link zu dieser App speichern.'
 
 let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_top">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
 <p><b>Moderator:</b> Stefan Bäumer</p>\
@@ -148,7 +148,7 @@ app.get('/',(req, res, next) => {
                         for(o = 0; o < wahlen[i].optionen.length; o++){      
                             //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                             if(x == (wahlen[i].optionen[o].id)){                        
-                                label = wahlen[i].name + ":" +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
+                                label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
                                 //console.log("Treffer" +  label)
                             }
                         }
@@ -220,7 +220,7 @@ app.post('/',(req, res, next) => {
                     for(o = 0; o < wahlen[i].optionen.length; o++){      
                         //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                         if(x == (wahlen[i].optionen[o].id)){                        
-                            label = wahlen[i].name + ":" +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
+                            label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
                             //console.log("Treffer" +  label)
                         }
                     }

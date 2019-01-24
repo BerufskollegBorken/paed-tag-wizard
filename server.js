@@ -505,7 +505,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
         renderedBadges += '<div class="double-val-label"><span class="' + badges[i].type + '">'+ badges[i].links +'</span><span>' + badges[i].rechts + '</span></div><p></p>'
 
         if(badges[i].beschreibung){    
-            renderedBadges += '<p style="text-align:center; font-size:2vw">' + badges[i].beschreibung + '</p>' 
+            renderedBadges += '<p style="text-align:center; font-size:4vw">' + badges[i].beschreibung + '</p>' 
         }
     }
 

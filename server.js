@@ -158,7 +158,7 @@ app.get('/',(req, res, next) => {
                 }
 
                 res.render('index.ejs', {                     
-                    badges : renderBadges(badges, false, false, lehrerKrz,"",wahlen.hinweis),                    
+                    badges : renderBadges(badges, false, false, lehrerKrz, "", wahlen.hinweis),                    
                     lehrerWahlen : lehrerWahlen,
                     footer : footer
                 })
@@ -206,18 +206,28 @@ app.post('/',(req, res, next) => {
                 let icon = "" //"close"
                 let label = "Bitte " + wahlen[i].name + " wählen!"
 
+                label = wahlen[i].name + " gewählt"
+
                 if(eval('rows[0].' + wahlen[i].dbFeld)){
                     rechts = eval('rows[0].' + wahlen[i].dbFeld)  
                     color="green"
                     icon="check"       
                     label = wahlen[i].name + " gewählt."               
+
+                    for(o = 0; o < wahlen[i].optionen.length; o++){      
+                        console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
+                        if(x == (wahlen[i].optionen[o].id)){                        
+                            label = wahlen[i].name + " gewählt<br>Raum: " + wahlen[i].optionen[o].raum                    
+                            console.log("Treffer" +  label)
+                        }
+                    }
                 }
                 
                 lehrerWahlen.push({name: wahlen[i].name, color: color, icon: icon, label: label })
             }            
         
             res.render('index.ejs', {                   
-                badges : renderBadges(badges, false, false, lehrerKrz, "",""),                                     
+                badges : renderBadges(badges, false, false, lehrerKrz, "", wahlen.hinweis),                                     
                 lehrerWahlen : lehrerWahlen,
                 footer : footer                
             })

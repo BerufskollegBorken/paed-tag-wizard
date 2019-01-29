@@ -19,9 +19,9 @@
             <form method="POST" action="/wahl?w=<%= index %>">
                 <input type="hidden" id="index" name="index" value="<%= index %>">
                 <span class="chb">
-                    <% for(var i=0; i < items.optionen.length; i++) {%>                                    
-                        <input type="radio" id="<%=items.optionen[i].id%>" name="element" value="<%=items.optionen[i].id%>">
-                        <label for="<%=items.optionen[i].id%>"><%=items.optionen[i].label%></label><br>        
+                    <% for(var i=0; i < wahl.optionen.length; i++) {%>                                    
+                        <input type="radio" id="<%=wahl.optionen[i].id%>" name="element" value="<%=wahl.optionen[i].id%>">
+                        <label for="<%=wahl.optionen[i].id%>"><%=wahl.optionen[i].label%> <%= wahl.optionen[i].ausgebucht%></label><br>        
                     <% } %>
                 </span>
                 <br>                

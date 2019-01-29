@@ -13,7 +13,8 @@ let tagesablauf = []
 tagesablauf.themaDesTages = "Pädagogischer Tag 2019"
 tagesablauf.titel = "Tagesablauf"
 tagesablauf.beschreibung = "Am 5.3.2019 steht unser gemeinsamer, erster Pädagogischer Tag 2019 an. Jede Kollegin und jeder Kollege ist herzlich engeladen, an zwei Workshops und der Anwendungsphase teilzunehmen. Bitte wählen Sie auf dieser Webseite aus dem interessanten Angebot."
-tagesablauf.push({von:"08:30", bis:"09:00", thema:'<i class="fa fa-fire"></i> Eingangsreferat', beschreibung: "Von und mit Gerti Kohlruss"})
+tagesablauf.push({von:"08:30", bis:"08:40", thema:'<i class="fa fa-fire"></i> Begrüßung', beschreibung: "Einleitende Worte der Schulleiterin"})
+tagesablauf.push({von:"08:40", bis:"09:10", thema:'<i class="fa fa-fire"></i> Eingangsreferat', beschreibung: "Von und mit Gerti Kohlruss"})
 tagesablauf.push({von:"09:15", bis:"10:45", thema:'<i class="fa fa-caret-square-o-right"></i> 1. Workshop', beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
 tagesablauf.push({von:"11:00", bis:"12:30", thema:'<i class="fa fa-caret-square-o-right"></i> 2. Workshop', beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
 tagesablauf.push({von:"12:30", bis:"13:15", thema:'<i class="fa fa-cutlery"></i> Mittagspause', beschreibung: 'Guten Appetit!'})
@@ -50,20 +51,20 @@ let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" sty
 let optionen = []        
 optionen.titel = "Das Workshop-Angebot für Sie:"
 optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
-optionen.push({id:"Laptops", name:"Workshop", label:"Umgang mit (Schüler-)Laptops", beschreibung:"", moderator: "", raum:"N.N."})
-optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007"})
-optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:"", moderator: "", raum:"N.N."})
-optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:"", moderator: "", raum:"N.N."})
-optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:"", moderator: "", raum:"N.N."})
-optionen.push({id:"Brainstorming",name:"Workshop", label:"Andere Art 'brainstorming'", beschreibung:"", moderator: "", raum:"N.N."})
-optionen.push({id:"Schreibwerkstatt",name:"Workshop", label:"Schreibwerkstatt", beschreibung:"", moderator: "", raum:"N.N."})
+optionen.push({id:"Laptops", name:"Workshop", label:"Umgang mit (Schüler-) Laptops", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: ""})
+optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:1, anzahl:0, ausgebucht: ""})
+optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: ""})
+optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: ""})
+optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: ""})
+optionen.push({id:"Brainstorming",name:"Workshop", label:"Andere Art 'brainstorming'", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: ""})
+optionen.push({id:"Schreibwerkstatt",name:"Workshop", label:"Schreibwerkstatt", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: ""})
 
 wahlen.push(new Wahl("Workshop 1", "09:15","10:45", "", optionen, "workshop1")) 
 wahlen.push(new Wahl("Workshop 2", "11:00","12:30", "", optionen, "workshop2")) 
 
 optionen = []
-optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch, Spanisch", moderator:"Reinhild Conrad", raum:"N.N."})
-optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch", moderator:"Eva Finke", raum:"N.N."})
+optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch", moderator:"Reinhild Conrad", raum:"N.N."})
+optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch, Spanisch", moderator:"Eva Finke", raum:"N.N."})
 optionen.push({id:"Englisch",name:"Workshop", label:"Englisch", moderator:"Kerstin Schneider", raum:"N.N."})
 optionen.push({id:"Mathematik",name:"Workshop", label:"Mathematik", moderator:"", raum:"N.N."})
 optionen.push({id:"Religion",name:"Workshop", label:"Religion", moderator:"Theresa Schroer", raum:"N.N."})
@@ -105,7 +106,7 @@ const dbVerbindung = mysql.createConnection({
 
 dbVerbindung.connect()
 
-function istAngemeldetAls(cookie){   // cookie = { istAngemeldetAls: '' } oder { istAngemeldetAls: 'BM' }
+function istAngemeldetAls(cookie){
     return cookie["istAngemeldetAls"]     
 }
 
@@ -148,7 +149,7 @@ app.get('/',(req, res, next) => {
                         for(o = 0; o < wahlen[i].optionen.length; o++){      
                             //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                             if(x == (wahlen[i].optionen[o].id)){                        
-                                label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
+                                label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                   
                                 //console.log("Treffer" +  label)
                             }
                         }
@@ -220,7 +221,7 @@ app.post('/',(req, res, next) => {
                     for(o = 0; o < wahlen[i].optionen.length; o++){      
                         //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
                         if(x == (wahlen[i].optionen[o].id)){                        
-                            label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum: " + wahlen[i].optionen[o].raum +")"                   
+                            label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                   
                             //console.log("Treffer" +  label)
                         }
                     }
@@ -326,14 +327,27 @@ app.get('/wahl',(req, res, next) => {
     if(req.query.w >= wahlen.length) return next(new Error("Unzulässiger Parameter!"))
 
     if(istAngemeldetAls(req.cookies)){
-        dbVerbindung.query("SELECT " + wahlen[req.query.w].dbFeld + " FROM lehrer WHERE lehrerKrz = '" + istAngemeldetAls(req.cookies) + "';", (err, rows) => { 
+        //dbVerbindung.query("SELECT " + wahlen[req.query.w].dbFeld + " FROM lehrer WHERE lehrerKrz = '" + istAngemeldetAls(req.cookies) + "';", (err, rows) => { 
+        
+        dbVerbindung.query("SELECT * FROM lehrer;", (err, rows) => { 
             if (err) return next(err)       
         
+            renderWahlen(req.query.w, rows)
+
+            let lehrerIndex=0
+
+            for(i = 0; i < rows.length; i++){  
+                if(rows[i].lehrerKrz === istAngemeldetAls(req.cookies)){
+                    lehrerIndex = i
+                }                
+            }
+
             badges = []
+
             let rechts = '<i class="fa fa-meh-o"></i> nichts gewählt'
             
-            if(eval('rows[0].' + wahlen[req.query.w].dbFeld)){
-                rechts = eval('rows[0].' + wahlen[req.query.w].dbFeld)
+            if(eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)){
+                rechts = eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)
                 badges.push({type:"warning", links:'Sie haben bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'Nochmal ändern <i class="fa fa-question-circle"></i>'})
             }
 
@@ -342,7 +356,7 @@ app.get('/wahl',(req, res, next) => {
             if(istAngemeldetAls(req.cookies)){        
                 res.render('wahl.ejs', {                     
                     badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,wahlen[req.query.w].beschreibung),                                    
-                    items : wahlen[req.query.w],
+                    wahl : wahlen[req.query.w],
                     index: req.query.w,
                     footer : footer                
                 })
@@ -369,7 +383,7 @@ app.post('/wahl',(req, res, next) => {
     if(istAngemeldetAls(req.cookies)){              
         badges = []    
         let wahl = ""    
-        dbVerbindung.query("SELECT * FROM lehrer WHERE lehrerKrz = '" + istAngemeldetAls(req.cookies) + "';", (err, rows) => {         
+        dbVerbindung.query("SELECT * FROM lehrer;", (err, rows) => {         
             if (err) return next(err)       
             if(!rows[0]) return next(new Error("Fehlerhafte Abfrage."))            
          
@@ -379,25 +393,56 @@ app.post('/wahl',(req, res, next) => {
                 wahl = req.body.element
             }
             
-            for(i = 0; i < wahlen.length; i++){  
-                if(eval('rows[0].' + wahlen[i].dbFeld)){
-                    if(eval('rows[0].' + wahlen[i].dbFeld) === req.body.element){
-                        if(eval('rows[0].' + wahlen[req.body.index].dbFeld) == ""){
-                            badges.push({type:"success", links:"Ihre bisherige Wahl:", rechts:"nichts gewählt"})
-                        }else{
-                            badges.push({type:"success", links:"Ihre bisherige Wahl:", rechts:eval('rows[0].' + wahlen[req.body.index].dbFeld)})
-                        }                        
-                        badges.push({type:"warning", links:req.body.element + ' 2x wählen <i class="fa fa-question-circle-o"></i>', rechts:"Das geht nicht!"})
+            renderWahlen(req.query.w, rows)
 
+            let lehrerIndex=0
+
+            for(i = 0; i < rows.length; i++){  
+                if(rows[i].lehrerKrz === istAngemeldetAls(req.cookies)){
+                    lehrerIndex = i
+                }                
+            }
+
+            console.log("lehrerIndex: " +lehrerIndex)
+
+            
+            if(eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld)){
+                if(eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld) === req.body.element){
+                    if(eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld) == ""){                            
+                        badges.push({type:"success", links:"Ihre bisherige Wahl:", rechts:"nichts gewählt"})
+                    }else{
+                        badges.push({type:"success", links:"Ihre bisherige Wahl:", rechts:eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld)})
+                    }                        
+                    badges.push({type:"warning", links:req.body.element + ' 2x wählen <i class="fa fa-question-circle-o"></i>', rechts:'Das geht nicht <i class="fa fa-exclamation-triangle"></i>'})
+
+                    
+                }   
+                
+                
+                res.render('wahl.ejs', {                            
+                    badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,""),                                    
+                    index: req.body.index,                            
+                    wahl : wahlen[req.body.index],
+                    footer : footer    
+                })                    
+                return
+            }
+            
+            
+            for(i = 0; i < wahlen[req.body.index].optionen.length; i++){                 
+                if(wahlen[req.body.index].optionen[i].id === req.body.element){
+                    if(wahlen[req.body.index].optionen[i].kapazitaet <= wahlen[req.body.index].optionen[i].anzahl){
+                        badges.push({type:"warning", links:'Leider ausgebucht <i class="fa fa-exclamation-triangle"></i>', rechts:'Etwas anderes wählen <i class="fa fa-exclamation-triangle"></i>'})
+    
                         res.render('wahl.ejs', {                            
-                            badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), "",""),                                    
+                            badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,""),                                    
                             index: req.body.index,                            
-                            items : wahlen[req.body.index],
+                            wahl : wahlen[req.body.index],
                             footer : footer    
                         })                    
                         return
                     }
-                }
+                }                
             }
 
             dbVerbindung.query("UPDATE lehrer SET " + wahlen[req.body.index].dbFeld + " = '" + wahl + "' WHERE lehrerKrz = '" + istAngemeldetAls(req.cookies) + "';", (err, rows) => { 
@@ -408,12 +453,18 @@ app.post('/wahl',(req, res, next) => {
                     badges.push({type:"success", links:'<i class="fa fa-thumbs-o-up"></i> Sie haben gewählt:', rechts:req.body.element})
                 }
                 
-                res.render('wahl.ejs', {                                          
-                    badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies),""),                                    
-                    index: req.body.index,                            
-                    items : wahlen[req.body.index],
-                    footer : footer    
-                })                    
+                dbVerbindung.query("SELECT * FROM lehrer;", (err, rows) => {         
+                    if (err) return next(err)       
+                
+                    renderWahlen(req.query.w, rows)
+
+                    res.render('wahl.ejs', {                                          
+                        badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,""),                                    
+                        index: req.body.index,                            
+                        wahl : wahlen[req.body.index],
+                        footer : footer    
+                    })                    
+                })
             })      
         })
     }else{
@@ -482,7 +533,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
     }
 
     if(save){
-        renderSave = '<label style="border-style: solid;border-radius: 5px;" tabindex="0" for="absenden" > ---  <i class="fa fa-save"> </i> --- Speichern ---</label>'
+        renderSave = '<label style="border-style: solid;border-radius: 5px;" tabindex="0" for="absenden" > <font color="#969694">---</font>  <i class="fa fa-save"> </i> <font color="#969694">---</font> Speichern <font color="#969694">---</font></label>'
     }else{
         renderSave = '<i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz + "!"
     }
@@ -515,11 +566,27 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
 }
 
 
-function getRaum(option){
-    for(o = 0; o < optionen.length; o++){         
-        if(option == optionen[o].id){
-            return "<br>Raum: " + optionen[o].raum
+function renderWahlen(w, rows){
+ 
+    for(i = 0; i < wahlen[w].optionen.length; i++){  
+        wahlen[w].optionen[i].anzahl = 0
+        if(wahlen[w].optionen[i].kapazitaet){
+            wahlen[w].optionen[i].ausgebucht = "(belegt: " + wahlen[w].optionen[i].anzahl + "/" + wahlen[w].optionen[i].kapazitaet + ")"
         }
     }
-    return "<br>Raum: N.N."
+
+    for(x = 0; x < rows.length; x++){  
+        for(i = 0; i < wahlen[w].optionen.length; i++){              
+            if(eval('rows[x].' + wahlen[w].dbFeld) == wahlen[w].optionen[i].id){
+                if(wahlen[w].optionen[i].kapazitaet >= wahlen[w].optionen[i].anzahl){
+                    wahlen[w].optionen[i].anzahl++
+                    if(wahlen[w].optionen[i].kapazitaet){
+                        wahlen[w].optionen[i].ausgebucht = "(belegt: " + (wahlen[w].optionen[i].anzahl) + "/" + wahlen[w].optionen[i].kapazitaet + ")"
+                    }                            
+                }else{
+                    wahlen[w].optionen[i].ausgebucht = "(ausgebucht)" 
+                }
+            }
+        }
+    }
 }

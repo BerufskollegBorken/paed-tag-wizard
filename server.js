@@ -13,13 +13,13 @@ let tagesablauf = []
 tagesablauf.themaDesTages = "Pädagogischer Tag 2019"
 tagesablauf.titel = "Tagesablauf"
 tagesablauf.beschreibung = "Am 5.3.2019 steht unser gemeinsamer, erster Pädagogischer Tag 2019 an. Jede Kollegin und jeder Kollege ist herzlich engeladen, an zwei Workshops und der Anwendungsphase teilzunehmen. Bitte wählen Sie auf dieser Webseite aus dem interessanten Angebot."
-tagesablauf.push({von:"08:30", bis:"08:40", thema:'<i class="fa fa-fire"></i> Begrüßung und Denkanstöße', beschreibung: "durch die Schulleiterin Annette Sühling"})
-tagesablauf.push({von:"08:40", bis:"09:10", thema:'<i class="fa fa-fire"></i> Eingangsreferat', beschreibung: "Von und mit Gerti Kohlruss"})
-tagesablauf.push({von:"09:15", bis:"10:45", thema:'<i class="fa fa-caret-square-o-right"></i> 1. Workshop', beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
-tagesablauf.push({von:"11:00", bis:"12:30", thema:'<i class="fa fa-caret-square-o-right"></i> 2. Workshop', beschreibung: "Jeder ist eingeladen aus dem Workshopangebot zu wählen!"})
+tagesablauf.push({von:"08:30", bis:"08:40", thema:'<i class="fa fa-fire"></i> Begrüßung und Denkanstöße', beschreibung: "Annette Sühling"})
+tagesablauf.push({von:"08:40", bis:"09:10", thema:'<i class="fa fa-fire"></i> Intro', beschreibung: "Gerti Kohlruss"})
+tagesablauf.push({von:"09:15", bis:"10:45", thema:'<i class="fa fa-caret-square-o-right"></i> 1. Workshop', beschreibung: "Treffen Sie Ihre Wahl!"})
+tagesablauf.push({von:"11:00", bis:"12:30", thema:'<i class="fa fa-caret-square-o-right"></i> 2. Workshop', beschreibung: "Treffen Sie Ihre Wahl!"})
 tagesablauf.push({von:"12:30", bis:"13:15", thema:'<i class="fa fa-cutlery"></i> Mittagspause', beschreibung: 'Guten Appetit!'})
-tagesablauf.push({von:"13:30", bis:"14:30", thema:'<i class="fa fa-caret-square-o-up"></i> Anwendungsphase', beschreibung: "Jeder ist eingeladen, zu wählen. Es ist angedacht, dass sich jeder nach Fächern, Bereich und / oder Neigung zu einer Gruppe zuordnet. Leitfrage: Was kann ich konkret in meinem Unterricht umsetzen?"})
-tagesablauf.push({von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> Plenum', beschreibung: 'Wir wollen per <a href="https://www.mentimeter.com/" style="color:red" target="_top">Mentimeter</a> evaluieren. Damit das gut klappt, sollte jede Kollegein und jeder Kollege ein Smartphone dabei haben und einen QR-Code-Scanner installiert haben.'})
+tagesablauf.push({von:"13:30", bis:"14:30", thema:'<i class="fa fa-caret-square-o-up"></i> Anwendungsphase', beschreibung: "Wie bringen wir die digitalen Impulse sinnvoll in unseren Unterricht? <br> Wählen Sie eine Fachgruppe!"})
+tagesablauf.push({von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> Plenum', beschreibung: 'Wir wollen per <a href="https://www.menti.com/" style="color:red" target="_top">Mentimeter</a> evaluieren.'})
 
 let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"

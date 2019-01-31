@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=1024">
         <title>Pädagogischer Tag 2019</title>  
         <link rel="stylesheet" href="styles.css">  
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -13,25 +14,25 @@
         <meta name="theme-color" content="#ffffff">              
     </head>
     <body> 
-            <main>  
-        <div class="top-container"><img style="width:100%;" src="head.png"></div>        
-        <div class="content">                    
-            <%- badges %>
-            <br>
-            <a href="/tagesablauf" class="button"><i class="fa fa-paper-plane-o"></i> Tagesablauf ansehen</a>
-            <p>
-            <a href="/workshops" class="button"><i class="fa fa-paper-plane-o"></i> Workshops erkunden</a>
-            <p>                
-            <% for(var i=0; i < lehrerWahlen.length; i++) {%>            
-                <a href="/wahl?w=<%= i %>" style="background-color:<%= lehrerWahlen[i].color %>" class="button"><i class="fa fa-<%= lehrerWahlen[i].icon %>"></i> <%- lehrerWahlen[i].label %></a>
+        <main>  
+            <div class="top-container"><img style="width:100%;" src="head.png"></div>        
+            <div class="content">                    
+                <%- badges %>
+                <br>
+                <a href="/tagesablauf" class="button"><i class="fa fa-paper-plane-o"></i> Tagesablauf ansehen</a>
                 <p>
-            <% } %>                
-            <br>
+                <a href="/workshops" class="button"><i class="fa fa-paper-plane-o"></i> Workshops erkunden</a>
+                <p>                
+                <% for(var i=0; i < lehrerWahlen.length; i++) {%>            
+                    <a href="/wahl?w=<%= i %>" style="background-color:<%= lehrerWahlen[i].color %>" class="button"><i class="fa fa-<%= lehrerWahlen[i].icon %>"></i> <%- lehrerWahlen[i].label %></a>
+                    <p>
+                <% } %>                
+                <br>
 
-            <p>Details können sich noch ändern oder stehen noch nicht fest. Alles wird zur gegebenen Zeit an dieser Stelle veröffentlicht werden. Also am besten den Link zu dieser App speichern.</p>
-            <p>Wer hat und mag, kann sein Smartphone am Pädagogischen Tag mitbringen. Bitte einen QR-Scanner installieren.</p>
-        </div>        
-    </main>
-    <%- footer %>
+                <p>Details können sich noch ändern oder stehen noch nicht fest. Alles wird zur gegebenen Zeit an dieser Stelle veröffentlicht werden. Also am besten den Link zu dieser App speichern.</p>
+                <p>Wer hat und mag, kann sein Smartphone am Pädagogischen Tag mitbringen. Bitte einen QR-Scanner installieren.</p>
+            </div>        
+        </main>
+        <%- footer %>
     </body>
 </html>

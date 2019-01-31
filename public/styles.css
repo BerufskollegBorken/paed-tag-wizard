@@ -70,7 +70,7 @@ html {
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
+  max-width: 57vh;
 }
 
 .sticky + .content {
@@ -132,7 +132,7 @@ input[type=email],
 input[type=url],
 input[type=password],
 textarea {
-	width: 100%;
+	max-width: 57vh;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-right: 1px solid #eee;
@@ -153,19 +153,19 @@ textarea:focus {
   border-color: #4697e4;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 57vh) {
   form > div {
     margin: 0 0 15px 0; 
   }
   form > div > label,
   legend {
-	  width: 100%;
+	  max-width: 57vh;
     float: none;
     margin: 0 0 5px 0;
   }
   form > div > div,
   form > div > fieldset > div {
-    width: 100%;
+    max-width: 57vh;
     float: none;
   }
   input[type=text],
@@ -174,7 +174,7 @@ textarea:focus {
   input[type=password],
   textarea,
   select {
-    width: 100%; 
+    max-width: 57vh;
   }
 }
 @media (min-width: 1200px) {
@@ -232,13 +232,13 @@ a {
   .button {
     background-color: #969694;
     border: none;
-    width: 70vw;
+    max-width: 57vh;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 2.5vh;
+    font-size: 2.7vh;
     border-radius: 10px;
     margin: 0 auto;
     border: black;
@@ -259,7 +259,8 @@ a {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 4vw;
+    font-size: 3vh;
+    max-width: 57vh;
     border-radius: 10px;
     margin: 0 auto;
     border: black;
@@ -276,7 +277,7 @@ a {
     border: dodgerblue;
     border-style: solid;
     border-width: 5px;
-    width: 65%;
+    max-width: 57vh;
     color: dodgerblue;
     padding: 15px 32px;
     text-align: center;
@@ -309,17 +310,18 @@ a {
 }
 
 label{
-  font-size: 3vw;
+  font-size: 2vh;
 }
 
 p {
-font-size: 2vw
+font-size: 2vh;
+text-align: justify; 
 }
 
 h1{
-font-size: 4vw
+font-size: 3vh
 }
 
 h2{
-  font-size: 3vw
+  font-size: 2.5vw
 }

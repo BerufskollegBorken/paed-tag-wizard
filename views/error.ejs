@@ -12,22 +12,24 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body>        
+        <main>  
             <div class="top-container"><img style="width:100%;" src="head.png"></div>    
-        <%- header %>
-        <div class="center">
-        <% if(error){ %>                            
-            <% for(var i=0; i < error.length; i++) {%>
-                <p><%- error[i] %></p><hr>                    
-            <% } %>                                                
-            <% } %> 
-        </div>                    
-        
-        <%- footer %>
-        
-        <script>
-            setTimeout(function () {                   
-                window.location = "/";
-            }, 7000)
-        </script>                   
+            <%- header %>
+            <div class="center">
+            <% if(error){ %>                            
+                <% for(var i=0; i < error.length; i++) {%>
+                    <p><%- error[i] %></p><hr>                    
+                <% } %>                                                
+                <% } %> 
+            </div>                    
+            
+            <%- footer %>
+            
+            <script>
+                setTimeout(function () {                   
+                    window.location = "/";
+                }, 7000)
+            </script>   
+        </main>                
     </body>
 </html>

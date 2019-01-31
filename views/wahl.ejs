@@ -13,21 +13,23 @@
         <meta name="theme-color" content="#ffffff">              
     </head>
     <body>           
-        <div class="top-container"><img style="width:100%;" src="head.png"></div>        
-        <div class="content">                                                
-            <%- badges %>
-            <form method="POST" action="/wahl?w=<%= index %>">
-                <input type="hidden" id="index" name="index" value="<%= index %>">
-                <span class="chb">
-                    <% for(var i=0; i < wahl.optionen.length; i++) {%>                                    
-                        <input type="radio" id="<%=wahl.optionen[i].id%>" name="element" value="<%=wahl.optionen[i].id%>">
-                        <label for="<%=wahl.optionen[i].id%>"><%=wahl.optionen[i].label%> <%= wahl.optionen[i].ausgebucht%></label><br>        
-                    <% } %>
-                </span>
-                <br>                
-                <button style="display:none;" id="absenden" type="hidden" ></button>
-            </form>                                    
-        </div>                
+        <main>  
+            <div class="top-container"><img style="width:100%;" src="head.png"></div>        
+            <div class="content">                                                
+                <%- badges %>
+                <form method="POST" action="/wahl?w=<%= index %>">
+                    <input type="hidden" id="index" name="index" value="<%= index %>">
+                    <span class="chb">
+                        <% for(var i=0; i < wahl.optionen.length; i++) {%>                                    
+                            <input type="radio" id="<%=wahl.optionen[i].id%>" name="element" value="<%=wahl.optionen[i].id%>">
+                            <label for="<%=wahl.optionen[i].id%>"><%=wahl.optionen[i].label%> <%= wahl.optionen[i].ausgebucht%></label><br>        
+                        <% } %>
+                    </span>
+                    <br>                
+                    <button style="display:none;" id="absenden" type="hidden" ></button>
+                </form>                                    
+            </div>      
+        </main>          
         <%- footer %>
     </body>
 </html>

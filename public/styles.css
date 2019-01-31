@@ -1,11 +1,11 @@
-html {
-  margin:    0 auto;
-  max-width: 60vh;
-}
-
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);
+
+html {
+  margin:    0 auto;
+  max-width: 60vh; 
+}
+
 #main-title {
 	font-family: 'Roboto', sans-serif;
 	font-size : 3em;
@@ -15,7 +15,7 @@ html {
 	display: table;
 	font-family: 'Roboto', sans-serif;
   margin: auto;
-  width: 57vh;  
+  width: 100%;  
 }
 .double-val-label>span {
 	background-color: #969694;
@@ -82,11 +82,13 @@ body {
   font-family: Helvetica, Arial, Sans-Serif;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */  
+  height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */    
+  background-color: #f1f1f1
 }
 
 main {  
   flex: 1;
+  background-color: #ffffff
 }
 
 form header {
@@ -300,8 +302,8 @@ a {
 
 .chb input[type="radio"]{
     margin-bottom:5px;        
-    width: 2vw; 
-    height: 2vw;
+    width: 2vh; 
+    height: 2vh;
     font-size: 2vh;
 }
 

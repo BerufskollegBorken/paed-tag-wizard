@@ -346,7 +346,7 @@ app.get('/wahl',(req, res, next) => {
             
             if(eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)){
                 rechts = eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)
-                badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'Nochmal ändern <i class="fa fa-question-circle"></i>'})                
+                badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'nochmal ändern <i class="fa fa-question-circle"></i>'})                
             }
 
             badges.push({type:"success", links:'<i class="fa fa-smile-o"></i> Ihre bisherige Wahl:', rechts:rechts})

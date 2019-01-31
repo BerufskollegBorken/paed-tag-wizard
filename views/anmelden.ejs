@@ -13,32 +13,34 @@
         <meta name="theme-color" content="#ffffff">        
     </head>
     <body>  
-        <div class="top-container"><img style="width:100%;" src="head.png"></div>            
-        <div class="content">                    
-            <br>
-            <form method="POST" action="/">         
-                <div>
-                    <label class="desc" id="title1" for="Field1">Lehrerkürzel:</label>
+        <main>  
+            <div class="top-container"><img style="width:100%;" src="head.png"></div>            
+            <div class="content">                    
+                <br>
+                <form method="POST" action="/">         
                     <div>
-                    <input class="input id="Field1" name="lehrerKrz" value="<%= lehrerKrz%>" type="text" class="field text fn" value="" size="8" tabindex="1" required>
+                        <label class="desc" id="title1" for="Field1">Lehrerkürzel:</label>
+                        <div>
+                        <input class="input id="Field1" name="lehrerKrz" value="<%= lehrerKrz%>" type="text" class="field text fn" value="" size="8" tabindex="1" required>
+                        </div>
                     </div>
-                </div>
-                    
-                <div>
-                    <label class="desc" id="title3" for="Field3">
-                    PIN:
-                    </label>
+                        
                     <div>
-                    <input class="input" id="Field3" name="pin" value="<%= pin %>" type="password" pattern="\d{3}"  spellcheck="false" value="" maxlength="4" tabindex="3" required> 
-                    </div>                    
-                </div>
-                <div>
-                    <div>
-                        <input id="saveForm" style="width: 50%;" class="button" name="saveForm" type="submit" value="Login">                             
+                        <label class="desc" id="title3" for="Field3">
+                        PIN:
+                        </label>
+                        <div>
+                        <input class="input" id="Field3" name="pin" value="<%= pin %>" type="password" pattern="\d{3}"  spellcheck="false" value="" maxlength="4" tabindex="3" required> 
+                        </div>                    
                     </div>
-                </div>            
-            </form>
-        </div>            
+                    <div>
+                        <div>
+                            <input id="saveForm" style="width: 50%;" class="button" name="saveForm" type="submit" value="Login">                             
+                        </div>
+                    </div>            
+                </form>
+            </div>      
+        </main>      
         <%- footer %>
     </div>          
     </body>

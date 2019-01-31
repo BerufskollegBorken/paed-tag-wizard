@@ -346,7 +346,7 @@ app.get('/wahl',(req, res, next) => {
             
             if(eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)){
                 rechts = eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)
-                badges.push({type:"warning", links:'Sie haben bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'Nochmal ändern <i class="fa fa-question-circle"></i>'})                
+                badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'Nochmal ändern <i class="fa fa-question-circle"></i>'})                
             }
 
             badges.push({type:"success", links:'<i class="fa fa-smile-o"></i> Ihre bisherige Wahl:', rechts:rechts})
@@ -573,7 +573,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
     }
  
     if(paragraph){        
-        renderedBadges += '<p style="font-size:4vw;text-align:justify;">' + paragraph + '</p>'
+        renderedBadges += '<p style="font-size:2vh;text-align:justify;">' + paragraph + '</p>'
     }
  
 
@@ -582,7 +582,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
         renderedBadges += '<div class="double-val-label"><span class="' + badges[i].type + '">'+ badges[i].links +'</span><span>' + badges[i].rechts + '</span></div><p></p>'
 
         if(badges[i].beschreibung){    
-            renderedBadges += '<p style="text-align:center; font-size:4vw">' + badges[i].beschreibung + '</p>' 
+            renderedBadges += '<p style="text-align:center; font-size:2vh">' + badges[i].beschreibung + '</p>' 
         }
     }
 

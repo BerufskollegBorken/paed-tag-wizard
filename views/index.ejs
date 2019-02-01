@@ -17,8 +17,7 @@
         <main>  
             <div class="top-container"><img style="width:100%;" src="head.png"></div>        
             <div class="content">                    
-                <%- badges %>
-                <br>
+                <%- badges %>                
                 <a href="/tagesablauf" class="button"><i class="fa fa-paper-plane-o"></i> Tagesablauf ansehen</a>
                 <p>
                 <a href="/workshops" class="button"><i class="fa fa-paper-plane-o"></i> Workshops erkunden</a>
@@ -27,8 +26,6 @@
                     <a href="/wahl?w=<%= i %>" style="background-color:<%= lehrerWahlen[i].color %>" class="button"><i class="fa fa-<%= lehrerWahlen[i].icon %>"></i> <%- lehrerWahlen[i].label %></a>
                     <p>
                 <% } %>                
-                <br>
-
                 <p>Details können sich noch ändern oder stehen noch nicht fest. Alles wird zur gegebenen Zeit an dieser Stelle veröffentlicht werden. Also am besten den Link zu dieser App speichern.</p>
                 <p>Wer hat und mag, kann sein Smartphone am Pädagogischen Tag mitbringen. Bitte einen QR-Scanner installieren.</p>
             </div>        

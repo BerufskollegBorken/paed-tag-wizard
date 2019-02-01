@@ -132,7 +132,7 @@ app.get('/',(req, res, next) => {
                 
                 for(i = 0; i < wahlen.length; i++){          
                     let rechts = "nichts gewählt"
-                    let color = "red"
+                    let color = "rgb(226, 100, 25)"
                     let icon = "close"
                     let label = "Bitte " + wahlen[i].name + " wählen!"
 
@@ -349,7 +349,7 @@ app.get('/wahl',(req, res, next) => {
                 badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'nochmal ändern <i class="fa fa-question-circle"></i>'})                
             }
 
-            badges.push({type:"success", links:'<i class="fa fa-smile-o"></i> Ihre bisherige Wahl:', rechts:rechts})
+            badges.push({type:"success", links:'Ihre bisherige Wahl:', rechts:rechts})
 
             if(istAngemeldetAls(req.cookies)){        
                 res.render('wahl.ejs', {                     
@@ -400,13 +400,7 @@ app.post('/wahl',(req, res, next) => {
                     lehrerIndex = i
                 }                
             }
-
-            let derAndereIndex = 0
-
-            if(req.body.index === 0){
-                derAndereIndex = 1
-            }
-
+            
             // Alle Spalten dieses Lehrers werden durchlaufen ... 
 
             for(i = 0; i < 3; i++){          
@@ -414,8 +408,14 @@ app.post('/wahl',(req, res, next) => {
                 // Wenn irgendeine andere Wahl dieser Wahl entspricht, dann Abbruch
 
                 if(i != req.body.index){
+
+                    //console.log(req.body.element + "===" + eval('rows[' + lehrerIndex + '].' + wahlen[i].dbFeld))
+
                     if(req.body.element === eval('rows[' + lehrerIndex + '].' + wahlen[i].dbFeld)){
-                        badges.push({type:"warning", links:req.body.element + ' 2x wählen <i class="fa fa-question-circle-o"></i>', rechts:'Das geht nicht <i class="fa fa-exclamation-triangle"></i>'})
+                    
+                        //console.log("Lehrerindex: " + lehrerIndex + " 2 " + req.body.element + "===" + eval('rows[' + lehrerIndex + '].'+ "  " + wahlen[i].dbFeld))
+                    
+                        badges.push({type:"warning", links:'1 Thema 2x wählen <i class="fa fa-question-circle-o"></i>', rechts:'Das geht nicht <i class="fa fa-exclamation-triangle"></i>'})
                         badges.push({type:"warning", links:'Es bleibt bei:', rechts:eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld)})
                         console.log(i + " " + req.body.index + " " + eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld) + " " + eval('rows[' + lehrerIndex + '].' + wahlen[i].dbFeld))
 
@@ -457,7 +457,7 @@ app.post('/wahl',(req, res, next) => {
                 for(i = 0; i < wahlen[req.body.index].optionen.length; i++){                 
                     if(wahlen[req.body.index].optionen[i].id === req.body.element){
                         if(wahlen[req.body.index].optionen[i].kapazitaet <= wahlen[req.body.index].optionen[i].anzahl){
-                            badges.push({type:"warning", links:'Leider ausgebucht <i class="fa fa-exclamation-triangle"></i>', rechts:'Etwas anderes wählen <i class="fa fa-exclamation-triangle"></i>'})
+                            badges.push({type:"warning", links:'leider ausgebucht <i class="fa fa-exclamation-triangle"></i>', rechts:'anderes wählen <i class="fa fa-exclamation-triangle"></i>'})
         
                             res.render('wahl.ejs', {                            
                                 badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,""),                                    

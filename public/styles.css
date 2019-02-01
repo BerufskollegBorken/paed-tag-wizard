@@ -27,13 +27,14 @@ html {
 	padding: .3em .6em;
 	text-align: center;
   vertical-align: baseline;  
-  white-space: nowrap;	  
+  white-space: nowrap;	    
 }
 .double-val-label>span.primary {
-	background-color: #337ab7;
+  background-color: #337ab7;
+  
 }
 .double-val-label>span.success {
-	background-color: orange;
+  background-color: rgb(226, 146, 25);
 }
 .double-val-label>span.info {
 	background-color: #5bc0de;

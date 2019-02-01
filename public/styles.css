@@ -24,20 +24,21 @@ html {
 	font-size: 2.5vh;
 	font-weight: 400;
 	line-height: 1;
-	padding: .3em .6em;
+  padding: .3em .6em;  
 	text-align: center;
   vertical-align: baseline;  
   white-space: nowrap;	    
 }
 .double-val-label>span.primary {
   background-color: #337ab7;
-  
+  width: 85%;
 }
 .double-val-label>span.success {
   background-color: rgb(226, 146, 25);
 }
 .double-val-label>span.info {
-	background-color: #5bc0de;
+  background-color: #5bc0de;
+  width: 30%;
 }
 .double-val-label>span.warning {
 	background-color: red;
@@ -321,10 +322,15 @@ font-size: 2vh;
 text-align: justify; 
 }
 
+ul {
+  font-size: 2vh;
+}
+
 h1{
-font-size: 3vh
+  font-size: 3vh
 }
 
 h2{
   font-size: 1.7vw
 }
+

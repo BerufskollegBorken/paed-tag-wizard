@@ -28,7 +28,7 @@ wahlen.hinweis=''
 
 let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_top">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
 <p><b>Moderator:</b> Stefan Bäumer</p>\
-<h2>Beschreibung</h2>\
+<p><b>Beschreibung:</b></p>\
 <p>Mit Hilfe einer  digitalen Tafel lässt sich die Beteiligung der Lernenden erhöhen, so kann man:</p>\
 <ul>\
 <li>Padlet für das kollaborative Sammeln von Ideen und Beiträgen nutzen,</li> \
@@ -42,7 +42,7 @@ let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" sty
 <li>Informationen ergänzen: Bilder, Links, weitere Padlets, …</li>\
 <li>Rechte und Einstellungen für die Tafel (Leserecht, Schreibrecht, Moderationsrecht)</li>\
 </ul></p>\
-<h2>Anmerkung:</h2>\
+<p><b>Anmerkung:</b></p>\
 <p>Für das Tool muss sich der Erstellende registrieren. Bis zu 3 Padlets können alle kostenlos nutzen.</p>\
 <p>Das Tool läuft im Browser (Chrome, Firefox).</p>\
 <p>Hier der Link zum Padlet am Pädagogischen Tag: <a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_top">Padlet</a></p>'

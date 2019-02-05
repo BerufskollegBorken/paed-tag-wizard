@@ -93,7 +93,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 
 const server = app.listen(process.env.PORT || 3000, () => {
-    console.log('Server lauscht auf Port %s', server.address().port)    
+    console.log('Server lauscht auf Port %s', server.address().port)
 })
 
 const mysql = require('mysql')
@@ -110,27 +110,27 @@ function istAngemeldetAls(cookie){
     return cookie["istAngemeldetAls"]     
 }
 
-app.get('/',(req, res, next) => {         
+app.get('/',(req, res, next) => {
     if(istAngemeldetAls(req.cookies)){        
-        let lehrerKrz = istAngemeldetAls(req.cookies)   
-        dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "';", (err, rows) => {             
-            if (err) return next(err)                   
+        let lehrerKrz = istAngemeldetAls(req.cookies)
+        dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "';", (err, rows) => {    
+            if (err) return next(err)
             if(rows[0] === undefined){
                 console.log("Cookies werden gelöscht .")
-                res.cookie('istAngemeldetAls', '')              
-                res.render('anmelden.ejs', {               
+                res.cookie('istAngemeldetAls', '')
+                res.render('anmelden.ejs', {      
                     header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                     lehrerKrz : req.query.lehrerKrz,
                     pin : req.query.pin,
                     footer : footer
                 })
-            }else{                
+            }else{       
                 let badges = []            
                 let lehrerWahlen = []
 
-                //badges.push({type:"danger", links:'Das BKB', rechts:'heißt Sie <i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz + "!"})                
+                //badges.push({type:"danger", links:'Das BKB', rechts:'heißt Sie <i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz + "!"})
                 
-                for(i = 0; i < wahlen.length; i++){          
+                for(i = 0; i < wahlen.length; i++){ 
                     let rechts = "nichts gewählt"
                     let color = "rgb(226, 100, 25)"
                     let icon = "close"
@@ -148,7 +148,7 @@ app.get('/',(req, res, next) => {
 
                         for(o = 0; o < wahlen[i].optionen.length; o++){      
                             //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
-                            if(x == (wahlen[i].optionen[o].id)){                        
+                            if(x == (wahlen[i].optionen[o].id)){               
                                 label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                   
                                 //console.log("Treffer" +  label)
                             }
@@ -158,17 +158,17 @@ app.get('/',(req, res, next) => {
                     lehrerWahlen.push({name: wahlen[i].name, color: color, icon: icon, label: label })
                 }
 
-                res.render('index.ejs', {                     
+                res.render('index.ejs', {            
                     badges : renderBadges(badges, false, false, lehrerKrz, "", wahlen.hinweis),                    
                     lehrerWahlen : lehrerWahlen,
                     footer : footer
                 })
             }        
-        })   
+        })
     }else{
         console.log("Cookies werden gelöscht ......")
         res.cookie('istAngemeldetAls', '')
-        res.render('anmelden.ejs', {               
+        res.render('anmelden.ejs', {      
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             lehrerKrz : req.query.lehrerKrz,
             pin : req.query.pin,
@@ -182,12 +182,12 @@ app.post('/',(req, res, next) => {
     let pin = req.body.pin
 
     dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "' AND pin = " + pin + ";", (err, rows) => { 
-        if (err) return next(err)       
+        if (err) return next(err)
         
         if(rows[0] === undefined){    
-            console.log("Cookies werden gelöscht ....")                
-            res.cookie('istAngemeldetAls', '')            
-            res.render('anmelden.ejs', {               
+            console.log("Cookies werden gelöscht ....")
+            res.cookie('istAngemeldetAls', '')
+            res.render('anmelden.ejs', {      
                 badges : renderBadges([], false, false, lehrerKrz, "",""),                    
                 lehrerKrz : req.query.lehrerKrz,
                 pin : req.query.pin,
@@ -199,9 +199,9 @@ app.post('/',(req, res, next) => {
             let lehrerWahlen = []
             let badges = []            
             
-            //badges.push({type:"danger", links:'<i class="fa fa-heart" aria-hidden="true"></i>', rechts:"Willkommen, " + lehrerKrz + "!"})                
+            //badges.push({type:"danger", links:'<i class="fa fa-heart" aria-hidden="true"></i>', rechts:"Willkommen, " + lehrerKrz + "!"})
             
-            for(i = 0; i < wahlen.length; i++){          
+            for(i = 0; i < wahlen.length; i++){ 
                 let rechts = "nichts gewählt"
                 let color = "red"
                 let icon = "" //"close"
@@ -213,14 +213,14 @@ app.post('/',(req, res, next) => {
 
                     let x = eval('rows[0].' + wahlen[i].dbFeld)
 
-                    rechts = eval('rows[0].' + wahlen[i].dbFeld)  
+                    rechts = eval('rows[0].' + wahlen[i].dbFeld)
                     color="green"
                     icon="check"       
                     label = wahlen[i].name + " gewählt."               
 
                     for(o = 0; o < wahlen[i].optionen.length; o++){      
                         //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
-                        if(x == (wahlen[i].optionen[o].id)){                        
+                        if(x == (wahlen[i].optionen[o].id)){               
                             label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                   
                             //console.log("Treffer" +  label)
                         }
@@ -230,30 +230,29 @@ app.post('/',(req, res, next) => {
                 lehrerWahlen.push({name: wahlen[i].name, color: color, icon: icon, label: label })
             }            
         
-            res.render('index.ejs', {                   
+            res.render('index.ejs', {          
                 badges : renderBadges(badges, false, false, lehrerKrz, "", wahlen.hinweis),                                     
                 lehrerWahlen : lehrerWahlen,
                 footer : footer                
             })
         }        
-    })     
-         
+    })
 })
 
-app.post('/anmelden',(req, res, next) => {                
-    res.cookie('istAngemeldetAls', '')    
-    res.render('anmelden.ejs', {               
-        badges : renderBadges(badges, false, false, "", "Bitte anmelden!",""),                        
+app.post('/anmelden',(req, res, next) => {
+    res.cookie('istAngemeldetAls', '')
+    res.render('anmelden.ejs', {
+        badges : renderBadges(badges, false, false, "", "Bitte anmelden!",""),
         lehrerKrz : req.query.lehrerKrz,
         pin : req.query.pin,
         footer : footer
     })
 })
 
-app.get('/anmelden',(req, res, next) => {                
+app.get('/anmelden',(req, res, next) => {       
     //console.log(req.query.user)
-    res.cookie('istAngemeldetAls', '')    
-    res.render('anmelden.ejs', {               
+    res.cookie('istAngemeldetAls', '')
+    res.render('anmelden.ejs', {      
         badges : renderBadges([], false, false, "", "Bitte anmelden",""),                
         lehrerKrz : req.query.lehrerKrz,
         pin : req.query.pin,
@@ -262,17 +261,17 @@ app.get('/anmelden',(req, res, next) => {
 })
 
 app.get('/tagesablauf',(req, res, next) => {     
-    if(istAngemeldetAls(req.cookies)){         
+    if(istAngemeldetAls(req.cookies)){
         let badges = []            
         
-        for(i = 0; i < tagesablauf.length; i++){                  
+        for(i = 0; i < tagesablauf.length; i++){         
             badges.push({type:"info", links:tagesablauf[i].von + " - " + tagesablauf[i].bis, rechts:tagesablauf[i].thema, beschreibung:tagesablauf[i].beschreibung})
         }      
 
         res.render('tagesablauf.ejs', {       
             badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), "Tagesablauf",""),             
             footer: footer
-        })   
+        })
     }else{
         res.render('anmelden.ejs', {       
             badges : renderBadges(badges, false, false, "", "Bitte anmelden!",""),                    
@@ -283,19 +282,19 @@ app.get('/tagesablauf',(req, res, next) => {
     }   
 })
 
-app.get('/workshops',(req, res, next) => {               
-    if(istAngemeldetAls(req.cookies)){         
+app.get('/workshops',(req, res, next) => {      
+    if(istAngemeldetAls(req.cookies)){
         let badges = []            
         
-        for(i = 0; i < wahlen[0].optionen.length; i++){                  
+        for(i = 0; i < wahlen[0].optionen.length; i++){         
             //console.log(wahlen[0].optionen)
             badges.push({type:"primary", links:wahlen[0].optionen[i].label, rechts:wahlen[0].optionen[i].moderator, beschreibung:wahlen[0].optionen[i].beschreibung})
         }      
         
-        res.render('workshops.ejs', {                         
+        res.render('workshops.ejs', {                
             badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), "Workshops",""),    
             footer : footer
-        })    
+        })
     }else{
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
@@ -307,12 +306,12 @@ app.get('/workshops',(req, res, next) => {
 })
 
 app.get('/about',(req, res, next) => {  
-    if(istAngemeldetAls(req.cookies)){         
-        res.render('about.ejs', {                 
+    if(istAngemeldetAls(req.cookies)){
+        res.render('about.ejs', {        
             badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), "",""),    
             jahr : (new Date()).getFullYear(),        
             footer : footer
-        })  
+        })
     }else{
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
@@ -328,7 +327,7 @@ app.get('/wahl',(req, res, next) => {
 
     if(istAngemeldetAls(req.cookies)){
         dbVerbindung.query("SELECT * FROM lehrer;", (err, rows) => { 
-            if (err) return next(err)       
+            if (err) return next(err)
         
             renderWahlen(req.query.w, rows)
 
@@ -346,20 +345,20 @@ app.get('/wahl',(req, res, next) => {
             
             if(eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)){
                 rechts = eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)
-                badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'nochmal ändern <i class="fa fa-question-circle"></i>'})                
+                badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'nochmal ändern <i class="fa fa-question-circle"></i>'})
             }
 
             badges.push({type:"success", links:'Ihre bisherige Wahl:', rechts:rechts})
 
             if(istAngemeldetAls(req.cookies)){        
-                res.render('wahl.ejs', {                     
+                res.render('wahl.ejs', {            
                     badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,wahlen[req.query.w].beschreibung),                                    
                     wahl : wahlen[req.query.w],
                     index: req.query.w,
                     footer : footer                
                 })
             }else{
-                res.render('anmelden.ejs', {               
+                res.render('anmelden.ejs', {      
                     header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                     lehrerKrz : req.query.lehrerKrz,
                     pin : req.query.pin,
@@ -377,15 +376,16 @@ app.get('/wahl',(req, res, next) => {
     }
 })
 
-app.post('/wahl',(req, res, next) => { 
-    if(istAngemeldetAls(req.cookies)){              
+app.post('/wahl',  (req, res, next) => { 
+    if(istAngemeldetAls(req.cookies)){     
         badges = []    
         let wahl = ""    
-        dbVerbindung.query("SELECT * FROM lehrer;", (err, rows) => {         
-            if (err) return next(err)       
-            if(!rows[0]) return next(new Error("Fehlerhafte Abfrage."))            
+          
+        dbVerbindung.query("SELECT * FROM lehrer;", (err, rows) => {
+            if (err) return next(err)
+            if(!rows[0]) return next(new Error("Fehlerhafte Abfrage."))
          
-            if(!req.body.element){            
+            if(!req.body.element){   
                 badges.push({type:"warning", links:"Nichts gewählt", rechts:'bzw. Wahl gelöscht <i class="fa fa-frown-o"></i>'})
             }else{
                 wahl = req.body.element
@@ -403,7 +403,7 @@ app.post('/wahl',(req, res, next) => {
             
             // Alle Spalten dieses Lehrers werden durchlaufen ... 
 
-            for(i = 0; i < 3; i++){          
+            for(i = 0; i < 3; i++){ 
 
                 // Wenn irgendeine andere Wahl dieser Wahl entspricht, dann Abbruch
 
@@ -419,52 +419,47 @@ app.post('/wahl',(req, res, next) => {
                         badges.push({type:"warning", links:'Es bleibt bei:', rechts:eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld)})
                         console.log(i + " " + req.body.index + " " + eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld) + " " + eval('rows[' + lehrerIndex + '].' + wahlen[i].dbFeld))
 
-                        res.render('wahl.ejs', {                            
+                        res.render('wahl.ejs', {                   
                             badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,""),                                    
                             index: req.body.index,                            
                             wahl : wahlen[req.body.index],
                             footer : footer    
-                        })                    
+                        })
                         return    
                     }
                 }                
             }
 
-            
-    
-
+            setTimeout(function(){ }, 1000);
 
             if(eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld)){
                 if(eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld) === req.body.element){
                     
-                    if(eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld) == ""){                            
+                    if(eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld) == ""){                   
                         badges.push({type:"success", links:"Ihre bisherige Wahl:", rechts:"nichts gewählt"})
                     }else{
                         badges.push({type:"success", links:"Ihre bisherige Wahl:", rechts:eval('rows[' + lehrerIndex + '].' + wahlen[req.body.index].dbFeld)})
                     }
-
-           
-
                     
-                    res.render('wahl.ejs', {                            
+                    res.render('wahl.ejs', {                   
                         badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,""),                                    
                         index: req.body.index,                            
                         wahl : wahlen[req.body.index],
                         footer : footer    
-                    })                    
+                    })
                     return
                 }
-                for(i = 0; i < wahlen[req.body.index].optionen.length; i++){                 
+                for(i = 0; i < wahlen[req.body.index].optionen.length; i++){        
                     if(wahlen[req.body.index].optionen[i].id === req.body.element){
                         if(wahlen[req.body.index].optionen[i].kapazitaet <= wahlen[req.body.index].optionen[i].anzahl){
                             badges.push({type:"warning", links:'leider ausgebucht <i class="fa fa-exclamation-triangle"></i>', rechts:'anderes wählen <i class="fa fa-exclamation-triangle"></i>'})
         
-                            res.render('wahl.ejs', {                            
+                            res.render('wahl.ejs', {                   
                                 badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,""),                                    
                                 index: req.body.index,                            
                                 wahl : wahlen[req.body.index],
                                 footer : footer    
-                            })                    
+                            })
                             return
                         }
                     }                
@@ -472,26 +467,26 @@ app.post('/wahl',(req, res, next) => {
             }   
             
             dbVerbindung.query("UPDATE lehrer SET " + wahlen[req.body.index].dbFeld + " = '" + wahl + "' WHERE lehrerKrz = '" + istAngemeldetAls(req.cookies) + "';", (err, rows) => { 
-                if (err) return next(err)       
+                if (err) return next(err)
                 
                 if(req.body.element){
                     
                     badges.push({type:"success", links:'<i class="fa fa-thumbs-o-up"></i> Sie haben gewählt:', rechts:req.body.element})
                 }
                 
-                dbVerbindung.query("SELECT * FROM lehrer;", (err, rows) => {         
-                    if (err) return next(err)       
+                dbVerbindung.query("SELECT * FROM lehrer;", (err, rows) => {
+                    if (err) return next(err)
                 
                     renderWahlen(req.query.w, rows)
 
-                    res.render('wahl.ejs', {                                          
+                    res.render('wahl.ejs', {                                 
                         badges : renderBadges(badges, true, true, istAngemeldetAls(req.cookies), wahlen[req.query.w].name ,""),                                    
                         index: req.body.index,                            
                         wahl : wahlen[req.body.index],
                         footer : footer    
-                    })                    
+                    })
                 })
-            })      
+            })
         })
     }else{
         res.render('anmelden.ejs', {       
@@ -602,7 +597,7 @@ function renderWahlen(w, rows){
     }
 
     for(x = 0; x < rows.length; x++){  
-        for(i = 0; i < wahlen[w].optionen.length; i++){              
+        for(i = 0; i < wahlen[w].optionen.length; i++){     
             if(eval('rows[x].' + wahlen[w].dbFeld) == wahlen[w].optionen[i].id){
                 if(wahlen[w].optionen[i].kapazitaet >= wahlen[w].optionen[i].anzahl){
                     wahlen[w].optionen[i].anzahl++

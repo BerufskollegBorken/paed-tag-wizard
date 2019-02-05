@@ -48,13 +48,29 @@ let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" sty
 <p>Hier der Link zum Padlet am Pädagogischen Tag: <a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_top">Padlet</a></p>'
 
 
+let beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
+<p><b>Moderator:</b>Andreas Schraven</p>\
+<p><b>Beschreibung:</b></p>\
+<p>Die kostenlose Web 2.0-Plattform LearningApps.org ermöglicht es, mit wenig Aufwand multimediale Lernbausteine in ansprechender Form online zu erstellen und zu verwalten.</p>\
+<p>LearningApps.org unterstützt mit seinen verschiedenen Aufgabentypen (Kreuzworträtsel, QuizAufgaben, Memory-Spiele, Hör-, Seh-, Schreib- und Zuordnungsübungen etc.) sowohl selbständiges als auch kooperatives Üben, Lernen und Erstellen.</p>\
+<p>Im Workshop werden wir:</p>\
+<ul>\
+<li>unterschiedliche Aufgabentypen bereits vorhandener LearningApps ausprobieren,</li>\
+<li>bestehende LearningApps an die eigenen Bedürfnisse anpassen,</li>\
+<li>neue Apps erstellen,</li>\
+<li>uns mit der Administration als Lehrer beschäftigen.</li>\
+</ul></p>\
+<p><b>Anmerkung:</b></p>\
+<p>Für die Arbeit im Workshop müsst Ihr Euch vorher nicht registrieren. Das Tool läuft im Browser (Chrome, Firefox).</p>'
+
+
 let optionen = []        
 optionen.titel = "Das Workshop-Angebot für Sie:"
 optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
 optionen.push({id:"Laptops", name:"Workshop", label:"Umgang mit (Schüler-) Laptops", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:1, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:beschreibungApps, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Brainstorming",name:"Workshop", label:"Andere Art 'brainstorming'", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Schreibwerkstatt",name:"Workshop", label:"Schreibwerkstatt", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})

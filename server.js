@@ -45,7 +45,7 @@ let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" sty
 <p><b>Anmerkung:</b></p>\
 <p>Für das Tool muss sich der Erstellende registrieren. Bis zu 3 Padlets können alle kostenlos nutzen.</p>\
 <p>Das Tool läuft im Browser (Chrome, Firefox).</p>\
-<p>Hier der Link zum Padlet am Pädagogischen Tag: <a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_top">Padlet</a></p>'
+<p>Hier der Link zum Padlet am Pädagogischen Tag: <a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_blank">Padlet</a></p>'
 
 
 let beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\

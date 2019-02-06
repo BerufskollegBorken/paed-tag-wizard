@@ -34,7 +34,7 @@ html {
   width: 85%;
 }
 .double-val-label>span.success {
-  background-color: rgb(226, 146, 25);
+  background-color: rgb(253, 195, 5);
 }
 .double-val-label>span.info {
   background-color: #5bc0de;
@@ -85,7 +85,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */    
-  background-color: #31982d
+  background-color: #74a774
 }
 
 main {  

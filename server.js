@@ -86,7 +86,7 @@ let optionen = []
 optionen.titel = "Das Workshop-Angebot für Sie:"
 optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
 optionen.push({id:"Laptops", name:"Workshop", label:"Umgang mit (Schüler-) Laptops", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:1, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:beschreibungEgmond, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:beschreibungApps, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
@@ -166,7 +166,7 @@ app.get('/',(req, res, next) => {
                 
                 for(i = 0; i < wahlen.length; i++){ 
                     let rechts = "nichts gewählt"
-                    let color = "rgb(226, 100, 25)"
+                    let color = "orange"
                     let icon = "close"
                     let label = "Bitte " + wahlen[i].name + " wählen!"
 

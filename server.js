@@ -19,14 +19,14 @@ tagesablauf.push({von:"09:15", bis:"10:45", thema:'<i class="fa fa-caret-square-
 tagesablauf.push({von:"11:00", bis:"12:30", thema:'<i class="fa fa-caret-square-o-right"></i> 2. Workshop', beschreibung: "Treffen Sie Ihre Wahl!"})
 tagesablauf.push({von:"12:30", bis:"13:15", thema:'<i class="fa fa-cutlery"></i> Mittagspause', beschreibung: 'Guten Appetit!'})
 tagesablauf.push({von:"13:30", bis:"14:30", thema:'<i class="fa fa-caret-square-o-up"></i> Anwendungsphase', beschreibung: "Wie bringen wir die digitalen Impulse sinnvoll in unseren Unterricht? <br> Wählen Sie eine Fachgruppe!"})
-tagesablauf.push({von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> Plenum', beschreibung: 'Wir wollen per <a href="https://www.menti.com/" style="color:red" target="_top">Mentimeter</a> evaluieren.'})
+tagesablauf.push({von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> Plenum', beschreibung: 'Wir wollen per <a href="https://www.menti.com/" style="color:red" target="_blank">Mentimeter</a> evaluieren.'})
 
 let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
 wahlen.hinweis=''
 
-let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_top">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
+let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_blank">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
 <p><b>Moderator:</b> Stefan Bäumer</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Mit Hilfe einer  digitalen Tafel lässt sich die Beteiligung der Lernenden erhöhen, so kann man:</p>\
@@ -78,7 +78,7 @@ let beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>
 <li>Erstes Kennenlernen von H5P</li>\
 </ul></p>\
 <p><b>Anmerkung:</b></p>\
-<p>EDMOND NRW ist für alle Lehrkräfte / Bildungseinrichtungen kostenlos, da die Kosten vom Land NRW sowie dem jeweiligen  kommunalen Medienzentrum getragen werden. Für die Nutzung ist eine Registrierung  über <a href="https://nrw.edupool.de/home?standort=BOR"" style="color:red" target="_top"> nrw.edupool.de </a> erforderlich. </p>\
+<p>EDMOND NRW ist für alle Lehrkräfte / Bildungseinrichtungen kostenlos, da die Kosten vom Land NRW sowie dem jeweiligen  kommunalen Medienzentrum getragen werden. Für die Nutzung ist eine Registrierung  über <a href="https://nrw.edupool.de/home?standort=BOR"" style="color:red" target="_blank"> nrw.edupool.de </a> erforderlich. </p>\
 <p>Empfehlung: Da Sie sich mit Ihrer E-Mailadresse registrieren und Ihnen im Verlauf des Verfahrens eine Mail mit einem Link zur Bestätigung geschickt wird, sollten Sie bei der Registrierung auch Zugriff auf Ihre E-Mails haben.</p>'
 
 

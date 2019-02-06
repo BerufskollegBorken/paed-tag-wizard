@@ -49,7 +49,7 @@ let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" sty
 
 
 let beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
-<p><b>Moderator:</b>Andreas Schraven</p>\
+<p><b>Moderator: </b>Andreas Schraven</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Die kostenlose Web 2.0-Plattform LearningApps.org ermöglicht es, mit wenig Aufwand multimediale Lernbausteine in ansprechender Form online zu erstellen und zu verwalten.</p>\
 <p>LearningApps.org unterstützt mit seinen verschiedenen Aufgabentypen (Kreuzworträtsel, QuizAufgaben, Memory-Spiele, Hör-, Seh-, Schreib- und Zuordnungsübungen etc.) sowohl selbständiges als auch kooperatives Üben, Lernen und Erstellen.</p>\
@@ -64,12 +64,30 @@ let beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
 <p>Für die Arbeit im Workshop müsst Ihr Euch vorher nicht registrieren. Das Tool läuft im Browser (Chrome, Firefox).</p>'
 
 
+let beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>\
+<p><b>Moderator: </b>Michael Hermes (Medienpädagoge - Medienzentrum Kreis Borken)</p>\
+<p><b>Beschreibung:</b></p>\
+<p>Mit EDMOND NRW steht Lehrkräften eine Plattform für online Medien zur Verfügung, die stetig sowohl technisch optimiert als auch inhaltlich ausgebaut wird. Aktuell werden für den Kreis Borken mehrere Tausend Online-Medien bereitgestellt, die für den Unterricht genutzt und auch an SuS weitergegeben werden können. Über die seit 2018 ergänzten Funktionen des HTML 5 -Paketes (H5P) sind neue Bearbeitungsmöglichkeiten sowie die Option eigenes Filmmaterial hochzuladen hinzugekommen.</p>\
+<p>Konkrete Inhalte des Workshops:</p>\
+<ul>\
+<li>Grundlagen und Bedienung von EDMOND NRW</li>\
+<li>Medien suchen und Ergebnisse eingrenzen</li>\
+<li>Suchergebnisse in Listen verwalten und verarbeiten</li>\
+<li>Medien an SuS weitergeben (EDU-IDs)</li>\
+<li>Medienablagen für die Schule  - Lösungsmodelle</li>\
+<li>Erstes Kennenlernen von H5P</li>\
+</ul></p>\
+<p><b>Anmerkung:</b></p>\
+<p>EDMOND NRW ist für alle Lehrkräfte / Bildungseinrichtungen kostenlos, da die Kosten vom Land NRW sowie dem jeweiligen  kommunalen Medienzentrum getragen werden. Für die Nutzung ist eine Registrierung  über <a href="https://nrw.edupool.de/home?standort=BOR"" style="color:red" target="_top"> nrw.edupool.de </a> erforderlich. </p>\
+<p>Empfehlung: Da Sie sich mit Ihrer E-Mailadresse registrieren und Ihnen im Verlauf des Verfahrens eine Mail mit einem Link zur Bestätigung geschickt wird, sollten Sie bei der Registrierung auch Zugriff auf Ihre E-Mails haben.</p>'
+
+
 let optionen = []        
 optionen.titel = "Das Workshop-Angebot für Sie:"
 optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
 optionen.push({id:"Laptops", name:"Workshop", label:"Umgang mit (Schüler-) Laptops", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:1, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:beschreibungEgmond, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:beschreibungApps, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Brainstorming",name:"Workshop", label:"Andere Art 'brainstorming'", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})

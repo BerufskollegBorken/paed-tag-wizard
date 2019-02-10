@@ -1,3 +1,4 @@
+
 class Wahl{
     constructor(name, von, bis, beschreibung, optionen, dbFeld) {
         this.name = name
@@ -201,16 +202,19 @@ app.use(express.static('public'))
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 
+var env = process.env.NODE_ENV || 'development';
+var config = require('./config')[env];
+
 const server = app.listen(process.env.PORT || 3000, () => {
     console.log('Server lauscht auf Port %s', server.address().port)
 })
 
 const mysql = require('mysql')
 const dbVerbindung = mysql.createConnection({
-    host: "10.40.38.110", 
-    user: "placematman", 
-    password: "BKB123456!", 
-    database: "dbpaedtag"
+    host: config.database.host,
+    user: config.database.user,
+    password: config.database.password,
+    database: config.database.db
 })
 
 dbVerbindung.connect()

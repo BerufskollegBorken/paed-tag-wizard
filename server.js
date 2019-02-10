@@ -26,6 +26,22 @@ wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
 wahlen.hinweis=''
 
+let beschreibungByod = '<h1>BYOD, Schul.Cloud und Co. – Wie können digitale Medien der SuS in den eigenen Unterricht integriert werden?</h1>\
+<p><b>Moderator: </b>Thomas Kottenstede</p>\
+<p><b>Beschreibung:</b></p>\
+<p>SuS bereiten ein Referat zuhause vor und wollen dazu den eigenen Laptop in der Schule verwenden. Außerhalb des EDV-Raums soll kurz eine Internet-Recherche durchgeführt werden. Eine Lehrerin oder ein Lehrer möchte gerne mit seinem Handy eine Audio-Datei im Fremdsprachenunterricht abspielen.</p>\
+<p>Das sind nur einige Beispiele für Anforderungen, die in einem zunehmend digitalisierten Unterricht auf zu zukommen. In diesem Workshop soll solche Fragen aufgegriffen, Lösungen aufgezeigt und praktisch ausprobiert werden.</p>\
+<p>Im Workshop werden wir:</p>\
+<ul>\
+<li>alle Schritte kennenlernen, die notwendig sind, um ein Lehrer- oder Schülerlaptop/Handy/Tablet… in das WLAN der Schule zu integrieren,</li>\
+<li>die neuen Lautsprecherboxen für die Klassenräume mit ihren Bluetooth-Möglichkeiten ausprobieren,</li>\
+<li>einen ersten Blick auf digitalen Tafeln (Smart-Boards) werfen. (zwei solche Geräte sollen Ende Februar angeliefert und danach am BKB installiert werden, um zu testen, ob diese einen Vorteil im Unterricht bieten)</li>\
+<li>einen einfachen Weg kennenlernen, um als LuL von zuhause auf die eigenen Daten in der Schule zugreifen zu können. (Was ich am Abend vorher in die Schule hochgeladen habe, kann ich am nächsten Morgen nicht auf dem Schreibtisch vergessen.)</li>\
+<li>bei Bedarf werden wir natürlich auch den konkreten Umgang mit den Dokumentenkameras, der päd. Oberfläche in den EDV-Räumen, dem Webweaver, etc. vertiefend üben.</li>\
+</ul></p>\
+<p><b>Anmerkung:</b></p>\
+<p>Wer den eigenen Laptop, das Tablet, das Handy etc. bisher noch nicht im Schulnetzwerk betrieben hat und dieses evtl. zukünftig möchte, sollte das Gerät mitbringen. Dann können wir am konkreten Fall auf mögliche Fallstricke hinweisen und Lösungen erarbeiten.</p>'
+
 let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_blank">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
 <p><b>Moderator:</b> Stefan Bäumer</p>\
 <p><b>Beschreibung:</b></p>\
@@ -46,6 +62,30 @@ let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" sty
 <p>Für das Tool muss sich der Erstellende registrieren. Bis zu 3 Padlets können alle kostenlos nutzen.</p>\
 <p>Das Tool läuft im Browser (Chrome, Firefox).</p>\
 <p>Hier der Link zum Padlet am Pädagogischen Tag: <a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_blank">Padlet</a></p>'
+
+let beschreibungZumpad = '<h1>ZUMpad und Classroomscreen - digitale Tools als praktische Alternativen zu Collegeblock und Tafel</h1>\
+<p><b>Moderator:</b> Regina Schreiber</p>\
+<p><b>Beschreibung:</b></p>\
+<p>Das<b>ZUMpad</b> ist eine kollaborative Arbeitsfläche, die kostenfrei von der ZUM (Zentrale für Unterrichtsmedien im Internet e.V.) zur Verfügung gestellt wird. Es handelt sich dabei um eine leere Website, auf der sofort - sogar von mehreren Personen/PCs gleichzeitig - über das Internet geschrieben werden kann. Ein ZUMpad hat eine selbstgewählte, einfache Adresse, die sich auch mündlich mitteilen lässt. So kann es von jedem genutzt werden, der diesen Link besitzt. Die Oberfläche speichert den Text automatisch. Der Pad-Inhalt kann jedoch auch in verschiedenen Formaten exportiert werden. Da es sich um ein kooperatives digitales Medium handelt, werden verschiedene Kompetenzen, z.B. die Strukturierung und Visualisierung von Gedanken, der Schüler gefördert.  Die Einsatzmöglichkeiten sind vielfältig: Verfassen von Protokollen, Festhalten von Gruppenarbeitsergebnissen, Kommunikation von Arbeitsergebnissen u.a.</p>\
+<p><b>Classroomscreen</b> ist ein Online-Tool, das wie eine digitale Tafel funktioniert. Die Website ist sehr einfach zu bedienen und kann mit einem interaktiven Whiteboard oder einem Projektor angezeigt werden. Das Tool verfügt über viele Funktionen, die den Unterricht visuell unterstützen und für die Schüler ansprechend machen. Hierzu zählen z.B.</p>\
+<ul>\
+<li>Stoppuhr, Anzeige der aktuellen Uhrzeit</li> \
+<li>Textfelder, in denen z.B. Aufgaben für die Schüler notiert werden können</li>\
+<li>Erstellung von QR-Codes für Websites, die während des Unterrichts aufgerufen werden sollen</li> \
+<li>Hochladen von Bildern, Anfertigen von Skizzen</li>\
+<li>Ampeln, die z.B. den Bearbeitungsstand visualisieren</li>\
+<li>Automatische Würfel, die Namen oder Zahlen nach dem Zufallsprinzip auswählen</li>\
+<li>Feedback-Funktion etc.</li>\
+</ul>\
+<p>Im Workshop werden wir </p>\
+<ul>\
+<li>die Funktionsweisen der beiden Tools kennenlernen</li>\
+<li>diese ausprobieren</li>\
+<li>Ideen für den Einsatz im Unterricht sammeln und vorstellen</li>\
+</ul>\
+<p><b>Anmerkung:</b></p>\
+<p>ZUMpad und Classroomscreen sind kostenfreie webbasierte Anwendungen, d.h. sie funktionieren ohne Registrierung oder vorherige Anmeldung. Die Tools laufen im Browser (Fierfox, Chrome) und sind sofort startklar.</p>\
+<p>Das Tool läuft im Browser (Chrome, Firefox).</p>'
 
 
 let beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
@@ -81,17 +121,56 @@ let beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>
 <p>EDMOND NRW ist für alle Lehrkräfte / Bildungseinrichtungen kostenlos, da die Kosten vom Land NRW sowie dem jeweiligen  kommunalen Medienzentrum getragen werden. Für die Nutzung ist eine Registrierung  über <a href="https://nrw.edupool.de/home?standort=BOR"" style="color:red" target="_blank"> nrw.edupool.de </a> erforderlich. </p>\
 <p>Empfehlung: Da Sie sich mit Ihrer E-Mailadresse registrieren und Ihnen im Verlauf des Verfahrens eine Mail mit einem Link zur Bestätigung geschickt wird, sollten Sie bei der Registrierung auch Zugriff auf Ihre E-Mails haben.</p>'
 
+let beschreibungVisualisierung = '<h1>Visualisierung mit digitalen Medien</h1>\
+<p><b>Moderatorinnen: </b>Theresa Schroer, Annegret Häming</p>\
+<p><b>Beschreibung:</b></p>\
+<p>Visualisierungen von Sachverhalten nehmen im Unterricht eine große Rolle ein. In diesem Workshop bieten wir die Möglichkeit, digitale Medien zur Visualisierung kennen zu lernen und zu erproben. </p>\
+<p>Ein Fokus wird hierbei auf die digitale Erstellung von Mindmaps, Diagrammen und Wortsammlungen gelegt. Diese können für kollaboratives Arbeiten genutzt werden. Ferner kann die Visualisierung im Unterricht attraktiver und effizienter gestaltet werden.</p>\
+<p>Mithilfe verschiedener Tools können</p>\
+<ul>\
+<li>Sachverhalten strukturiert und veranschaulicht,</li>\
+<li>Mitschriften erstellt,</li>\
+<li>Projekte geplant,</li>\
+<li>Lernstoffe aufbereitet und</li>\
+<li>Ideen gesammelt werden.</li>\
+</ul></p>\
+<p><b>Anmerkung:</b></p>\
+<p>Für die Tools ist es teilweise notwendig, sich während des Workshops zu regierstieren. Für die Teilnahme am Workshop wäre ein internetfähiges Smartphone von Vorteil.</p>'
+
+let beschreibungLernvideos = '<h1>Lernvideos – digital, individuell und vielfältig</h1>\
+<p><b>Moderatoren: </b>Michael Bauhaus, Dirk Nixdorf</p>\
+<p><b>Beschreibung:</b></p>\
+<p>„Wie oft muss ich das denn noch erklären?“, „Das ging mir jetzt zu schnell!“ oder „Ich war letzte Woche krank, könnten Sie das nochmal wiederholen“. Das sind alles Sätze, die jeder von uns schonmal gehört oder gedacht hat. </p>\
+<p>Eine Möglichkeit seinen Unterricht schrittweise zur individualisieren ist der Einsatz von selbst erstellten Lernvideos, die passgenau auf den eigenen Unterricht zugeschnitten sind. Mit diesen Lernvideos ermöglicht ihr euren Schülern zentrale Unterrichtsinhalte in komprimierter Form zu wiederholen, nachzulernen oder völlig neue Unterrichtsinhalte zeitlich flexibel einzuführen.</p>\
+<p>Lernvideos können ein echtes Werkzeug sein, um im Unterrichtsalltag:</p>\
+<ul>\
+<li>den Umgang mit heterogenen Lerngruppen einfacher zu organisieren,</li>\
+<li>die Umsetzung von kompetenzorientierten Lernsituationen zu erleichtern,</li>\
+<li>die Lehrverantwortung des Lehrers in die Lernverantwortung des Schülers zu überführen.</li>\
+</ul>\
+<p>Dazu werden wir in unserem Workshop:</p>\
+<ul>\
+<li>die Möglichkeiten zur Erstellung von Lernvideos am BK-Borken aufzeigen,</li>\
+<li>wichtige Tipps und Erfahrungsberichte bei der Erstellung von Lernvideos vorstellen,</li>\
+<li>Ideen und Vorschläge für den Einsatz von Lernvideos zur Unterrichtsgestaltung bzw. Unterrichtsbegleitung sammeln und diskutieren,</li>\
+<li>ein Lernvideo erstellen und die Möglichkeiten der Veröffentlichung vorstellen. </li>\
+</ul>\
+<p><b>Anmerkung:</b></p>\
+<p>Für die Arbeit im Workshop solltet ihr eine eigene Idee für den Einsatz eines Lernvideos in bzw. für euren Unterricht mitbringen. Außerdem solltet ihr dazu bereit sein im Rahmen des Workshops zu Übungszwecken ein eigenes Lernvideo zu erstellen. </p>\
+<p>Sinnvoll wäre es zudem, wenn ihr auch grundsätzlich mit dem Gedanken zurechtkommt, dass Videos, die ihr erstellt habt, später im Internet veröffentlicht werden.</p>'
+
+
 
 let optionen = []        
 optionen.titel = "Das Workshop-Angebot für Sie:"
 optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
-optionen.push({id:"Laptops", name:"Workshop", label:"Umgang mit (Schüler-) Laptops", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Laptops", name:"Workshop", label:"BYOD, Schul.Cloud und Co.", beschreibung:beschreibungByod, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:beschreibungEgmond, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:beschreibungApps, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Videos",name:"Workshop", label:"Erklärvideos", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Brainstorming",name:"Workshop", label:"Andere Art 'brainstorming'", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Schreibwerkstatt",name:"Workshop", label:"Schreibwerkstatt", beschreibung:"", moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Visualisierung",name:"Workshop", label:"Visualisierung mit digitalen Medien", beschreibung:beschreibungVisualisierung, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Zumpad",name:"Workshop", label:"ZUMpad und Classroomscreen", beschreibung:beschreibungZumpad, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Lernvideos",name:"Workshop", label:"Lernvideos", beschreibung:beschreibungLernvideos, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 
 wahlen.push(new Wahl("Workshop 1", "09:15","10:45", "", optionen, "workshop1")) 
 wahlen.push(new Wahl("Workshop 2", "11:00","12:30", "", optionen, "workshop2")) 
@@ -140,8 +219,8 @@ const dbVerbindung = mysql.createConnection({
 
 dbVerbindung.connect()
 
-function istAngemeldetAls(cookie){
-    return cookie["istAngemeldetAls"]     
+function istAngemeldetAls(cookies){
+    return cookies["istAngemeldetAls"]     
 }
 
 app.get('/',(req, res, next) => {

@@ -307,7 +307,7 @@ app.post('/',(req, res, next) => {
                 footer : footer            
             })
         }else{     
-            res.cookie('istAngemeldetAls', lehrerKrz)
+            res.cookie('istAngemeldetAls', lehrerKrz.toUpperCase())
             
             let lehrerWahlen = []
             let badges = []            
@@ -319,8 +319,6 @@ app.post('/',(req, res, next) => {
                 let color = "red"
                 let icon = "" //"close"
                 let label = "Bitte " + wahlen[i].name + " wählen!"
-
-                label = wahlen[i].name + " gewählt"
 
                 if(eval('rows[0].' + wahlen[i].dbFeld)){
 
@@ -444,11 +442,12 @@ app.get('/wahl',(req, res, next) => {
         
             renderWahlen(req.query.w, rows)
 
-            let lehrerIndex=0
+            let lehrerIndex = 0
 
-            for(i = 0; i < rows.length; i++){  
-                if(rows[i].lehrerKrz === istAngemeldetAls(req.cookies)){
+            for(i = 0; i < rows.length; i++){                                              
+                if(rows[i].lehrerKrz === istAngemeldetAls(req.cookies)){                    
                     lehrerIndex = i
+                    break
                 }                
             }
 
@@ -456,6 +455,8 @@ app.get('/wahl',(req, res, next) => {
 
             let rechts = '<i class="fa fa-meh-o"></i> nichts gewählt'
             
+            console.log('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)
+
             if(eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)){
                 rechts = eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)
                 badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'nochmal ändern <i class="fa fa-question-circle"></i>'})
@@ -669,7 +670,7 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
     if(save){
         renderSave = '<label style="border-style: solid;border-radius: 5px;" tabindex="0" for="absenden" > <font color="#969694">---</font>  <i class="fa fa-save"> </i> <font color="#969694">---</font> Speichern <font color="#969694">---</font></label>'
     }else{
-        renderSave = '<i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz + "!"
+        renderSave = '<i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz.toUpperCase() + "!"
     }
 
     let renderedBadges = '<div class="double-val-label"><span class="danger">'+ renderBackHome +'</span><span>' + renderSave + '</span></div><p></p>'

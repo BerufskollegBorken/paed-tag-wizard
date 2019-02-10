@@ -26,7 +26,7 @@ wahlen.titel = "Bitte wählen Sie!"
 wahlen.beschreibung = "Speichern nicht vergessen!"
 wahlen.hinweis=''
 
-let beschreibungByod = '<h1>BYOD, Schul.Cloud und Co. – Wie können digitale Medien der SuS in den eigenen Unterricht integriert werden?</h1>\
+const beschreibungByod = '<h1>BYOD, Schul.Cloud und Co. – Wie können digitale Medien der SuS in den eigenen Unterricht integriert werden?</h1>\
 <p><b>Moderator: </b>Thomas Kottenstede</p>\
 <p><b>Beschreibung:</b></p>\
 <p>SuS bereiten ein Referat zuhause vor und wollen dazu den eigenen Laptop in der Schule verwenden. Außerhalb des EDV-Raums soll kurz eine Internet-Recherche durchgeführt werden. Eine Lehrerin oder ein Lehrer möchte gerne mit seinem Handy eine Audio-Datei im Fremdsprachenunterricht abspielen.</p>\
@@ -42,7 +42,7 @@ let beschreibungByod = '<h1>BYOD, Schul.Cloud und Co. – Wie können digitale M
 <p><b>Anmerkung:</b></p>\
 <p>Wer den eigenen Laptop, das Tablet, das Handy etc. bisher noch nicht im Schulnetzwerk betrieben hat und dieses evtl. zukünftig möchte, sollte das Gerät mitbringen. Dann können wir am konkreten Fall auf mögliche Fallstricke hinweisen und Lösungen erarbeiten.</p>'
 
-let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_blank">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
+const beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_blank">Padlet</a> – Digitale Tafeln im Unterricht nutzen</h1>\
 <p><b>Moderator:</b> Stefan Bäumer</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Mit Hilfe einer  digitalen Tafel lässt sich die Beteiligung der Lernenden erhöhen, so kann man:</p>\
@@ -63,7 +63,7 @@ let beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" sty
 <p>Das Tool läuft im Browser (Chrome, Firefox).</p>\
 <p>Hier der Link zum Padlet am Pädagogischen Tag: <a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_blank">Padlet</a></p>'
 
-let beschreibungZumpad = '<h1>ZUMpad und Classroomscreen - digitale Tools als praktische Alternativen zu Collegeblock und Tafel</h1>\
+const beschreibungZumpad = '<h1>ZUMpad und Classroomscreen - digitale Tools als praktische Alternativen zu Collegeblock und Tafel</h1>\
 <p><b>Moderator:</b> Regina Schreiber</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Das<b>ZUMpad</b> ist eine kollaborative Arbeitsfläche, die kostenfrei von der ZUM (Zentrale für Unterrichtsmedien im Internet e.V.) zur Verfügung gestellt wird. Es handelt sich dabei um eine leere Website, auf der sofort - sogar von mehreren Personen/PCs gleichzeitig - über das Internet geschrieben werden kann. Ein ZUMpad hat eine selbstgewählte, einfache Adresse, die sich auch mündlich mitteilen lässt. So kann es von jedem genutzt werden, der diesen Link besitzt. Die Oberfläche speichert den Text automatisch. Der Pad-Inhalt kann jedoch auch in verschiedenen Formaten exportiert werden. Da es sich um ein kooperatives digitales Medium handelt, werden verschiedene Kompetenzen, z.B. die Strukturierung und Visualisierung von Gedanken, der Schüler gefördert.  Die Einsatzmöglichkeiten sind vielfältig: Verfassen von Protokollen, Festhalten von Gruppenarbeitsergebnissen, Kommunikation von Arbeitsergebnissen u.a.</p>\
@@ -87,8 +87,7 @@ let beschreibungZumpad = '<h1>ZUMpad und Classroomscreen - digitale Tools als pr
 <p>ZUMpad und Classroomscreen sind kostenfreie webbasierte Anwendungen, d.h. sie funktionieren ohne Registrierung oder vorherige Anmeldung. Die Tools laufen im Browser (Fierfox, Chrome) und sind sofort startklar.</p>\
 <p>Das Tool läuft im Browser (Chrome, Firefox).</p>'
 
-
-let beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
+const beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
 <p><b>Moderator: </b>Andreas Schraven</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Die kostenlose Web 2.0-Plattform LearningApps.org ermöglicht es, mit wenig Aufwand multimediale Lernbausteine in ansprechender Form online zu erstellen und zu verwalten.</p>\
@@ -103,8 +102,7 @@ let beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
 <p><b>Anmerkung:</b></p>\
 <p>Für die Arbeit im Workshop müsst Ihr Euch vorher nicht registrieren. Das Tool läuft im Browser (Chrome, Firefox).</p>'
 
-
-let beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>\
+const beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>\
 <p><b>Moderator: </b>Michael Hermes (Medienpädagoge - Medienzentrum Kreis Borken)</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Mit EDMOND NRW steht Lehrkräften eine Plattform für online Medien zur Verfügung, die stetig sowohl technisch optimiert als auch inhaltlich ausgebaut wird. Aktuell werden für den Kreis Borken mehrere Tausend Online-Medien bereitgestellt, die für den Unterricht genutzt und auch an SuS weitergegeben werden können. Über die seit 2018 ergänzten Funktionen des HTML 5 -Paketes (H5P) sind neue Bearbeitungsmöglichkeiten sowie die Option eigenes Filmmaterial hochzuladen hinzugekommen.</p>\
@@ -121,7 +119,7 @@ let beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>
 <p>EDMOND NRW ist für alle Lehrkräfte / Bildungseinrichtungen kostenlos, da die Kosten vom Land NRW sowie dem jeweiligen  kommunalen Medienzentrum getragen werden. Für die Nutzung ist eine Registrierung  über <a href="https://nrw.edupool.de/home?standort=BOR"" style="color:red" target="_blank"> nrw.edupool.de </a> erforderlich. </p>\
 <p>Empfehlung: Da Sie sich mit Ihrer E-Mailadresse registrieren und Ihnen im Verlauf des Verfahrens eine Mail mit einem Link zur Bestätigung geschickt wird, sollten Sie bei der Registrierung auch Zugriff auf Ihre E-Mails haben.</p>'
 
-let beschreibungVisualisierung = '<h1>Visualisierung mit digitalen Medien</h1>\
+const beschreibungVisualisierung = '<h1>Visualisierung mit digitalen Medien</h1>\
 <p><b>Moderatorinnen: </b>Theresa Schroer, Annegret Häming</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Visualisierungen von Sachverhalten nehmen im Unterricht eine große Rolle ein. In diesem Workshop bieten wir die Möglichkeit, digitale Medien zur Visualisierung kennen zu lernen und zu erproben. </p>\
@@ -137,7 +135,7 @@ let beschreibungVisualisierung = '<h1>Visualisierung mit digitalen Medien</h1>\
 <p><b>Anmerkung:</b></p>\
 <p>Für die Tools ist es teilweise notwendig, sich während des Workshops zu regierstieren. Für die Teilnahme am Workshop wäre ein internetfähiges Smartphone von Vorteil.</p>'
 
-let beschreibungLernvideos = '<h1>Lernvideos – digital, individuell und vielfältig</h1>\
+const beschreibungLernvideos = '<h1>Lernvideos – digital, individuell und vielfältig</h1>\
 <p><b>Moderatoren: </b>Michael Bauhaus, Dirk Nixdorf</p>\
 <p><b>Beschreibung:</b></p>\
 <p>„Wie oft muss ich das denn noch erklären?“, „Das ging mir jetzt zu schnell!“ oder „Ich war letzte Woche krank, könnten Sie das nochmal wiederholen“. Das sind alles Sätze, die jeder von uns schonmal gehört oder gedacht hat. </p>\
@@ -158,8 +156,6 @@ let beschreibungLernvideos = '<h1>Lernvideos – digital, individuell und vielf�
 <p><b>Anmerkung:</b></p>\
 <p>Für die Arbeit im Workshop solltet ihr eine eigene Idee für den Einsatz eines Lernvideos in bzw. für euren Unterricht mitbringen. Außerdem solltet ihr dazu bereit sein im Rahmen des Workshops zu Übungszwecken ein eigenes Lernvideo zu erstellen. </p>\
 <p>Sinnvoll wäre es zudem, wenn ihr auch grundsätzlich mit dem Gedanken zurechtkommt, dass Videos, die ihr erstellt habt, später im Internet veröffentlicht werden.</p>'
-
-
 
 let optionen = []        
 optionen.titel = "Das Workshop-Angebot für Sie:"
@@ -229,7 +225,7 @@ app.get('/',(req, res, next) => {
         dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "';", (err, rows) => {    
             if (err) return next(err)
             if(rows[0] === undefined){
-                console.log("Cookies werden gelöscht .")
+                console.log("Cookies wird gelöscht .")
                 res.cookie('istAngemeldetAls', '')
                 res.render('anmelden.ejs', {      
                     header : renderHeader(tagesablauf.themaDesTages,"",false, false),
@@ -240,8 +236,6 @@ app.get('/',(req, res, next) => {
             }else{       
                 let badges = []            
                 let lehrerWahlen = []
-
-                //badges.push({type:"danger", links:'Das BKB', rechts:'heißt Sie <i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz + "!"})
                 
                 for(i = 0; i < wahlen.length; i++){ 
                     let rechts = "nichts gewählt"
@@ -259,11 +253,9 @@ app.get('/',(req, res, next) => {
                         
                         label = wahlen[i].name + " gewählt"
 
-                        for(o = 0; o < wahlen[i].optionen.length; o++){      
-                            //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
+                        for(o = 0; o < wahlen[i].optionen.length; o++){                                
                             if(x == (wahlen[i].optionen[o].id)){               
-                                label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                   
-                                //console.log("Treffer" +  label)
+                                label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                                             
                             }
                         }
                     }                    
@@ -279,7 +271,7 @@ app.get('/',(req, res, next) => {
             }        
         })
     }else{
-        console.log("Cookies werden gelöscht ......")
+        console.log("Cookies wird gelöscht ......")
         res.cookie('istAngemeldetAls', '')
         res.render('anmelden.ejs', {      
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
@@ -298,7 +290,7 @@ app.post('/',(req, res, next) => {
         if (err) return next(err)
         
         if(rows[0] === undefined){    
-            console.log("Cookies werden gelöscht ....")
+            console.log("Cookies wird gelöscht ....")
             res.cookie('istAngemeldetAls', '')
             res.render('anmelden.ejs', {      
                 badges : renderBadges([], false, false, lehrerKrz, "",""),                    
@@ -311,8 +303,6 @@ app.post('/',(req, res, next) => {
             
             let lehrerWahlen = []
             let badges = []            
-            
-            //badges.push({type:"danger", links:'<i class="fa fa-heart" aria-hidden="true"></i>', rechts:"Willkommen, " + lehrerKrz + "!"})
             
             for(i = 0; i < wahlen.length; i++){ 
                 let rechts = "nichts gewählt"
@@ -329,11 +319,9 @@ app.post('/',(req, res, next) => {
                     icon="check"       
                     label = wahlen[i].name + " gewählt."               
 
-                    for(o = 0; o < wahlen[i].optionen.length; o++){      
-                        //console.log(x +"= = ="+ wahlen[i].optionen[o].id + "-")
+                    for(o = 0; o < wahlen[i].optionen.length; o++){                           
                         if(x == (wahlen[i].optionen[o].id)){               
-                            label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                   
-                            //console.log("Treffer" +  label)
+                            label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                                               
                         }
                     }
                 }
@@ -360,8 +348,7 @@ app.post('/anmelden',(req, res, next) => {
     })
 })
 
-app.get('/anmelden',(req, res, next) => {       
-    //console.log(req.query.user)
+app.get('/anmelden',(req, res, next) => {     
     res.cookie('istAngemeldetAls', '')
     res.render('anmelden.ejs', {      
         badges : renderBadges([], false, false, "", "Bitte anmelden",""),                
@@ -398,7 +385,6 @@ app.get('/workshops',(req, res, next) => {
         let badges = []            
         
         for(i = 0; i < wahlen[0].optionen.length; i++){         
-            //console.log(wahlen[0].optionen)
             badges.push({type:"primary", links:wahlen[0].optionen[i].label, rechts:wahlen[0].optionen[i].moderator, beschreibung:wahlen[0].optionen[i].beschreibung})
         }      
         
@@ -419,7 +405,7 @@ app.get('/workshops',(req, res, next) => {
 app.get('/about',(req, res, next) => {  
     if(istAngemeldetAls(req.cookies)){
         res.render('about.ejs', {        
-            badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), "",""),    
+            badges : [],
             jahr : (new Date()).getFullYear(),        
             footer : footer
         })

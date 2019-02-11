@@ -243,7 +243,7 @@ app.get('/',(req, res, next) => {
                 
                 for(i = 0; i < wahlen.length; i++){ 
                     let rechts = "nichts gewählt"
-                    let color = "orange"
+                    let color = "red"
                     let icon = "close"
                     let label = "Bitte " + wahlen[i].name + " wählen!"
 

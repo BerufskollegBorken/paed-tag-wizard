@@ -64,7 +64,7 @@ const beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" s
 <p>Das Tool läuft im Browser (Chrome, Firefox).</p>\
 <p>Hier der Link zum Padlet am Pädagogischen Tag: <a href="https://padlet.com/stbaeumer/PaedTag" style="color:red" target="_blank">Padlet</a></p>'
 
-const beschreibungZumpad = '<h1>ZUMpad und Classroomscreen - digitale Tools als praktische Alternativen zu Collegeblock und Tafel</h1>\
+const beschreibungZumpad = '<h1><a href="https://zumpad.zum.de/" style="color:red" target="_blank">ZUMpad</a> und <a href="https://classroomscreen.com/" style="color:red" target="_blank">Classroomscreen</a>  - digitale Tools als praktische Alternativen zu Collegeblock und Tafel</h1>\
 <p><b>Moderator:</b> Regina Schreiber</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Das <b>ZUMpad</b> ist eine kollaborative Arbeitsfläche, die kostenfrei von der ZUM (Zentrale für Unterrichtsmedien im Internet e.V.) zur Verfügung gestellt wird. Es handelt sich dabei um eine leere Website, auf der sofort - sogar von mehreren Personen/PCs gleichzeitig - über das Internet geschrieben werden kann. Ein ZUMpad hat eine selbstgewählte, einfache Adresse, die sich auch mündlich mitteilen lässt. So kann es von jedem genutzt werden, der diesen Link besitzt. Die Oberfläche speichert den Text automatisch. Der Pad-Inhalt kann jedoch auch in verschiedenen Formaten exportiert werden. Da es sich um ein kooperatives digitales Medium handelt, werden verschiedene Kompetenzen, z.B. die Strukturierung und Visualisierung von Gedanken, der Schüler gefördert.  Die Einsatzmöglichkeiten sind vielfältig: Verfassen von Protokollen, Festhalten von Gruppenarbeitsergebnissen, Kommunikation von Arbeitsergebnissen u.a.</p>\
@@ -91,7 +91,7 @@ const beschreibungZumpad = '<h1>ZUMpad und Classroomscreen - digitale Tools als 
 const beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
 <p><b>Moderator: </b>Andreas Schraven</p>\
 <p><b>Beschreibung:</b></p>\
-<p>Die kostenlose Web 2.0-Plattform LearningApps.org ermöglicht es, mit wenig Aufwand multimediale Lernbausteine in ansprechender Form online zu erstellen und zu verwalten.</p>\
+<p>Die kostenlose Web 2.0-Plattform <a href="https://learningapps.org/" style="color:red" target="_blank">LearningApps.org</a> ermöglicht es, mit wenig Aufwand multimediale Lernbausteine in ansprechender Form online zu erstellen und zu verwalten.</p>\
 <p>LearningApps.org unterstützt mit seinen verschiedenen Aufgabentypen (Kreuzworträtsel, QuizAufgaben, Memory-Spiele, Hör-, Seh-, Schreib- und Zuordnungsübungen etc.) sowohl selbständiges als auch kooperatives Üben, Lernen und Erstellen.</p>\
 <p>Im Workshop werden wir:</p>\
 <ul>\

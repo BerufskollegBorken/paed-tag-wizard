@@ -2,44 +2,44 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <title>Pädagogischer Tag 2019</title>  
-        <link rel="stylesheet" href="styles.css">  
+        <title>Pädagogischer Tag 2019</title>
+        <link rel="stylesheet" href="styles.css">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta name="msapplication-TileColor" content="#da532c">        
-        <meta name="theme-color" content="#ffffff">              
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
     </head>
-    <body>           
-        <main>  
-                <table style="border: 10px solid transparent">
-                        <tr>
-                            <td>
-                                <p>Pädagogischer Tag am 5.3.2019</p>
-                                <p>Einsatz digitaler Medien im Unterricht</p>
-                            </td>
-                            <td width="40%">
-                                <img style="width:100%;" src="BKB_Logo_kurz.png">
-                            </td>
-                        </tr>                
-                    </table>  
-            <div class="content">                                                
+    <body>
+        <main>
+            <table style="border: 10px solid transparent">
+                <tr>
+                    <td>
+                        <p>Pädagogischer Tag am 5.3.2019</p>
+                        <p>Einsatz digitaler Medien im Unterricht</p>
+                    </td>
+                    <td width="40%">
+                        <img style="width:100%;" src="BKB_Logo_kurz.png">
+                    </td>
+                </tr>
+            </table>
+            <div class="content">
                 <%- badges %>
                 <form method="POST" action="/wahl?w=<%= index %>">
                     <input type="hidden" id="index" name="index" value="<%= index %>">
                     <span class="chb">
-                        <% for(var i=0; i < wahl.optionen.length; i++) {%>                                    
+                        <% for(var i=0; i < wahl.optionen.length; i++) {%>
                             <input type="radio" id="<%=wahl.optionen[i].id%>" name="element" value="<%=wahl.optionen[i].id%>">
-                            <label for="<%=wahl.optionen[i].id%>"><%=wahl.optionen[i].label%> <%= wahl.optionen[i].ausgebucht%></label><br>        
+                            <label for="<%=wahl.optionen[i].id%>"><%=wahl.optionen[i].label%><%= wahl.optionen[i].ausgebucht%></label><br>
                         <% } %>
                     </span>
-                    <br>                
+                    <br>
                     <button style="display:none;" id="absenden" type="hidden" ></button>
-                </form>                                    
-            </div>      
-        </main>          
+                </form>
+            </div>
+        </main>
         <%- footer %>
     </body>
 </html>

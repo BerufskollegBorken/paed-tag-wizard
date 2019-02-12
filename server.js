@@ -31,13 +31,13 @@ const beschreibungByod = '<h1>BYOD, Schul.Cloud und Co. – Wie können digitale
 <p><b>Moderator: </b>Thomas Kottenstede</p>\
 <p><b>Beschreibung:</b></p>\
 <p>SuS bereiten ein Referat zuhause vor und wollen dazu den eigenen Laptop in der Schule verwenden. Außerhalb des EDV-Raums soll kurz eine Internet-Recherche durchgeführt werden. Eine Lehrerin oder ein Lehrer möchte gerne mit seinem Handy eine Audio-Datei im Fremdsprachenunterricht abspielen.</p>\
-<p>Das sind nur einige Beispiele für Anforderungen, die in einem zunehmend digitalisierten Unterricht auf zu zukommen. In diesem Workshop soll solche Fragen aufgegriffen, Lösungen aufgezeigt und praktisch ausprobiert werden.</p>\
+<p>Das sind nur einige Beispiele für Anforderungen, die in einem zunehmend digitalisierten Unterricht auf uns zukommen. In diesem Workshop sollen solche Fragen aufgegriffen, Lösungen aufgezeigt und praktisch ausprobiert werden.</p>\
 <p>Im Workshop werden wir:</p>\
 <ul>\
 <li>alle Schritte kennenlernen, die notwendig sind, um ein Lehrer- oder Schülerlaptop/Handy/Tablet… in das WLAN der Schule zu integrieren,</li>\
 <li>die neuen Lautsprecherboxen für die Klassenräume mit ihren Bluetooth-Möglichkeiten ausprobieren,</li>\
-<li>einen ersten Blick auf digitalen Tafeln (Smart-Boards) werfen. (zwei solche Geräte sollen Ende Februar angeliefert und danach am BKB installiert werden, um zu testen, ob diese einen Vorteil im Unterricht bieten)</li>\
-<li>einen einfachen Weg kennenlernen, um als LuL von zuhause auf die eigenen Daten in der Schule zugreifen zu können. (Was ich am Abend vorher in die Schule hochgeladen habe, kann ich am nächsten Morgen nicht auf dem Schreibtisch vergessen.)</li>\
+<li>einen ersten Blick auf digitale Tafeln (Smart-Boards) werfen, (zwei solche Geräte sollen Ende Februar angeliefert und danach am BKB installiert werden, um zu testen, ob diese einen Vorteil im Unterricht bieten),</li>\
+<li>einen einfachen Weg kennenlernen, um als LuL von zuhause auf die eigenen Daten in der Schule zugreifen zu können. (Was ich am Abend vorher in die Schule hochgeladen habe, kann ich am nächsten Morgen nicht auf dem Schreibtisch vergessen.),</li>\
 <li>bei Bedarf werden wir natürlich auch den konkreten Umgang mit den Dokumentenkameras, der päd. Oberfläche in den EDV-Räumen, dem Webweaver, etc. vertiefend üben.</li>\
 </ul></p>\
 <p><b>Anmerkung:</b></p>\
@@ -48,9 +48,9 @@ const beschreibungPadlet = '<h1><a href="https://padlet.com/stbaeumer/PaedTag" s
 <p><b>Beschreibung:</b></p>\
 <p>Mit Hilfe einer  digitalen Tafel lässt sich die Beteiligung der Lernenden erhöhen, so kann man:</p>\
 <ul>\
-<li>Padlet für das kollaborative Sammeln von Ideen und Beiträgen nutzen,</li> \
+<li>Padlet für das kollaborative Sammeln von Ideen und Beiträgen nutzen</li> \
 <li>Informationen strukturiert sammeln </li>\
-<li>Feedbackmöglichkeiten: Beiträge können auch kommentiert und bewertet werden.</li> \
+<li>Feedbackmöglichkeiten: Beiträge können auch kommentiert und bewertet werden</li> \
 <li>Ressourcen zur Verfügung stellen („das papierlose Stationenlernen“)</li>\
 <p></ul>\
 <p>Hierzu können folgende Funktionen des Tools Padlet kennengelernt und ausprobiert werden:</p>\
@@ -101,7 +101,7 @@ const beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
 <li>uns mit der Administration als Lehrer beschäftigen.</li>\
 </ul></p>\
 <p><b>Anmerkung:</b></p>\
-<p>Für die Arbeit im Workshop müsst Ihr Euch vorher nicht registrieren. Das Tool läuft im Browser (Chrome, Firefox).</p>'
+<p>Für die Arbeit im Workshop müsst ihr euch vorher nicht registrieren. Das Tool läuft im Browser (Chrome, Firefox).</p>'
 
 const beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>\
 <p><b>Moderator: </b>Michael Hermes (Medienpädagoge - Medienzentrum Kreis Borken)</p>\
@@ -115,7 +115,7 @@ const beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h
 <li>Medien an SuS weitergeben (EDU-IDs)</li>\
 <li>Medienablagen für die Schule  - Lösungsmodelle</li>\
 <li>Erstes Kennenlernen von H5P</li>\
-</ul></p>\
+</ul>\
 <p><b>Anmerkung:</b></p>\
 <p>EDMOND NRW ist für alle Lehrkräfte / Bildungseinrichtungen kostenlos, da die Kosten vom Land NRW sowie dem jeweiligen  kommunalen Medienzentrum getragen werden. Für die Nutzung ist eine Registrierung  über <a href="https://nrw.edupool.de/home?standort=BOR"" style="color:red" target="_blank"> nrw.edupool.de </a> erforderlich. </p>\
 <p>Empfehlung: Da Sie sich mit Ihrer E-Mailadresse registrieren und Ihnen im Verlauf des Verfahrens eine Mail mit einem Link zur Bestätigung geschickt wird, sollten Sie bei der Registrierung auch Zugriff auf Ihre E-Mails haben.</p>'
@@ -132,15 +132,15 @@ const beschreibungVisualisierung = '<h1>Visualisierung mit digitalen Medien</h1>
 <li>Projekte geplant,</li>\
 <li>Lernstoffe aufbereitet und</li>\
 <li>Ideen gesammelt werden.</li>\
-</ul></p>\
+</ul>\
 <p><b>Anmerkung:</b></p>\
-<p>Für die Tools ist es teilweise notwendig, sich während des Workshops zu regierstieren. Für die Teilnahme am Workshop wäre ein internetfähiges Smartphone von Vorteil.</p>'
+<p>Für die Tools ist es teilweise notwendig, sich während des Workshops zu registrieren. Für die Teilnahme am Workshop wäre ein internetfähiges Smartphone von Vorteil.</p>'
 
 const beschreibungLernvideos = '<h1>Lernvideos – digital, individuell und vielfältig</h1>\
 <p><b>Moderatoren: </b>Michael Bauhaus, Dirk Nixdorf</p>\
 <p><b>Beschreibung:</b></p>\
 <p>„Wie oft muss ich das denn noch erklären?“, „Das ging mir jetzt zu schnell!“ oder „Ich war letzte Woche krank, könnten Sie das nochmal wiederholen“. Das sind alles Sätze, die jeder von uns schonmal gehört oder gedacht hat. </p>\
-<p>Eine Möglichkeit seinen Unterricht schrittweise zur individualisieren ist der Einsatz von selbst erstellten Lernvideos, die passgenau auf den eigenen Unterricht zugeschnitten sind. Mit diesen Lernvideos ermöglicht ihr euren Schülern zentrale Unterrichtsinhalte in komprimierter Form zu wiederholen, nachzulernen oder völlig neue Unterrichtsinhalte zeitlich flexibel einzuführen.</p>\
+<p>Eine Möglichkeit seinen Unterricht schrittweise zu individualisieren ist der Einsatz von selbst erstellten Lernvideos, die passgenau auf den eigenen Unterricht zugeschnitten sind. Mit diesen Lernvideos ermöglicht ihr euren Schülern zentrale Unterrichtsinhalte in komprimierter Form zu wiederholen, nachzulernen oder völlig neue Unterrichtsinhalte zeitlich flexibel einzuführen.</p>\
 <p>Lernvideos können ein echtes Werkzeug sein, um im Unterrichtsalltag:</p>\
 <ul>\
 <li>den Umgang mit heterogenen Lerngruppen einfacher zu organisieren,</li>\

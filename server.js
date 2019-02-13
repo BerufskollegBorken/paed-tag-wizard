@@ -662,6 +662,10 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
     if(save){
         renderSave = '<label style="border-style: solid;border-radius: 5px;" tabindex="0" for="absenden" > <font color="#969694">---</font>  <i class="fa fa-save"> </i> <font color="#969694">---</font> Speichern <font color="#969694">---</font></label>'
     }else{
+        if(!lehrerKrz)
+        {
+            lehrerKrz = ""
+        }
         renderSave = '<i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz.toUpperCase() + "!"
     }
 

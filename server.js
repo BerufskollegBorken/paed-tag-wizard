@@ -103,7 +103,7 @@ const beschreibungApps = '<h1>LearningApps – Gimmick oder mehr?</h1>\
 <p><b>Anmerkung:</b></p>\
 <p>Für die Arbeit im Workshop müsst ihr euch vorher nicht registrieren. Das Tool läuft im Browser (Chrome, Firefox).</p>'
 
-const beschreibungEgmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>\
+const beschreibungEdmond = '<h1>EDMOND NRW – Medien für Schule und Bildung</h1>\
 <p><b>Moderator: </b>Michael Hermes (Medienpädagoge - Medienzentrum Kreis Borken)</p>\
 <p><b>Beschreibung:</b></p>\
 <p>Mit EDMOND NRW steht Lehrkräften eine Plattform für online Medien zur Verfügung, die stetig sowohl technisch optimiert als auch inhaltlich ausgebaut wird. Aktuell werden für den Kreis Borken mehrere Tausend Online-Medien bereitgestellt, die für den Unterricht genutzt und auch an SuS weitergegeben werden können. Über die seit 2018 ergänzten Funktionen des HTML 5 -Paketes (H5P) sind neue Bearbeitungsmöglichkeiten sowie die Option eigenes Filmmaterial hochzuladen hinzugekommen.</p>\
@@ -163,7 +163,7 @@ optionen.titel = "Das Workshop-Angebot für Sie:"
 optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
 optionen.push({id:"Laptops", name:"Workshop", label:"BYOD, Schul.Cloud und Co.", beschreibung:beschreibungByod, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Egmond",name:"Workshop", label:"Egmond", beschreibung:beschreibungEgmond, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Edmond",name:"Workshop", label:"Edmond", beschreibung:beschreibungEdmond, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:beschreibungApps, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Visualisierung",name:"Workshop", label:"Visualisierung mit digitalen Medien", beschreibung:beschreibungVisualisierung, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
 optionen.push({id:"Zumpad",name:"Workshop", label:"ZUMpad und Classroomscreen", beschreibung:beschreibungZumpad, moderator: "", raum:"N.N.", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})

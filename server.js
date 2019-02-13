@@ -363,7 +363,8 @@ app.get('/anmelden',(req, res, next) => {
 })
 
 app.get('/tagesablauf',(req, res, next) => {     
-    if(istAngemeldetAls(req.cookies)){
+    //if(istAngemeldetAls(req.cookies)){
+        if(true){
         let badges = []            
         
         for(i = 0; i < tagesablauf.length; i++){         
@@ -384,8 +385,9 @@ app.get('/tagesablauf',(req, res, next) => {
     }   
 })
 
-app.get('/workshops',(req, res, next) => {      
-    if(istAngemeldetAls(req.cookies)){
+app.get('/workshops',(req, res, next) => {     
+    //if(istAngemeldetAls(req.cookies)){ 
+    if(true){
         let badges = []            
         
         for(i = 0; i < wahlen[0].optionen.length; i++){         

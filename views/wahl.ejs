@@ -31,7 +31,7 @@
                     <input type="hidden" id="index" name="index" value="<%= index %>">
                     <span class="chb">
                         <% for(var i=0; i < wahl.optionen.length; i++) {%>
-                            <input type="radio" id="<%=wahl.optionen[i].id%>" name="element" value="<%=wahl.optionen[i].id%>">
+                            <input type="radio" id="<%=wahl.optionen[i].id%>" name="element" value="<%=wahl.optionen[i].id%>" <%=wahl.optionen[i].disabled%>>
                             <label for="<%=wahl.optionen[i].id%>"><%=wahl.optionen[i].label%><%= wahl.optionen[i].ausgebucht%></label><br>
                         <% } %>
                     </span>

@@ -162,32 +162,32 @@ const beschreibungLernvideos = '<h1>Lernvideos – digital, individuell und viel
 let optionen = []        
 optionen.titel = "Das Workshop-Angebot für Sie:"
 optionen.beschreibung = "Informieren Sie sich hier über die verschiedenen Angebote. Welche beiden Themen wecken Ihr Interesse?"
-optionen.push({id:"Laptops", name:"Workshop", label:"BYOD, Schul.Cloud und Co.", beschreibung:beschreibungByod, moderator: "", raum:"4008", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Edmond",name:"Workshop", label:"Edmond", beschreibung:beschreibungEdmond, moderator: "", raum:"4003", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:beschreibungApps, moderator: "", raum:"4011", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Visualisierung",name:"Workshop", label:"Visualisierung mit digitalen Medien", beschreibung:beschreibungVisualisierung, moderator: "", raum:"4010", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Zumpad",name:"Workshop", label:"ZUMpad und Classroomscreen", beschreibung:beschreibungZumpad, moderator: "", raum:"4002", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Lernvideos",name:"Workshop", label:"Lernvideos", beschreibung:beschreibungLernvideos, moderator: "", raum:"4009", kapazitaet:25, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Laptops", name:"Workshop", label:"BYOD, Schul.Cloud und Co.", beschreibung:beschreibungByod, moderator: "", raum:"4008", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Padlet", name:"Workshop", label:"Padlet", beschreibung:beschreibungPadlet, moderator: "", raum:"4007", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Edmond",name:"Workshop", label:"Edmond", beschreibung:beschreibungEdmond, moderator: "", raum:"4003", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:beschreibungApps, moderator: "", raum:"4011", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Visualisierung",name:"Workshop", label:"Visualisierung mit digitalen Medien", beschreibung:beschreibungVisualisierung, moderator: "", raum:"4010", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Zumpad",name:"Workshop", label:"ZUMpad und Classroomscreen", beschreibung:beschreibungZumpad, moderator: "", raum:"4002", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Lernvideos",name:"Workshop", label:"Lernvideos", beschreibung:beschreibungLernvideos, moderator: "", raum:"4009", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 
 wahlen.push(new Wahl("Workshop 1", "09:15","10:45", "", optionen, "workshop1")) 
 wahlen.push(new Wahl("Workshop 2", "11:00","12:30", "", optionen, "workshop2")) 
 
 optionen = []
-optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch", moderator:"Reinhild Conrad", raum:"3007", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch, Spanisch", moderator:"Eva Finke", raum:"3002", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Englisch",name:"Workshop", label:"Englisch", moderator:"Kerstin Schneider", raum:"4002", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Mathematik",name:"Workshop", label:"Mathematik", moderator:"", raum:"4010", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch", moderator:"Reinhild Conrad", raum:"3007", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch, Spanisch", moderator:"Eva Finke", raum:"3002", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Englisch",name:"Workshop", label:"Englisch", moderator:"Kerstin Schneider", raum:"4002", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Mathematik",name:"Workshop", label:"Mathematik", moderator:"", raum:"4010", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Religion",name:"Workshop", label:"Religion", moderator:"Theresa Schroer", raum:"2003", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Sport",name:"Workshop", label:"Sport", moderator:"Jonas Harlacher", raum:"4006", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Politik / GG",name:"Workshop", label:"Politik / GG", moderator:"Raluca Frincu", raum:"4003", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Grüner Bereich",name:"Workshop", label:"Grüner Bereich", moderator:"Uwe Sobbe", raum:"4007", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Naturwissenschaften",name:"Workshop", label:"Naturwissenschaften", moderator:"Eva Hansen", raum:"4002", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"WirtschaftA",name:"Workshop", label:"Wirtschaft (Anlage A)", moderator:"Andreas Schraven", raum:"4009", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Soziales",name:"Workshop", label:"Soziales", moderator:"NN", raum:"3005", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Wirtschaft",name:"Workshop", label:"Wirtschaft", moderator:"", raum:"4011", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Technik",name:"Workshop", label:"Technik", moderator:"KS", raum:"4008", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Weitere",name:"Workshop", label:"Weitere Fächer", moderator:"Steuergruppe", raum:"Forum", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Sport",name:"Workshop", label:"Sport", moderator:"Jonas Harlacher", raum:"4006", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Politik / GG",name:"Workshop", label:"Politik / GG", moderator:"Raluca Frincu", raum:"4003", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Grüner Bereich",name:"Workshop", label:"Grüner Bereich", moderator:"Uwe Sobbe", raum:"4007", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Naturwissenschaften",name:"Workshop", label:"Naturwissenschaften", moderator:"Eva Hansen", raum:"4002", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"WirtschaftA",name:"Workshop", label:"Wirtschaft (Anlage A)", moderator:"Andreas Schraven", raum:"4009", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Soziales",name:"Workshop", label:"Soziales", moderator:"NN", raum:"3005", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Wirtschaft",name:"Workshop", label:"Wirtschaft", moderator:"", raum:"4011", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Technik",name:"Workshop", label:"Technik", moderator:"KS", raum:"4008", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Weitere",name:"Workshop", label:"Weitere Fächer", moderator:"Steuergruppe", raum:"Forum", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 
 wahlen.push(new Wahl("Anwendungsphase", "13:30","14:30", "Jede Kollegin und jeder Kollegen soll sich zu einem seiner Fächer bzw. zu seinem Bereich zuordnen, um dann gemeinsam Überlegungen zu entwickeln und Schritte zu planen, wie die gewonnenen Erkenntnisse im Unterricht, in bestimmten Klassen, zu bestimmten Themen etc. sinnvoll eingesetzt werden können.", optionen, "anwendungsphase")) 
 
@@ -741,8 +741,10 @@ function renderWahlen(w, rows){
                     if(wahlen[w].optionen[i].kapazitaet){
                         wahlen[w].optionen[i].ausgebucht = " (belegt: " + (wahlen[w].optionen[i].anzahl) + "/" + wahlen[w].optionen[i].kapazitaet + ")"
                     }                            
+                    wahlen[w].optionen[i].disabled = "" 
                 }else{
                     wahlen[w].optionen[i].ausgebucht = " (ausgebucht)" 
+                    wahlen[w].optionen[i].disabled = "disabled" 
                 }
             }
         }

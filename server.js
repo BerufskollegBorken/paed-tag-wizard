@@ -168,7 +168,7 @@ optionen.push({id:"Edmond",name:"Workshop", label:"Edmond", beschreibung:beschre
 optionen.push({id:"LearningApps",name:"Workshop", label:"Learning Apps", beschreibung:beschreibungApps, moderator: "", raum:"4011", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Visualisierung",name:"Workshop", label:"Visualisierung mit digitalen Medien", beschreibung:beschreibungVisualisierung, moderator: "", raum:"4010", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Zumpad",name:"Workshop", label:"ZUMpad und Classroomscreen", beschreibung:beschreibungZumpad, moderator: "", raum:"4002", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Lernvideos",name:"Workshop", label:"Lernvideos", beschreibung:beschreibungLernvideos, moderator: "", raum:"4009", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Lernvideos",name:"Workshop", label:"Lernvideos", beschreibung:beschreibungLernvideos, moderator: "", raum:"3205", kapazitaet:25, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 
 wahlen.push(new Wahl("Workshop 1", "09:15","10:45", "", optionen, "workshop1")) 
 wahlen.push(new Wahl("Workshop 2", "11:00","12:30", "", optionen, "workshop2")) 

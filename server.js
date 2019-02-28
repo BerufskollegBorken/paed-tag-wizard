@@ -179,7 +179,7 @@ optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch, Sp
 optionen.push({id:"Englisch",name:"Workshop", label:"Englisch", moderator:"Kerstin Schneider", raum:"4002", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Mathematik",name:"Workshop", label:"Mathematik", moderator:"", raum:"4010", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Religion",name:"Workshop", label:"Religion", moderator:"Theresa Schroer", raum:"2003", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Sport",name:"Workshop", label:"Sport", moderator:"Jonas Harlacher", raum:"4006", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Sport",name:"Workshop", label:"Sport", moderator:"Jonas Harlacher", raum:"3005", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Politik / GG",name:"Workshop", label:"Politik / GG", moderator:"Raluca Frincu", raum:"4003", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Grüner Bereich",name:"Workshop", label:"Grüner Bereich", moderator:"Uwe Sobbe", raum:"4007", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Naturwissenschaften",name:"Workshop", label:"Naturwissenschaften", moderator:"Eva Hansen", raum:"4002", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})

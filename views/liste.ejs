@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">        
+        <link rel="stylesheet" href="styles.css">          
+    </head>
+    <body>   
+        <main>  
+                <table style="border: 10px solid transparent">
+                        <tr>
+                            <td>
+                                <p>Pädagogischer Tag am 5.3.2019</p>
+                                <p>Einsatz digitaler Medien im Unterricht</p>
+                            </td>
+                            <td width="40%">
+                                <img style="width:100%;" src="BKB_Logo_kurz.png">
+                            </td>
+                        </tr>                
+                    </table>
+            <div class="content">                                             
+                <%- badges %>   
+                <div style="overflow-x:auto;">
+                    <table border="1">
+                        <tr>
+                            <th></th><th><%= liste[0].ab1 %></th><th><%= liste[0].ab2 %></th><th><%= liste[0].ab3 %></th>
+                        </tr>
+                    
+                        <% for(var i=0; i<liste.length; i++) {%>
+                        <tr>      
+                            <td><%= liste[i].lehrerKrz %></td>                        
+                            <td><%= liste[i].raum1 %> <%= liste[i].thema1 %></td>              
+                            <td><%= liste[i].raum2 %> <%= liste[i].thema2 %></td>              
+                            <td><%= liste[i].raum3 %> <%= liste[i].thema3 %></td>                        
+                        </tr>
+                        <% } %>  
+                    </table>
+                </div>
+            </div>
+        </main>
+        <%- footer %>
+    </body>
+</html>

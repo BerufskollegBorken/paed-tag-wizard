@@ -14,14 +14,14 @@ let tagesablauf = []
 tagesablauf.themaDesTages = "Pädagogischer Tag 2019"
 tagesablauf.titel = "Tagesablauf"
 tagesablauf.beschreibung = "Am 5.3.2019 steht unser gemeinsamer, erster Pädagogischer Tag 2019 an. Jede Kollegin und jeder Kollege ist herzlich engeladen, an zwei Workshops und der Anwendungsphase teilzunehmen. Bitte wählen Sie auf dieser Webseite aus dem interessanten Angebot."
-tagesablauf.push({von:"08:30", bis:"08:40", thema:'<i class="fa fa-fire"></i> Begrüßung im FORUM', beschreibung: "Annette Sühling"})
-tagesablauf.push({von:"08:40", bis:"09:10", thema:'<i class="fa fa-fire"></i> Intro im FORUM', beschreibung: "Gerti Kohlruss"})
-tagesablauf.push({von:"09:15", bis:"10:45", thema:'<i class="fa fa-caret-square-o-right"></i> 1. Workshop', beschreibung: "Treffen Sie Ihre Wahl!"})
-tagesablauf.push({von:"11:00", bis:"12:30", thema:'<i class="fa fa-caret-square-o-right"></i> 2. Workshop', beschreibung: "Treffen Sie Ihre Wahl!"})
-tagesablauf.push({von:"12:30", bis:"13:15", thema:'<i class="fa fa-cutlery"></i> Mittagspause', beschreibung: 'Guten Appetit!'})
-tagesablauf.push({von:"13:15", bis:"13:30", thema:'<i class="fa fa-group"></i> Fototermin in der Sporthalle', beschreibung: 'Das  Foto des Kollegiums soll im kommenden Jahrbuch erscheinen.'})
-tagesablauf.push({von:"13:30", bis:"14:30", thema:'<i class="fa fa-caret-square-o-up"></i> Anwendungsphase', beschreibung: "Wie bringen wir die digitalen Impulse sinnvoll in unseren Unterricht? <br> Wählen Sie eine Fachgruppe!"})
-tagesablauf.push({von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> Plenum', beschreibung: 'Wir wollen per <a href="https://www.menti.com/" style="color:red" target="_blank">Mentimeter</a> evaluieren.'})
+tagesablauf.push({id:"",von:"08:30", bis:"08:40", thema:'<i class="fa fa-fire"></i> Begrüßung im FORUM', beschreibung: "Annette Sühling"})
+tagesablauf.push({id:"",von:"08:40", bis:"09:10", thema:'<i class="fa fa-fire"></i> Intro im FORUM', beschreibung: "Gerti Kohlruss"})
+tagesablauf.push({id:"workshop1",von:"09:15", bis:"10:45", thema:'<i class="fa fa-caret-square-o-right"></i> 1. Workshop', beschreibung: "Treffen Sie Ihre Wahl!"})
+tagesablauf.push({id:"workshop2",von:"11:00", bis:"12:30", thema:'<i class="fa fa-caret-square-o-right"></i> 2. Workshop', beschreibung: "Treffen Sie Ihre Wahl!"})
+tagesablauf.push({id:"",von:"12:30", bis:"13:15", thema:'<i class="fa fa-cutlery"></i> Mittagspause', beschreibung: 'Guten Appetit!'})
+tagesablauf.push({id:"",von:"13:15", bis:"13:30", thema:'<i class="fa fa-group"></i> Fototermin in der Sporthalle', beschreibung: 'Das  Foto des Kollegiums soll im kommenden Jahrbuch erscheinen.'})
+tagesablauf.push({id:"anwendungsphase",von:"13:30", bis:"14:30", thema:'<i class="fa fa-caret-square-o-up"></i> Anwendungsphase', beschreibung: "Wie bringen wir die digitalen Impulse sinnvoll in unseren Unterricht? <br> Wählen Sie eine Fachgruppe!"})
+tagesablauf.push({id:"",von:"14:45", bis:"15:00", thema:'<i class="fa fa-group"></i> Plenum', beschreibung: 'Wir wollen per <a href="https://www.menti.com/" style="color:red" target="_blank">Mentimeter</a> evaluieren.'})
 
 let wahlen = []
 wahlen.titel = "Bitte wählen Sie!"
@@ -363,27 +363,119 @@ app.get('/anmelden',(req, res, next) => {
     })
 })
 
+app.get('/liste',(req, res, next) => {     
+
+    let lehrerKrz = req.body.lehrerKrz
+    
+    liste = []
+
+    dbVerbindung.query("SELECT * from lehrer WHERE workshop1 <> '';", (err, rows) => { 
+        
+        for(i = 0; i < rows.length; i++){         
+
+            w1 = ""
+            w2 = ""
+            a = ""
+
+            for(z = 0; z < wahlen[0].optionen.length; z++){        
+                if(wahlen[0].optionen[z].id === rows[i].workshop1){                    
+                    w1 = wahlen[0].optionen[z].raum
+                }                
+            }
+            for(z = 0; z < wahlen[1].optionen.length; z++){                         
+                if(wahlen[1].optionen[z].id === rows[i].workshop2){
+                    w2 = wahlen[1].optionen[z].raum
+                }                
+            }
+
+            for(z = 0; z < wahlen[2].optionen.length; z++){                         
+                if(wahlen[2].optionen[z].id === rows[i].anwendungsphase){
+                    a = wahlen[2].optionen[z].raum
+                }                
+            }
+
+            liste.push({lehrerKrz:rows[i].lehrerKrz, ab1: wahlen[0].von, thema1:rows[i].workshop1, raum1:w1, ab2: wahlen[1].von, thema2:rows[i].workshop2, raum2:w2, ab3: wahlen[2].von, thema3:rows[i].anwendungsphase, raum3: a})
+        }
+
+        res.render('liste.ejs', {                  
+            liste: liste,
+            lehrerKrz : req.query.lehrerKrz,            
+            footer : footer,
+            badges : renderBadges([], true, false, istAngemeldetAls(req.cookies), "Gesamtübersicht",""),                         
+        })
+    })
+})
+
+
+
 app.get('/tagesablauf',(req, res, next) => {     
-    //if(istAngemeldetAls(req.cookies)){
-        if(true){
+    
+    let lehrerKrz = istAngemeldetAls(req.cookies)
+
+    dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "';", (err, rows) => { 
+        
+        w1raum = ""
+        w2raum = ""
+        araum = ""
+        w1thema = ""
+        w2thema = ""
+        athema = ""
+
+        for(i = 0; i < rows.length; i++){         
+
+            for(z = 0; z < wahlen[0].optionen.length; z++){        
+                if(wahlen[0].optionen[z].id === rows[i].workshop1){                    
+                    w1raum = wahlen[0].optionen[z].raum
+                    w1thema = rows[i].workshop1
+                }                
+            }
+            for(z = 0; z < wahlen[1].optionen.length; z++){                         
+                if(wahlen[1].optionen[z].id === rows[i].workshop2){
+                    w2raum = wahlen[1].optionen[z].raum
+                    w2thema = rows[i].workshop2
+                }                
+            }
+
+            for(z = 0; z < wahlen[2].optionen.length; z++){                         
+                if(wahlen[2].optionen[z].id === rows[i].anwendungsphase){
+                    araum = wahlen[2].optionen[z].raum
+                    athema = rows[i].anwendungsphase                    
+                }                
+            }
+        }
+
         let badges = []            
         
-        for(i = 0; i < tagesablauf.length; i++){         
-            badges.push({type:"info", links:tagesablauf[i].von + " - " + tagesablauf[i].bis, rechts:tagesablauf[i].thema, beschreibung:tagesablauf[i].beschreibung})
+        for(i = 0; i < tagesablauf.length; i++){     
+
+            let thema = tagesablauf[i].thema
+            let beschreibung = tagesablauf[i].beschreibung
+            
+            if(tagesablauf[i].id === "workshop1"){                
+                if(w1thema != ""){
+                    beschreibung = "Ihre Wahl: " + w1thema + " in Raum " + w1raum
+                }
+            }
+            if(tagesablauf[i].id === "workshop2"){
+                if(w2thema != ""){
+                    beschreibung = "Ihre Wahl: " + w2thema + " in Raum " + w2raum
+                }
+            }
+
+            if(tagesablauf[i].id === "anwendungsphase"){             
+                if(athema != ""){
+                    beschreibung = "Ihre Wahl: " + athema + " in Raum " + araum
+                }
+            }
+
+            badges.push({type:"info", links:tagesablauf[i].von + " - " + tagesablauf[i].bis, rechts:thema, beschreibung:beschreibung})
         }      
 
         res.render('tagesablauf.ejs', {       
             badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), "Tagesablauf",""),             
             footer: footer
         })
-    }else{
-        res.render('anmelden.ejs', {       
-            badges : renderBadges(badges, false, false, "", "Bitte anmelden!",""),                    
-            lehrerKrz : req.query.lehrerKrz,
-            pin : req.query.pin,
-            footer : footer   
-        })
-    }   
+    })
 })
 
 app.get('/workshops',(req, res, next) => {     

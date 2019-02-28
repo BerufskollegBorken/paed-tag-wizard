@@ -783,7 +783,12 @@ function renderBadges(badges, backHome, save, lehrerKrz, h1, paragraph){
         {
             lehrerKrz = ""
         }
-        renderSave = '<i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz.toUpperCase() + "!"
+
+        if(lehrerKrz.toUpperCase().length > 0){
+            renderSave = '<i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen, ' + lehrerKrz.toUpperCase() + "!"
+        } else{
+            renderSave = '<i class="fa fa-heart" aria-hidden="true"></i>-lich Willkommen!'
+        }        
     }
 
     let renderedBadges = '<div class="double-val-label"><span class="danger">'+ renderBackHome +'</span><span>' + renderSave + '</span></div><p></p>'

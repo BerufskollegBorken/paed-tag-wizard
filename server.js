@@ -437,7 +437,7 @@ app.get('/tagesablauf',(req, res, next) => {
             for(z = 0; z < wahlen[2].optionen.length; z++){                         
                 if(wahlen[2].optionen[z].id === rows[i].anwendungsphase){
                     araum = wahlen[2].optionen[z].raum
-                    abeschreibung = "Ihr Wahl: " + rows[i].anwendungsphase + " in Raum " + araum +  "</br>Für die Anwendungsphase klicken Sie <a style='color:red' href='" + wahlen[2].optionen[z].urlPadlet + "' target='_blank'>diesen Link zum Padlet</a>."
+                    abeschreibung = "Ihre Wahl: " + rows[i].anwendungsphase + " in Raum " + araum +  "</br>Für die Anwendungsphase klicken Sie <a style='color:red' href='" + wahlen[2].optionen[z].urlPadlet + "' target='_blank'>diesen Link zum Padlet</a>."
                 }                
             }
         }

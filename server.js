@@ -365,8 +365,6 @@ app.get('/anmelden',(req, res, next) => {
 
 app.get('/liste',(req, res, next) => {     
 
-    let lehrerKrz = req.body.lehrerKrz
-    
     liste = []
 
     dbVerbindung.query("SELECT * from lehrer WHERE workshop1 <> '';", (err, rows) => { 

@@ -174,20 +174,20 @@ wahlen.push(new Wahl("Workshop 1", "09:15","10:45", "", optionen, "workshop1"))
 wahlen.push(new Wahl("Workshop 2", "11:00","12:30", "", optionen, "workshop2")) 
 
 optionen = []
-optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch", moderator:"Reinhild Conrad", raum:"3007", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch, Spanisch", moderator:"Eva Finke", raum:"3002", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Englisch",name:"Workshop", label:"Englisch", moderator:"Kerstin Schneider", raum:"4002", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Mathematik",name:"Workshop", label:"Mathematik", moderator:"", raum:"4010", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Religion",name:"Workshop", label:"Religion", moderator:"Theresa Schroer", raum:"2003", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Sport",name:"Workshop", label:"Sport", moderator:"Jonas Harlacher", raum:"3005", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Politik / GG",name:"Workshop", label:"Politik / GG", moderator:"Raluca Frincu", raum:"4003", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Grüner Bereich",name:"Workshop", label:"Grüner Bereich", moderator:"Uwe Sobbe", raum:"4007", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Naturwissenschaften",name:"Workshop", label:"Naturwissenschaften", moderator:"Eva Hansen", raum:"4002", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"WirtschaftA",name:"Workshop", label:"Wirtschaft (Anlage A)", moderator:"Andreas Schraven", raum:"4009", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Soziales",name:"Workshop", label:"Soziales", moderator:"NN", raum:"3005", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Wirtschaft",name:"Workshop", label:"Wirtschaft", moderator:"", raum:"4011", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Technik",name:"Workshop", label:"Technik", moderator:"KS", raum:"4008", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Weitere",name:"Workshop", label:"Weitere Fächer", moderator:"Steuergruppe", raum:"Forum", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch", moderator:"Reinhild Conrad", raum:"3007",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch, Spanisch", moderator:"Eva Finke", raum:"3002",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Englisch",name:"Workshop", label:"Englisch", moderator:"Kerstin Schneider", raum:"4002",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Mathematik",name:"Workshop", label:"Mathematik", moderator:"", raum:"4010",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Religion",name:"Workshop", label:"Religion", moderator:"Theresa Schroer", raum:"2003",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Sport",name:"Workshop", label:"Sport", moderator:"Jonas Harlacher", raum:"3005",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Politik / GG",name:"Workshop", label:"Politik / GG", moderator:"Raluca Frincu", raum:"4003",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Grüner Bereich",name:"Workshop", label:"Grüner Bereich", moderator:"Uwe Sobbe", raum:"4007",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Naturwissenschaften",name:"Workshop", label:"Naturwissenschaften", moderator:"Eva Hansen", raum:"4002",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"WirtschaftA",name:"Workshop", label:"Wirtschaft (Anlage A)", moderator:"Andreas Schraven", raum:"4009",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Soziales",name:"Workshop", label:"Soziales", moderator:"NN", raum:"3005",urlPadlet:"https://padlet.com/anschraven/w8igcsuyog0p", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Wirtschaft",name:"Workshop", label:"Wirtschaft", moderator:"", raum:"4011",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Technik",name:"Workshop", label:"Technik", moderator:"KS", raum:"4008",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Weitere",name:"Workshop", label:"Weitere Fächer", moderator:"Steuergruppe", raum:"Forum",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 
 wahlen.push(new Wahl("Anwendungsphase", "13:30","14:30", "Jede Kollegin und jeder Kollegen soll sich zu einem seiner Fächer bzw. zu seinem Bereich zuordnen, um dann gemeinsam Überlegungen zu entwickeln und Schritte zu planen, wie die gewonnenen Erkenntnisse im Unterricht, in bestimmten Klassen, zu bestimmten Themen etc. sinnvoll eingesetzt werden können.", optionen, "anwendungsphase")) 
 
@@ -259,8 +259,8 @@ app.get('/',(req, res, next) => {
                         label = wahlen[i].name + " gewählt"
 
                         for(o = 0; o < wahlen[i].optionen.length; o++){                                
-                            if(x == (wahlen[i].optionen[o].id)){               
-                                label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"                                             
+                            if(x == (wahlen[i].optionen[o].id)){                                               
+                                label = wahlen[i].name + ": " +  wahlen[i].optionen[o].id + "<br>(um " + wahlen[i].von + " im Raum " + wahlen[i].optionen[o].raum +")"
                             }
                         }
                     }                    
@@ -417,7 +417,7 @@ app.get('/tagesablauf',(req, res, next) => {
         araum = ""
         w1thema = ""
         w2thema = ""
-        athema = ""
+        abeschreibung = ""
 
         for(i = 0; i < rows.length; i++){         
 
@@ -437,7 +437,7 @@ app.get('/tagesablauf',(req, res, next) => {
             for(z = 0; z < wahlen[2].optionen.length; z++){                         
                 if(wahlen[2].optionen[z].id === rows[i].anwendungsphase){
                     araum = wahlen[2].optionen[z].raum
-                    athema = rows[i].anwendungsphase                    
+                    abeschreibung = "Ihr Wahl: " + rows[i].anwendungsphase + " in Raum " + araum +  "</br>Für die Anwendungsphase klicken Sie <a style='color:red' href='" + wahlen[2].optionen[z].urlPadlet + "' target='_blank'>diesen Link zum Padlet</a>."
                 }                
             }
         }
@@ -461,8 +461,8 @@ app.get('/tagesablauf',(req, res, next) => {
             }
 
             if(tagesablauf[i].id === "anwendungsphase"){             
-                if(athema != ""){
-                    beschreibung = "Ihre Wahl: " + athema + " in Raum " + araum
+                if(abeschreibung != ""){
+                    beschreibung = abeschreibung
                 }
             }
 
@@ -477,8 +477,7 @@ app.get('/tagesablauf',(req, res, next) => {
 })
 
 app.get('/workshops',(req, res, next) => {     
-    //if(istAngemeldetAls(req.cookies)){ 
-    if(true){
+    if(istAngemeldetAls(req.cookies)){     
         let badges = []            
         
         for(i = 0; i < wahlen[0].optionen.length; i++){         
@@ -540,8 +539,6 @@ app.get('/admin',(req, res, next) => {
     }  
 })
 
-
-
 app.get('/wahl',(req, res, next) => {  
     if(req.query.w >= wahlen.length) return next(new Error("Unzulässiger Parameter!"))
 
@@ -564,11 +561,9 @@ app.get('/wahl',(req, res, next) => {
 
             let rechts = '<i class="fa fa-meh-o"></i> nichts gewählt'
             
-            console.log('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)
-
             if(eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)){
                 rechts = eval('rows[' + lehrerIndex + '].' + wahlen[req.query.w].dbFeld)
-                badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'nochmal ändern <i class="fa fa-question-circle"></i>'})
+                badges.push({type:"warning", links:'bereits gewählt <i class="fa fa-exclamation-triangle"></i>', rechts:'nochmal ändern <i class="fa fa-question-circle"></i>'})                
             }
 
             badges.push({type:"success", links:'Ihre bisherige Wahl:', rechts:rechts})

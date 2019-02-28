@@ -401,7 +401,7 @@ app.get('/liste',(req, res, next) => {
             liste: liste,
             lehrerKrz : req.query.lehrerKrz,            
             footer : footer,
-            badges : renderBadges([], true, false, istAngemeldetAls(req.cookies), "Gesamtübersicht",""),                         
+            badges : renderBadges([], true, false, istAngemeldetAls(req.cookies), "Wer? ... Wann? ... Was? ... Wo?",""),                         
         })
     })
 })

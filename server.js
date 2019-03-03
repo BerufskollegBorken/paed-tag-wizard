@@ -174,19 +174,19 @@ wahlen.push(new Wahl("Workshop 1", "09:15","10:45", "", optionen, "workshop1"))
 wahlen.push(new Wahl("Workshop 2", "11:00","12:30", "", optionen, "workshop2")) 
 
 optionen = []
-optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch", moderator:"Reinhild Conrad", raum:"3007",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch, Spanisch", moderator:"Eva Finke", raum:"3002",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Englisch",name:"Workshop", label:"Englisch", moderator:"Kerstin Schneider", raum:"4002",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Deutsch", name:"Workshop", label:"Deutsch", moderator:"Reinhild Conrad", raum:"3007",urlPadlet:"https://padlet.com/anschraven/m1dm7qccbqms", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Niederländisch", name:"Workshop", label:"Niederländisch, Spanisch", moderator:"Eva Finke", raum:"3002",urlPadlet:"https://padlet.com/anschraven/6p8ws96htjmr", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Englisch",name:"Workshop", label:"Englisch", moderator:"Kerstin Schneider", raum:"4002",urlPadlet:"https://padlet.com/anschraven/b9z31r35bbj7", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Mathematik",name:"Workshop", label:"Mathematik", moderator:"", raum:"4010",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Religion",name:"Workshop", label:"Religion", moderator:"Theresa Schroer", raum:"2003",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
-optionen.push({id:"Sport",name:"Workshop", label:"Sport", moderator:"Jonas Harlacher", raum:"3005",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Politik / GG",name:"Workshop", label:"Politik / GG", moderator:"Raluca Frincu", raum:"4003",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Grüner Bereich",name:"Workshop", label:"Grüner Bereich", moderator:"Uwe Sobbe", raum:"4007",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Religion",name:"Workshop", label:"Religion", moderator:"Theresa Schroer", raum:"2003",urlPadlet:"https://padlet.com/anschraven/tsswwxsev4ja", kapazitaet:99, anzahl:0, ausgebucht: "",checked: ""})
+optionen.push({id:"Sport",name:"Workshop", label:"Sport", moderator:"Jonas Harlacher", raum:"3005",urlPadlet:"https://padlet.com/anschraven/68pbxqlpvwm4", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Politik / GG",name:"Workshop", label:"Politik / GG", moderator:"Raluca Frincu", raum:"4003",urlPadlet:"https://padlet.com/anschraven/ym6vuhgtpxf6", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Grüner Bereich",name:"Workshop", label:"Grüner Bereich", moderator:"Uwe Sobbe", raum:"4007",urlPadlet:"https://padlet.com/anschraven/z1ifyxthqwh0", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Naturwissenschaften",name:"Workshop", label:"Naturwissenschaften", moderator:"Eva Hansen", raum:"4002",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"WirtschaftA",name:"Workshop", label:"Wirtschaft (Anlage A)", moderator:"Andreas Schraven", raum:"4009",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"WirtschaftA",name:"Workshop", label:"Wirtschaft (Anlage A)", moderator:"Andreas Schraven", raum:"4009",urlPadlet:"https://padlet.com/anschraven/5v1bll0k2cps", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Soziales",name:"Workshop", label:"Soziales", moderator:"NN", raum:"3005",urlPadlet:"https://padlet.com/anschraven/w8igcsuyog0p", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Wirtschaft",name:"Workshop", label:"Wirtschaft", moderator:"", raum:"4011",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Technik",name:"Workshop", label:"Technik", moderator:"KS", raum:"4008",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Wirtschaft",name:"Workshop", label:"Wirtschaft", moderator:"", raum:"4011",urlPadlet:"https://padlet.com/anschraven/5nrofgdylzdp", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Technik",name:"Workshop", label:"Technik", moderator:"KS", raum:"4008",urlPadlet:"https://padlet.com/anschraven/o060l7geis1l", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Weitere",name:"Workshop", label:"Weitere Fächer", moderator:"Steuergruppe", raum:"Forum",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 
 wahlen.push(new Wahl("Anwendungsphase", "13:30","14:30", "Jede Kollegin und jeder Kollegen soll sich zu einem seiner Fächer bzw. zu seinem Bereich zuordnen, um dann gemeinsam Überlegungen zu entwickeln und Schritte zu planen, wie die gewonnenen Erkenntnisse im Unterricht, in bestimmten Klassen, zu bestimmten Themen etc. sinnvoll eingesetzt werden können.", optionen, "anwendungsphase")) 
@@ -235,6 +235,7 @@ app.get('/',(req, res, next) => {
                 res.render('anmelden.ejs', {      
                     header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                     lehrerKrz : req.query.lehrerKrz,
+                    redirect : "",
                     pin : req.query.pin,
                     footer : footer
                 })
@@ -281,6 +282,7 @@ app.get('/',(req, res, next) => {
         res.render('anmelden.ejs', {      
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             lehrerKrz : req.query.lehrerKrz,
+            redirect : "",
             pin : req.query.pin,
             footer : footer
         })
@@ -288,6 +290,7 @@ app.get('/',(req, res, next) => {
 })
 
 app.post('/',(req, res, next) => {        
+
     let lehrerKrz = req.body.lehrerKrz
     let pin = req.body.pin
 
@@ -300,6 +303,7 @@ app.post('/',(req, res, next) => {
             res.render('anmelden.ejs', {      
                 badges : renderBadges([], false, false, lehrerKrz, "",""),                    
                 lehrerKrz : req.query.lehrerKrz,
+                redirect : "",                
                 pin : req.query.pin,
                 footer : footer            
             })
@@ -348,6 +352,7 @@ app.post('/anmelden',(req, res, next) => {
     res.render('anmelden.ejs', {
         badges : renderBadges(badges, false, false, "", "Bitte anmelden!",""),
         lehrerKrz : req.query.lehrerKrz,
+        redirect : "",
         pin : req.query.pin,
         footer : footer
     })
@@ -358,6 +363,7 @@ app.get('/anmelden',(req, res, next) => {
     res.render('anmelden.ejs', {      
         badges : renderBadges([], false, false, "", "Bitte anmelden",""),                
         lehrerKrz : req.query.lehrerKrz,
+        redirect : "",
         pin : req.query.pin,
         footer : footer
     })
@@ -374,6 +380,7 @@ app.get('/liste',(req, res, next) => {
             w1 = ""
             w2 = ""
             a = ""
+            anwendungsphase = ""
 
             for(z = 0; z < wahlen[0].optionen.length; z++){        
                 if(wahlen[0].optionen[z].id === rows[i].workshop1){                    
@@ -389,10 +396,13 @@ app.get('/liste',(req, res, next) => {
             for(z = 0; z < wahlen[2].optionen.length; z++){                         
                 if(wahlen[2].optionen[z].id === rows[i].anwendungsphase){
                     a = wahlen[2].optionen[z].raum
+                    anwendungsphase = "<a target='_blank' style='color:red' href ='" + wahlen[2].optionen[z].urlPadlet + "'>" + rows[i].anwendungsphase + "</a>"
                 }                
             }
 
-            liste.push({lehrerKrz:rows[i].lehrerKrz, ab1: wahlen[0].von, thema1:rows[i].workshop1, raum1:w1, ab2: wahlen[1].von, thema2:rows[i].workshop2, raum2:w2, ab3: wahlen[2].von, thema3:rows[i].anwendungsphase, raum3: a})
+
+
+            liste.push({lehrerKrz:rows[i].lehrerKrz, ab1: wahlen[0].von, thema1:rows[i].workshop1, raum1:w1, ab2: wahlen[1].von, thema2:rows[i].workshop2, raum2:w2, ab3: wahlen[2].von, thema3:anwendungsphase, raum3: a})
         }
 
         res.render('liste.ejs', {                  
@@ -410,71 +420,184 @@ app.get('/tagesablauf',(req, res, next) => {
     
     let lehrerKrz = istAngemeldetAls(req.cookies)
 
-    dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "';", (err, rows) => { 
-        
-        w1raum = ""
-        w2raum = ""
-        araum = ""
-        w1thema = ""
-        w2thema = ""
-        abeschreibung = ""
+    if(lehrerKrz){     
 
-        for(i = 0; i < rows.length; i++){         
-
-            for(z = 0; z < wahlen[0].optionen.length; z++){        
-                if(wahlen[0].optionen[z].id === rows[i].workshop1){                    
-                    w1raum = wahlen[0].optionen[z].raum
-                    w1thema = rows[i].workshop1
-                }                
-            }
-            for(z = 0; z < wahlen[1].optionen.length; z++){                         
-                if(wahlen[1].optionen[z].id === rows[i].workshop2){
-                    w2raum = wahlen[1].optionen[z].raum
-                    w2thema = rows[i].workshop2
-                }                
-            }
-
-            for(z = 0; z < wahlen[2].optionen.length; z++){                         
-                if(wahlen[2].optionen[z].id === rows[i].anwendungsphase){
-                    araum = wahlen[2].optionen[z].raum
-                    abeschreibung = "Ihre Wahl: " + rows[i].anwendungsphase + " in Raum " + araum +  "</br>Für die Anwendungsphase klicken Sie <a style='color:red' href='" + wahlen[2].optionen[z].urlPadlet + "' target='_blank'>diesen Link zum Padlet</a>."
-                }                
-            }
-        }
-
-        let badges = []            
-        
-        for(i = 0; i < tagesablauf.length; i++){     
-
-            let thema = tagesablauf[i].thema
-            let beschreibung = tagesablauf[i].beschreibung
+        dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "';", (err, rows) => { 
             
-            if(tagesablauf[i].id === "workshop1"){                
-                if(w1thema != ""){
-                    beschreibung = "Ihre Wahl: " + w1thema + " in Raum " + w1raum
+            w1raum = ""
+            w2raum = ""
+            araum = ""
+            w1thema = ""
+            w2thema = ""
+            abeschreibung = ""
+
+            for(i = 0; i < rows.length; i++){         
+
+                for(z = 0; z < wahlen[0].optionen.length; z++){        
+                    if(wahlen[0].optionen[z].id === rows[i].workshop1){                    
+                        w1raum = wahlen[0].optionen[z].raum
+                        w1thema = rows[i].workshop1
+                    }                
                 }
-            }
-            if(tagesablauf[i].id === "workshop2"){
-                if(w2thema != ""){
-                    beschreibung = "Ihre Wahl: " + w2thema + " in Raum " + w2raum
+                for(z = 0; z < wahlen[1].optionen.length; z++){                         
+                    if(wahlen[1].optionen[z].id === rows[i].workshop2){
+                        w2raum = wahlen[1].optionen[z].raum
+                        w2thema = rows[i].workshop2
+                    }                
+                }
+
+                for(z = 0; z < wahlen[2].optionen.length; z++){                         
+                    if(wahlen[2].optionen[z].id === rows[i].anwendungsphase){
+                        araum = wahlen[2].optionen[z].raum
+                        abeschreibung = "Ihre Wahl: " + rows[i].anwendungsphase + " in Raum " + araum +  "</br>Für die Anwendungsphase klicken Sie <a style='color:red' href='" + wahlen[2].optionen[z].urlPadlet + "' target='_blank'>diesen Link zum Padlet</a>."
+                    }                
                 }
             }
 
-            if(tagesablauf[i].id === "anwendungsphase"){             
-                if(abeschreibung != ""){
-                    beschreibung = abeschreibung
+            let badges = []            
+            
+            for(i = 0; i < tagesablauf.length; i++){     
+
+                let thema = tagesablauf[i].thema
+                let beschreibung = tagesablauf[i].beschreibung
+                
+                if(tagesablauf[i].id === "workshop1"){                
+                    if(w1thema != ""){
+                        beschreibung = "Ihre Wahl: " + w1thema + " in Raum " + w1raum
+                    }
                 }
-            }
+                if(tagesablauf[i].id === "workshop2"){
+                    if(w2thema != ""){
+                        beschreibung = "Ihre Wahl: " + w2thema + " in Raum " + w2raum
+                    }
+                }
 
-            badges.push({type:"info", links:tagesablauf[i].von + " - " + tagesablauf[i].bis, rechts:thema, beschreibung:beschreibung})
-        }      
+                if(tagesablauf[i].id === "anwendungsphase"){             
+                    if(abeschreibung != ""){
+                        beschreibung = abeschreibung
+                    }
+                }
 
-        res.render('tagesablauf.ejs', {       
-            badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), "Tagesablauf",""),             
-            footer: footer
+                badges.push({type:"info", links:tagesablauf[i].von + " - " + tagesablauf[i].bis, rechts:thema, beschreibung:beschreibung})
+            }      
+
+            res.render('tagesablauf.ejs', {       
+                badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), "Tagesablauf",""),             
+                footer: footer
+            })
         })
+    }else{
+        res.render('anmelden.ejs', {       
+            header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+            lehrerKrz : req.query.lehrerKrz,
+            redirect : "tagesablauf",
+            pin : req.query.pin,
+            footer : footer   
+        })
+    }  
+})
+
+
+app.post('/tagesablauf',(req, res, next) => {     
+    
+    let lehrerKrz = req.body.lehrerKrz
+    let pin = req.body.pin
+
+    dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "' AND pin = " + pin + ";", (err, rows) => { 
+        if (err) return next(err)
+        
+        if(rows[0] === undefined){    
+            console.log("Cookies wird gelöscht ....")
+            res.cookie('istAngemeldetAls', '')
+            res.render('anmelden.ejs', {      
+                badges : renderBadges([], false, false, lehrerKrz, "",""),                    
+                lehrerKrz : req.query.lehrerKrz,
+                redirect : "",                
+                pin : req.query.pin,
+                footer : footer            
+            })
+        }else{     
+            res.cookie('istAngemeldetAls', lehrerKrz.toUpperCase())
+            
+            if(lehrerKrz){     
+
+                dbVerbindung.query("SELECT * from lehrer WHERE lehrerkrz = '" + lehrerKrz + "';", (err, rows) => { 
+                    
+                    w1raum = ""
+                    w2raum = ""
+                    araum = ""
+                    w1thema = ""
+                    w2thema = ""
+                    abeschreibung = ""
+        
+                    for(i = 0; i < rows.length; i++){         
+        
+                        for(z = 0; z < wahlen[0].optionen.length; z++){        
+                            if(wahlen[0].optionen[z].id === rows[i].workshop1){                    
+                                w1raum = wahlen[0].optionen[z].raum
+                                w1thema = rows[i].workshop1
+                            }                
+                        }
+                        for(z = 0; z < wahlen[1].optionen.length; z++){                         
+                            if(wahlen[1].optionen[z].id === rows[i].workshop2){
+                                w2raum = wahlen[1].optionen[z].raum
+                                w2thema = rows[i].workshop2
+                            }                
+                        }
+        
+                        for(z = 0; z < wahlen[2].optionen.length; z++){                         
+                            if(wahlen[2].optionen[z].id === rows[i].anwendungsphase){
+                                araum = wahlen[2].optionen[z].raum
+                                abeschreibung = "Ihre Wahl: " + rows[i].anwendungsphase + " in Raum " + araum +  "</br>Für die Anwendungsphase klicken Sie <a style='color:red' href='" + wahlen[2].optionen[z].urlPadlet + "' target='_blank'>diesen Link zum Padlet</a>."
+                            }                
+                        }
+                    }
+        
+                    let badges = []            
+                    
+                    for(i = 0; i < tagesablauf.length; i++){     
+        
+                        let thema = tagesablauf[i].thema
+                        let beschreibung = tagesablauf[i].beschreibung
+                        
+                        if(tagesablauf[i].id === "workshop1"){                
+                            if(w1thema != ""){
+                                beschreibung = "Ihre Wahl: " + w1thema + " in Raum " + w1raum
+                            }
+                        }
+                        if(tagesablauf[i].id === "workshop2"){
+                            if(w2thema != ""){
+                                beschreibung = "Ihre Wahl: " + w2thema + " in Raum " + w2raum
+                            }
+                        }
+        
+                        if(tagesablauf[i].id === "anwendungsphase"){             
+                            if(abeschreibung != ""){
+                                beschreibung = abeschreibung
+                            }
+                        }
+        
+                        badges.push({type:"info", links:tagesablauf[i].von + " - " + tagesablauf[i].bis, rechts:thema, beschreibung:beschreibung})
+                    }      
+        
+                    res.render('tagesablauf.ejs', {       
+                        badges : renderBadges(badges, true, false, istAngemeldetAls(req.cookies), "Tagesablauf",""),             
+                        footer: footer
+                    })
+                })
+            }else{
+                res.render('anmelden.ejs', {       
+                    header : renderHeader(tagesablauf.themaDesTages,"",false, false),
+                    lehrerKrz : req.query.lehrerKrz,
+                    redirect : "tagesablauf",
+                    pin : req.query.pin,
+                    footer : footer   
+                })
+            }        
+        }        
     })
 })
+
 
 app.get('/workshops',(req, res, next) => {     
     if(istAngemeldetAls(req.cookies)){     
@@ -492,6 +615,7 @@ app.get('/workshops',(req, res, next) => {
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             lehrerKrz : req.query.lehrerKrz,
+            redirect : "",
             pin : req.query.pin,
             footer : footer   
         })
@@ -509,6 +633,7 @@ app.get('/about',(req, res, next) => {
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             lehrerKrz : req.query.lehrerKrz,
+            redirect : "",
             pin : req.query.pin,
             footer : footer   
         })
@@ -533,6 +658,7 @@ app.get('/admin',(req, res, next) => {
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             lehrerKrz : req.query.lehrerKrz,
+            redirect : "",
             pin : req.query.pin,
             footer : footer   
         })
@@ -579,6 +705,7 @@ app.get('/wahl',(req, res, next) => {
                 res.render('anmelden.ejs', {      
                     header : renderHeader(tagesablauf.themaDesTages,"",false, false),
                     lehrerKrz : req.query.lehrerKrz,
+                    redirect : "",
                     pin : req.query.pin,
                     footer : footer
                 })
@@ -588,6 +715,7 @@ app.get('/wahl',(req, res, next) => {
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages,"",false, false),
             lehrerKrz : req.query.lehrerKrz,
+            redirect : "",
             pin : req.query.pin,
             footer : footer   
         })
@@ -710,6 +838,7 @@ app.post('/wahl',  (req, res, next) => {
         res.render('anmelden.ejs', {       
             header : renderHeader(tagesablauf.themaDesTages, "",false, false),  
             lehrerKrz : req.query.lehrerKrz,
+            redirect : "",
             pin : req.query.pin,                                
             footer : footer   
         })

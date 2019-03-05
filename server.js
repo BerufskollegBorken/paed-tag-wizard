@@ -187,7 +187,7 @@ optionen.push({id:"WirtschaftA",name:"Workshop", label:"Wirtschaft (Anlage A)", 
 optionen.push({id:"Soziales",name:"Workshop", label:"Soziales", moderator:"NN", raum:"3005",urlPadlet:"https://padlet.com/anschraven/w8igcsuyog0p", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Wirtschaft",name:"Workshop", label:"Wirtschaft", moderator:"", raum:"4011",urlPadlet:"https://padlet.com/anschraven/5nrofgdylzdp", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 optionen.push({id:"Technik",name:"Workshop", label:"Technik", moderator:"KS", raum:"4008",urlPadlet:"https://padlet.com/anschraven/o060l7geis1l", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
-optionen.push({id:"Weitere",name:"Workshop", label:"Weitere Fächer", moderator:"Steuergruppe", raum:"Forum",urlPadlet:"", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
+optionen.push({id:"Weitere",name:"Workshop", label:"Weitere Fächer", moderator:"Steuergruppe", raum:"Forum",urlPadlet:"https://padlet.com/anschraven/dqmmy48y8sey", kapazitaet:99, anzahl:0, ausgebucht: "", disabled: "",checked: ""})
 
 wahlen.push(new Wahl("Anwendungsphase", "13:30","14:30", "Jede Kollegin und jeder Kollegen soll sich zu einem seiner Fächer bzw. zu seinem Bereich zuordnen, um dann gemeinsam Überlegungen zu entwickeln und Schritte zu planen, wie die gewonnenen Erkenntnisse im Unterricht, in bestimmten Klassen, zu bestimmten Themen etc. sinnvoll eingesetzt werden können.", optionen, "anwendungsphase")) 
 
